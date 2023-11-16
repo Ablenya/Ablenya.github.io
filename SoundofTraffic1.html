@@ -1,0 +1,1113 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_887290770d2ad347c2d383b5fdad4252 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+<style>
+@font-face {
+    font-family: 'CustomFont';
+    src: url('file:///C:/Users/ABarros/Downloads/MuseoSans_300.otf') format('opentype');
+}
+</style>
+<div style="position: fixed; bottom: 50px; left: 50px; z-index: 1000; background-color: white; padding: 10px; border: 2px solid grey; font-size: 14px; font-family: 'CustomFont', sans-serif;">
+    <b>Presence of traffic</b><br>
+    <i style="background: #fedada; border-radius: 50%; width: 15px; height: 15px; display: inline-block;"></i> Helemaal niet: 1.2% <br>
+    <i style="background: #ffa1a1; border-radius: 50%; width: 15px; height: 15px; display: inline-block;"></i> Een beetje: 16.1%<br>
+    <i style="background: #ff3a1e; border-radius: 50%; width: 15px; height: 15px; display: inline-block;"></i> Matig: 24.4%<br>
+    <i style="background: #a70000; border-radius: 50%; width: 15px; height: 15px; display: inline-block;"></i> Veel: 35.8% <br>
+    <i style="background: #2e0000; border-radius: 50%; width: 15px; height: 15px; display: inline-block;"></i> Overheersend: 22.4%
+</div>
+    
+            <div class="folium-map" id="map_887290770d2ad347c2d383b5fdad4252" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_887290770d2ad347c2d383b5fdad4252 = L.map(
+                "map_887290770d2ad347c2d383b5fdad4252",
+                {
+                    center: [51.026, 4.476],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 9,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_484779464ba60c4db4c84c94200f2849 = L.tileLayer(
+                "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "Data by \u0026copy; \u003ca target=\"_blank\" href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_887290770d2ad347c2d383b5fdad4252);
+        
+    
+            var circle_236cf9a2d3ba9758885d55a7f376cb32 = L.circle(
+                [50.6690841, 4.6140913],
+                {"bubblingMouseEvents": true, "color": "#ffa1a1", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ffa1a1", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20, "stroke": true, "weight": 3}
+            ).addTo(map_887290770d2ad347c2d383b5fdad4252);
+        
+    
+        var popup_cec3141cb5e2fe4819f0c684b61ca6b8 = L.popup({"maxHeight": 400, "maxWidth": 350, "minHeight": 350, "minWidth": 400});
+
+        
+            
+                var html_061339d9d6adc7566603f95147080f39 = $(`<div id="html_061339d9d6adc7566603f95147080f39" style="width: 100.0%; height: 100.0%;"><img src="https://github.com/Ablenya/Ablenya.github.io/blob/main/Justradarplots/1.png"></div>`)[0];
+                popup_cec3141cb5e2fe4819f0c684b61ca6b8.setContent(html_061339d9d6adc7566603f95147080f39);
+            
+        
+
+        circle_236cf9a2d3ba9758885d55a7f376cb32.bindPopup(popup_cec3141cb5e2fe4819f0c684b61ca6b8)
+        ;
+
+        
+    
+    
+            var circle_bc9c51358a49828a48f4f91ae57dde1e = L.circle(
+                [50.9732393, 4.496065300000001],
+                {"bubblingMouseEvents": true, "color": "#ffa1a1", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ffa1a1", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20, "stroke": true, "weight": 3}
+            ).addTo(map_887290770d2ad347c2d383b5fdad4252);
+        
+    
+        var popup_e5ab2dc8a811667a830f1a1dcd0c07f1 = L.popup({"maxHeight": 400, "maxWidth": 350, "minHeight": 350, "minWidth": 400});
+
+        
+            
+                var html_a3141e55244b7a9d42bf9bc816d9d6ed = $(`<div id="html_a3141e55244b7a9d42bf9bc816d9d6ed" style="width: 100.0%; height: 100.0%;"><img src="https://github.com/Ablenya/Ablenya.github.io/blob/main/Justradarplots/2.png"></div>`)[0];
+                popup_e5ab2dc8a811667a830f1a1dcd0c07f1.setContent(html_a3141e55244b7a9d42bf9bc816d9d6ed);
+            
+        
+
+        circle_bc9c51358a49828a48f4f91ae57dde1e.bindPopup(popup_e5ab2dc8a811667a830f1a1dcd0c07f1)
+        ;
+
+        
+    
+    
+            var circle_db97aab347e214cfe5d54a4c3b502461 = L.circle(
+                [50.9734844, 4.4959807],
+                {"bubblingMouseEvents": true, "color": "#2e0000", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2e0000", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20, "stroke": true, "weight": 3}
+            ).addTo(map_887290770d2ad347c2d383b5fdad4252);
+        
+    
+        var popup_117e4b99249be52b7f59555bdadb01b9 = L.popup({"maxHeight": 400, "maxWidth": 350, "minHeight": 350, "minWidth": 400});
+
+        
+            
+                var html_bfbf95cb42e7c6e8e48bd7807a512f5e = $(`<div id="html_bfbf95cb42e7c6e8e48bd7807a512f5e" style="width: 100.0%; height: 100.0%;"><img src="https://github.com/Ablenya/Ablenya.github.io/blob/main/Justradarplots/3.png"></div>`)[0];
+                popup_117e4b99249be52b7f59555bdadb01b9.setContent(html_bfbf95cb42e7c6e8e48bd7807a512f5e);
+            
+        
+
+        circle_db97aab347e214cfe5d54a4c3b502461.bindPopup(popup_117e4b99249be52b7f59555bdadb01b9)
+        ;
+
+        
+    
+    
+            var circle_00beb222ab2e56b0e1225abd50ad8488 = L.circle(
+                [51.2771047, 4.4175641],
+                {"bubblingMouseEvents": true, "color": "#2e0000", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2e0000", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20, "stroke": true, "weight": 3}
+            ).addTo(map_887290770d2ad347c2d383b5fdad4252);
+        
+    
+        var popup_4a5b9795eaa591d1a301ff5a57cb3442 = L.popup({"maxHeight": 400, "maxWidth": 350, "minHeight": 350, "minWidth": 400});
+
+        
+            
+                var html_66aacbfd20711282ff4a774526627fd9 = $(`<div id="html_66aacbfd20711282ff4a774526627fd9" style="width: 100.0%; height: 100.0%;"><img src="https://github.com/Ablenya/Ablenya.github.io/blob/main/Justradarplots/4.png"></div>`)[0];
+                popup_4a5b9795eaa591d1a301ff5a57cb3442.setContent(html_66aacbfd20711282ff4a774526627fd9);
+            
+        
+
+        circle_00beb222ab2e56b0e1225abd50ad8488.bindPopup(popup_4a5b9795eaa591d1a301ff5a57cb3442)
+        ;
+
+        
+    
+    
+            var circle_dc28430a4949b7275a76530872e42010 = L.circle(
+                [51.2131386, 4.4447163],
+                {"bubblingMouseEvents": true, "color": "#a70000", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#a70000", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20, "stroke": true, "weight": 3}
+            ).addTo(map_887290770d2ad347c2d383b5fdad4252);
+        
+    
+        var popup_01d42e858d5e50b52de0cce9515016f1 = L.popup({"maxHeight": 400, "maxWidth": 350, "minHeight": 350, "minWidth": 400});
+
+        
+            
+                var html_452147e4c6cbaada027bfb432250a6a9 = $(`<div id="html_452147e4c6cbaada027bfb432250a6a9" style="width: 100.0%; height: 100.0%;"><img src="https://github.com/Ablenya/Ablenya.github.io/blob/main/Justradarplots/5.png"></div>`)[0];
+                popup_01d42e858d5e50b52de0cce9515016f1.setContent(html_452147e4c6cbaada027bfb432250a6a9);
+            
+        
+
+        circle_dc28430a4949b7275a76530872e42010.bindPopup(popup_01d42e858d5e50b52de0cce9515016f1)
+        ;
+
+        
+    
+    
+            var circle_8084247cc0ca3e779b21ac6d7882ad0b = L.circle(
+                [51.0926833, 4.242789],
+                {"bubblingMouseEvents": true, "color": "#a70000", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#a70000", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20, "stroke": true, "weight": 3}
+            ).addTo(map_887290770d2ad347c2d383b5fdad4252);
+        
+    
+        var popup_f40144dfb215def813ad22f26ce6ccb9 = L.popup({"maxHeight": 400, "maxWidth": 350, "minHeight": 350, "minWidth": 400});
+
+        
+            
+                var html_029ce93163a69b8860e8abeb4a656cdd = $(`<div id="html_029ce93163a69b8860e8abeb4a656cdd" style="width: 100.0%; height: 100.0%;"><img src="https://github.com/Ablenya/Ablenya.github.io/blob/main/Justradarplots/6.png"></div>`)[0];
+                popup_f40144dfb215def813ad22f26ce6ccb9.setContent(html_029ce93163a69b8860e8abeb4a656cdd);
+            
+        
+
+        circle_8084247cc0ca3e779b21ac6d7882ad0b.bindPopup(popup_f40144dfb215def813ad22f26ce6ccb9)
+        ;
+
+        
+    
+    
+            var circle_cbb5ebe4a36acd4b05d5c36a09334f36 = L.circle(
+                [51.1640264, 4.446242],
+                {"bubblingMouseEvents": true, "color": "#a70000", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#a70000", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20, "stroke": true, "weight": 3}
+            ).addTo(map_887290770d2ad347c2d383b5fdad4252);
+        
+    
+        var popup_1e256b73e857ba28b88c96f3d5e18916 = L.popup({"maxHeight": 400, "maxWidth": 350, "minHeight": 350, "minWidth": 400});
+
+        
+            
+                var html_2df1597c35419c8059df571cb2e45bac = $(`<div id="html_2df1597c35419c8059df571cb2e45bac" style="width: 100.0%; height: 100.0%;"><img src="https://github.com/Ablenya/Ablenya.github.io/blob/main/Justradarplots/7.png"></div>`)[0];
+                popup_1e256b73e857ba28b88c96f3d5e18916.setContent(html_2df1597c35419c8059df571cb2e45bac);
+            
+        
+
+        circle_cbb5ebe4a36acd4b05d5c36a09334f36.bindPopup(popup_1e256b73e857ba28b88c96f3d5e18916)
+        ;
+
+        
+    
+    
+            var circle_296f5897cf11563b5b1d2565f9d3e63e = L.circle(
+                [51.2757693, 4.3716153],
+                {"bubblingMouseEvents": true, "color": "#a70000", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#a70000", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20, "stroke": true, "weight": 3}
+            ).addTo(map_887290770d2ad347c2d383b5fdad4252);
+        
+    
+        var popup_9e086d3bac49ad3cab724e92316261b8 = L.popup({"maxHeight": 400, "maxWidth": 350, "minHeight": 350, "minWidth": 400});
+
+        
+            
+                var html_ff450e89392ef6cfa3c8db79b7d43eb9 = $(`<div id="html_ff450e89392ef6cfa3c8db79b7d43eb9" style="width: 100.0%; height: 100.0%;"><img src="https://github.com/Ablenya/Ablenya.github.io/blob/main/Justradarplots/8.png"></div>`)[0];
+                popup_9e086d3bac49ad3cab724e92316261b8.setContent(html_ff450e89392ef6cfa3c8db79b7d43eb9);
+            
+        
+
+        circle_296f5897cf11563b5b1d2565f9d3e63e.bindPopup(popup_9e086d3bac49ad3cab724e92316261b8)
+        ;
+
+        
+    
+    
+            var circle_18b3601d30ae446b2921fc9a8a10ba7b = L.circle(
+                [51.1611886, 3.097499],
+                {"bubblingMouseEvents": true, "color": "#2e0000", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2e0000", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20, "stroke": true, "weight": 3}
+            ).addTo(map_887290770d2ad347c2d383b5fdad4252);
+        
+    
+        var popup_138e383c5645a5146d108402d4dbc88d = L.popup({"maxHeight": 400, "maxWidth": 350, "minHeight": 350, "minWidth": 400});
+
+        
+            
+                var html_f721b55d47507c28899214a70510dadd = $(`<div id="html_f721b55d47507c28899214a70510dadd" style="width: 100.0%; height: 100.0%;"><img src="https://github.com/Ablenya/Ablenya.github.io/blob/main/Justradarplots/9.png"></div>`)[0];
+                popup_138e383c5645a5146d108402d4dbc88d.setContent(html_f721b55d47507c28899214a70510dadd);
+            
+        
+
+        circle_18b3601d30ae446b2921fc9a8a10ba7b.bindPopup(popup_138e383c5645a5146d108402d4dbc88d)
+        ;
+
+        
+    
+    
+            var circle_c88ab0c83b4c3dc23b96ff4d3a3a2f1b = L.circle(
+                [51.220895, 4.4832888],
+                {"bubblingMouseEvents": true, "color": "#ff3a1e", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff3a1e", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20, "stroke": true, "weight": 3}
+            ).addTo(map_887290770d2ad347c2d383b5fdad4252);
+        
+    
+        var popup_efede603da241f3e8b57600a4e4c5ec5 = L.popup({"maxHeight": 400, "maxWidth": 350, "minHeight": 350, "minWidth": 400});
+
+        
+            
+                var html_9a04aeae5faf974797265f5012a95740 = $(`<div id="html_9a04aeae5faf974797265f5012a95740" style="width: 100.0%; height: 100.0%;"><img src="https://github.com/Ablenya/Ablenya.github.io/blob/main/Justradarplots/10.png"></div>`)[0];
+                popup_efede603da241f3e8b57600a4e4c5ec5.setContent(html_9a04aeae5faf974797265f5012a95740);
+            
+        
+
+        circle_c88ab0c83b4c3dc23b96ff4d3a3a2f1b.bindPopup(popup_efede603da241f3e8b57600a4e4c5ec5)
+        ;
+
+        
+    
+    
+            var circle_3ad12680397b7e6d4d107c75167a8db3 = L.circle(
+                [50.9344995, 4.4852202],
+                {"bubblingMouseEvents": true, "color": "#ffa1a1", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ffa1a1", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20, "stroke": true, "weight": 3}
+            ).addTo(map_887290770d2ad347c2d383b5fdad4252);
+        
+    
+        var popup_2e3d4d59ba48764b9eab2ab471f5a88f = L.popup({"maxHeight": 400, "maxWidth": 350, "minHeight": 350, "minWidth": 400});
+
+        
+            
+                var html_30456d3e24f57966b1b578556f9c5ceb = $(`<div id="html_30456d3e24f57966b1b578556f9c5ceb" style="width: 100.0%; height: 100.0%;"><img src="https://github.com/Ablenya/Ablenya.github.io/blob/main/Justradarplots/11.png"></div>`)[0];
+                popup_2e3d4d59ba48764b9eab2ab471f5a88f.setContent(html_30456d3e24f57966b1b578556f9c5ceb);
+            
+        
+
+        circle_3ad12680397b7e6d4d107c75167a8db3.bindPopup(popup_2e3d4d59ba48764b9eab2ab471f5a88f)
+        ;
+
+        
+    
+    
+            var circle_d285a4b6faeb76d0dcd4c68534f3fef0 = L.circle(
+                [51.0712444, 4.482342099999999],
+                {"bubblingMouseEvents": true, "color": "#fedada", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fedada", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20, "stroke": true, "weight": 3}
+            ).addTo(map_887290770d2ad347c2d383b5fdad4252);
+        
+    
+        var popup_f5899860dd491aa35f1ca2a9b5b005b2 = L.popup({"maxHeight": 400, "maxWidth": 350, "minHeight": 350, "minWidth": 400});
+
+        
+            
+                var html_59d9733106ea722e9ef96934a391fab2 = $(`<div id="html_59d9733106ea722e9ef96934a391fab2" style="width: 100.0%; height: 100.0%;"><img src="https://github.com/Ablenya/Ablenya.github.io/blob/main/Justradarplots/12.png"></div>`)[0];
+                popup_f5899860dd491aa35f1ca2a9b5b005b2.setContent(html_59d9733106ea722e9ef96934a391fab2);
+            
+        
+
+        circle_d285a4b6faeb76d0dcd4c68534f3fef0.bindPopup(popup_f5899860dd491aa35f1ca2a9b5b005b2)
+        ;
+
+        
+    
+    
+            var circle_f6089cbf1c711dccffa07c27742272a6 = L.circle(
+                [50.8216838, 3.7444449],
+                {"bubblingMouseEvents": true, "color": "#a70000", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#a70000", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20, "stroke": true, "weight": 3}
+            ).addTo(map_887290770d2ad347c2d383b5fdad4252);
+        
+    
+        var popup_65b725d43016cc40f8364d840b7be0d1 = L.popup({"maxHeight": 400, "maxWidth": 350, "minHeight": 350, "minWidth": 400});
+
+        
+            
+                var html_18c7fa3b2b3308fcafaae839e77d1394 = $(`<div id="html_18c7fa3b2b3308fcafaae839e77d1394" style="width: 100.0%; height: 100.0%;"><img src="https://github.com/Ablenya/Ablenya.github.io/blob/main/Justradarplots/13.png"></div>`)[0];
+                popup_65b725d43016cc40f8364d840b7be0d1.setContent(html_18c7fa3b2b3308fcafaae839e77d1394);
+            
+        
+
+        circle_f6089cbf1c711dccffa07c27742272a6.bindPopup(popup_65b725d43016cc40f8364d840b7be0d1)
+        ;
+
+        
+    
+    
+            var circle_64e916c30aa8c3be39ab600271210735 = L.circle(
+                [51.2484551, 4.8215474],
+                {"bubblingMouseEvents": true, "color": "#ffa1a1", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ffa1a1", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20, "stroke": true, "weight": 3}
+            ).addTo(map_887290770d2ad347c2d383b5fdad4252);
+        
+    
+        var popup_37611f5f44983d23a74b2117dbe2c6ea = L.popup({"maxHeight": 400, "maxWidth": 350, "minHeight": 350, "minWidth": 400});
+
+        
+            
+                var html_884fc0025b822569005d425e53cc3416 = $(`<div id="html_884fc0025b822569005d425e53cc3416" style="width: 100.0%; height: 100.0%;"><img src="https://github.com/Ablenya/Ablenya.github.io/blob/main/Justradarplots/14.png"></div>`)[0];
+                popup_37611f5f44983d23a74b2117dbe2c6ea.setContent(html_884fc0025b822569005d425e53cc3416);
+            
+        
+
+        circle_64e916c30aa8c3be39ab600271210735.bindPopup(popup_37611f5f44983d23a74b2117dbe2c6ea)
+        ;
+
+        
+    
+    
+            var circle_a2469e84f87bf947dfc3e79e3dce4d63 = L.circle(
+                [51.1746081, 5.1757943],
+                {"bubblingMouseEvents": true, "color": "#a70000", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#a70000", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20, "stroke": true, "weight": 3}
+            ).addTo(map_887290770d2ad347c2d383b5fdad4252);
+        
+    
+        var popup_53f102e10beaae275b9981a5a798e8ab = L.popup({"maxHeight": 400, "maxWidth": 350, "minHeight": 350, "minWidth": 400});
+
+        
+            
+                var html_e97bc78929ab81b9b7959d8019965bf1 = $(`<div id="html_e97bc78929ab81b9b7959d8019965bf1" style="width: 100.0%; height: 100.0%;"><img src="https://github.com/Ablenya/Ablenya.github.io/blob/main/Justradarplots/15.png"></div>`)[0];
+                popup_53f102e10beaae275b9981a5a798e8ab.setContent(html_e97bc78929ab81b9b7959d8019965bf1);
+            
+        
+
+        circle_a2469e84f87bf947dfc3e79e3dce4d63.bindPopup(popup_53f102e10beaae275b9981a5a798e8ab)
+        ;
+
+        
+    
+    
+            var circle_5521207904d8e8c8c9f6bd1038cb915a = L.circle(
+                [50.7622659, 3.860876],
+                {"bubblingMouseEvents": true, "color": "#2e0000", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2e0000", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20, "stroke": true, "weight": 3}
+            ).addTo(map_887290770d2ad347c2d383b5fdad4252);
+        
+    
+        var popup_a2ba5b348c634604c7269a0e6001ea2b = L.popup({"maxHeight": 400, "maxWidth": 350, "minHeight": 350, "minWidth": 400});
+
+        
+            
+                var html_18fabf4ed581997154160942f5c9c209 = $(`<div id="html_18fabf4ed581997154160942f5c9c209" style="width: 100.0%; height: 100.0%;"><img src="https://github.com/Ablenya/Ablenya.github.io/blob/main/Justradarplots/16.png"></div>`)[0];
+                popup_a2ba5b348c634604c7269a0e6001ea2b.setContent(html_18fabf4ed581997154160942f5c9c209);
+            
+        
+
+        circle_5521207904d8e8c8c9f6bd1038cb915a.bindPopup(popup_a2ba5b348c634604c7269a0e6001ea2b)
+        ;
+
+        
+    
+    
+            var circle_839f8eca8bb8a7c4f420261f9ecdab40 = L.circle(
+                [51.2442234, 4.703429],
+                {"bubblingMouseEvents": true, "color": "#a70000", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#a70000", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20, "stroke": true, "weight": 3}
+            ).addTo(map_887290770d2ad347c2d383b5fdad4252);
+        
+    
+        var popup_ffd67afed402aeed62ac3bdb35057d1b = L.popup({"maxHeight": 400, "maxWidth": 350, "minHeight": 350, "minWidth": 400});
+
+        
+            
+                var html_7d507b839de77229090fbf453342c0ed = $(`<div id="html_7d507b839de77229090fbf453342c0ed" style="width: 100.0%; height: 100.0%;"><img src="https://github.com/Ablenya/Ablenya.github.io/blob/main/Justradarplots/17.png"></div>`)[0];
+                popup_ffd67afed402aeed62ac3bdb35057d1b.setContent(html_7d507b839de77229090fbf453342c0ed);
+            
+        
+
+        circle_839f8eca8bb8a7c4f420261f9ecdab40.bindPopup(popup_ffd67afed402aeed62ac3bdb35057d1b)
+        ;
+
+        
+    
+    
+            var circle_9844371f4773f45abcdb93422d1f5698 = L.circle(
+                [51.1098423, 3.7099673],
+                {"bubblingMouseEvents": true, "color": "#ff3a1e", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff3a1e", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20, "stroke": true, "weight": 3}
+            ).addTo(map_887290770d2ad347c2d383b5fdad4252);
+        
+    
+        var popup_0b79392de74804032fc1dd83cd895ef3 = L.popup({"maxHeight": 400, "maxWidth": 350, "minHeight": 350, "minWidth": 400});
+
+        
+            
+                var html_d3ade0c9f67866d0b352e79cd4677c9b = $(`<div id="html_d3ade0c9f67866d0b352e79cd4677c9b" style="width: 100.0%; height: 100.0%;"><img src="https://github.com/Ablenya/Ablenya.github.io/blob/main/Justradarplots/18.png"></div>`)[0];
+                popup_0b79392de74804032fc1dd83cd895ef3.setContent(html_d3ade0c9f67866d0b352e79cd4677c9b);
+            
+        
+
+        circle_9844371f4773f45abcdb93422d1f5698.bindPopup(popup_0b79392de74804032fc1dd83cd895ef3)
+        ;
+
+        
+    
+    
+            var circle_9b60e33eb254b6af42c81e53484d5a07 = L.circle(
+                [50.9508143, 3.5919924],
+                {"bubblingMouseEvents": true, "color": "#ff3a1e", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff3a1e", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20, "stroke": true, "weight": 3}
+            ).addTo(map_887290770d2ad347c2d383b5fdad4252);
+        
+    
+        var popup_7e924ccd93edb1e0580f5c16783813da = L.popup({"maxHeight": 400, "maxWidth": 350, "minHeight": 350, "minWidth": 400});
+
+        
+            
+                var html_0411e1674c220289371b267bd9014ef3 = $(`<div id="html_0411e1674c220289371b267bd9014ef3" style="width: 100.0%; height: 100.0%;"><img src="https://github.com/Ablenya/Ablenya.github.io/blob/main/Justradarplots/19.png"></div>`)[0];
+                popup_7e924ccd93edb1e0580f5c16783813da.setContent(html_0411e1674c220289371b267bd9014ef3);
+            
+        
+
+        circle_9b60e33eb254b6af42c81e53484d5a07.bindPopup(popup_7e924ccd93edb1e0580f5c16783813da)
+        ;
+
+        
+    
+    
+            var circle_f5894b175a7686c100dad71aa1f92b4c = L.circle(
+                [51.2244203, 3.2381671],
+                {"bubblingMouseEvents": true, "color": "#2e0000", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2e0000", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20, "stroke": true, "weight": 3}
+            ).addTo(map_887290770d2ad347c2d383b5fdad4252);
+        
+    
+        var popup_00164ffdf41dd8d24ed5ef46b3b92284 = L.popup({"maxHeight": 400, "maxWidth": 350, "minHeight": 350, "minWidth": 400});
+
+        
+            
+                var html_d581f2fb660666e6c4db24169ab5a380 = $(`<div id="html_d581f2fb660666e6c4db24169ab5a380" style="width: 100.0%; height: 100.0%;"><img src="https://github.com/Ablenya/Ablenya.github.io/blob/main/Justradarplots/20.png"></div>`)[0];
+                popup_00164ffdf41dd8d24ed5ef46b3b92284.setContent(html_d581f2fb660666e6c4db24169ab5a380);
+            
+        
+
+        circle_f5894b175a7686c100dad71aa1f92b4c.bindPopup(popup_00164ffdf41dd8d24ed5ef46b3b92284)
+        ;
+
+        
+    
+    
+            var circle_fe2b63bd5cf217faf31e98997f1459bb = L.circle(
+                [50.9251793, 3.9634272],
+                {"bubblingMouseEvents": true, "color": "#a70000", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#a70000", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20, "stroke": true, "weight": 3}
+            ).addTo(map_887290770d2ad347c2d383b5fdad4252);
+        
+    
+        var popup_b6e2c9ec66eb0aef6635dd2ddbfbc9bb = L.popup({"maxHeight": 400, "maxWidth": 350, "minHeight": 350, "minWidth": 400});
+
+        
+            
+                var html_a76611c49fa19afdc265b766c1a54990 = $(`<div id="html_a76611c49fa19afdc265b766c1a54990" style="width: 100.0%; height: 100.0%;"><img src="https://github.com/Ablenya/Ablenya.github.io/blob/main/Justradarplots/21.png"></div>`)[0];
+                popup_b6e2c9ec66eb0aef6635dd2ddbfbc9bb.setContent(html_a76611c49fa19afdc265b766c1a54990);
+            
+        
+
+        circle_fe2b63bd5cf217faf31e98997f1459bb.bindPopup(popup_b6e2c9ec66eb0aef6635dd2ddbfbc9bb)
+        ;
+
+        
+    
+    
+            var circle_551c7751481f7af2fbc8263b700d4ea0 = L.circle(
+                [51.15663869999999, 5.4002146],
+                {"bubblingMouseEvents": true, "color": "#ffa1a1", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ffa1a1", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20, "stroke": true, "weight": 3}
+            ).addTo(map_887290770d2ad347c2d383b5fdad4252);
+        
+    
+        var popup_e3cc97a60e3bcf8e141cb8327373a65d = L.popup({"maxHeight": 400, "maxWidth": 350, "minHeight": 350, "minWidth": 400});
+
+        
+            
+                var html_ca6b8b28815f862a9c97824f84977600 = $(`<div id="html_ca6b8b28815f862a9c97824f84977600" style="width: 100.0%; height: 100.0%;"><img src="https://github.com/Ablenya/Ablenya.github.io/blob/main/Justradarplots/22.png"></div>`)[0];
+                popup_e3cc97a60e3bcf8e141cb8327373a65d.setContent(html_ca6b8b28815f862a9c97824f84977600);
+            
+        
+
+        circle_551c7751481f7af2fbc8263b700d4ea0.bindPopup(popup_e3cc97a60e3bcf8e141cb8327373a65d)
+        ;
+
+        
+    
+    
+            var circle_ea81f2b1fe141d75ce60fbb14eb3fe26 = L.circle(
+                [51.2016325, 4.4310658],
+                {"bubblingMouseEvents": true, "color": "#a70000", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#a70000", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20, "stroke": true, "weight": 3}
+            ).addTo(map_887290770d2ad347c2d383b5fdad4252);
+        
+    
+        var popup_4b0ccb71f0c167587f595d6114320274 = L.popup({"maxHeight": 400, "maxWidth": 350, "minHeight": 350, "minWidth": 400});
+
+        
+            
+                var html_b241dc46901f20e81c18fb26bf01e027 = $(`<div id="html_b241dc46901f20e81c18fb26bf01e027" style="width: 100.0%; height: 100.0%;"><img src="https://github.com/Ablenya/Ablenya.github.io/blob/main/Justradarplots/23.png"></div>`)[0];
+                popup_4b0ccb71f0c167587f595d6114320274.setContent(html_b241dc46901f20e81c18fb26bf01e027);
+            
+        
+
+        circle_ea81f2b1fe141d75ce60fbb14eb3fe26.bindPopup(popup_4b0ccb71f0c167587f595d6114320274)
+        ;
+
+        
+    
+    
+            var circle_57b3e2a26fee921e7af26f31b8bf0079 = L.circle(
+                [50.9248664, 4.7147081],
+                {"bubblingMouseEvents": true, "color": "#ff3a1e", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff3a1e", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20, "stroke": true, "weight": 3}
+            ).addTo(map_887290770d2ad347c2d383b5fdad4252);
+        
+    
+        var popup_4d740657c2cd31f0f9a0ddde48a8e482 = L.popup({"maxHeight": 400, "maxWidth": 350, "minHeight": 350, "minWidth": 400});
+
+        
+            
+                var html_762241918508e2802ddf604294142653 = $(`<div id="html_762241918508e2802ddf604294142653" style="width: 100.0%; height: 100.0%;"><img src="https://github.com/Ablenya/Ablenya.github.io/blob/main/Justradarplots/24.png"></div>`)[0];
+                popup_4d740657c2cd31f0f9a0ddde48a8e482.setContent(html_762241918508e2802ddf604294142653);
+            
+        
+
+        circle_57b3e2a26fee921e7af26f31b8bf0079.bindPopup(popup_4d740657c2cd31f0f9a0ddde48a8e482)
+        ;
+
+        
+    
+    
+            var circle_97b38d80bd64638284f01f25886e8c6a = L.circle(
+                [50.9219237, 3.2063084],
+                {"bubblingMouseEvents": true, "color": "#ffa1a1", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ffa1a1", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20, "stroke": true, "weight": 3}
+            ).addTo(map_887290770d2ad347c2d383b5fdad4252);
+        
+    
+        var popup_42b18171b975e1f580227dacbc1d7fac = L.popup({"maxHeight": 400, "maxWidth": 350, "minHeight": 350, "minWidth": 400});
+
+        
+            
+                var html_bbdb9ada4eac583c8a42188b29d91ccb = $(`<div id="html_bbdb9ada4eac583c8a42188b29d91ccb" style="width: 100.0%; height: 100.0%;"><img src="https://github.com/Ablenya/Ablenya.github.io/blob/main/Justradarplots/25.png"></div>`)[0];
+                popup_42b18171b975e1f580227dacbc1d7fac.setContent(html_bbdb9ada4eac583c8a42188b29d91ccb);
+            
+        
+
+        circle_97b38d80bd64638284f01f25886e8c6a.bindPopup(popup_42b18171b975e1f580227dacbc1d7fac)
+        ;
+
+        
+    
+    
+            var circle_febb731697571afca1e9d1135675fbe3 = L.circle(
+                [50.9477407, 5.1143028],
+                {"bubblingMouseEvents": true, "color": "#2e0000", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2e0000", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20, "stroke": true, "weight": 3}
+            ).addTo(map_887290770d2ad347c2d383b5fdad4252);
+        
+    
+        var popup_3f5a3209844d62f1d9aa56f3ae87a203 = L.popup({"maxHeight": 400, "maxWidth": 350, "minHeight": 350, "minWidth": 400});
+
+        
+            
+                var html_1bf93292082addcc41dbb8998ed58d22 = $(`<div id="html_1bf93292082addcc41dbb8998ed58d22" style="width: 100.0%; height: 100.0%;"><img src="https://github.com/Ablenya/Ablenya.github.io/blob/main/Justradarplots/26.png"></div>`)[0];
+                popup_3f5a3209844d62f1d9aa56f3ae87a203.setContent(html_1bf93292082addcc41dbb8998ed58d22);
+            
+        
+
+        circle_febb731697571afca1e9d1135675fbe3.bindPopup(popup_3f5a3209844d62f1d9aa56f3ae87a203)
+        ;
+
+        
+    
+    
+            var circle_192c3a478ed9508375e899f64ba635d7 = L.circle(
+                [51.391602, 4.4748972],
+                {"bubblingMouseEvents": true, "color": "#2e0000", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2e0000", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20, "stroke": true, "weight": 3}
+            ).addTo(map_887290770d2ad347c2d383b5fdad4252);
+        
+    
+        var popup_2554063f926af31829afc2786ef4a3af = L.popup({"maxHeight": 400, "maxWidth": 350, "minHeight": 350, "minWidth": 400});
+
+        
+            
+                var html_62feda045badee96323291c7742474c9 = $(`<div id="html_62feda045badee96323291c7742474c9" style="width: 100.0%; height: 100.0%;"><img src="https://github.com/Ablenya/Ablenya.github.io/blob/main/Justradarplots/27.png"></div>`)[0];
+                popup_2554063f926af31829afc2786ef4a3af.setContent(html_62feda045badee96323291c7742474c9);
+            
+        
+
+        circle_192c3a478ed9508375e899f64ba635d7.bindPopup(popup_2554063f926af31829afc2786ef4a3af)
+        ;
+
+        
+    
+    
+            var circle_bdf109b173f4efc8d5820a782f7296bc = L.circle(
+                [51.2405044, 3.0255849],
+                {"bubblingMouseEvents": true, "color": "#ffa1a1", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ffa1a1", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20, "stroke": true, "weight": 3}
+            ).addTo(map_887290770d2ad347c2d383b5fdad4252);
+        
+    
+        var popup_7eb4d0bd73ae0e4ecfea05033b64ae62 = L.popup({"maxHeight": 400, "maxWidth": 350, "minHeight": 350, "minWidth": 400});
+
+        
+            
+                var html_a0cf015633b5a106182e88780dec70dc = $(`<div id="html_a0cf015633b5a106182e88780dec70dc" style="width: 100.0%; height: 100.0%;"><img src="https://github.com/Ablenya/Ablenya.github.io/blob/main/Justradarplots/28.png"></div>`)[0];
+                popup_7eb4d0bd73ae0e4ecfea05033b64ae62.setContent(html_a0cf015633b5a106182e88780dec70dc);
+            
+        
+
+        circle_bdf109b173f4efc8d5820a782f7296bc.bindPopup(popup_7eb4d0bd73ae0e4ecfea05033b64ae62)
+        ;
+
+        
+    
+    
+            var circle_59746899168f8d56d6984948094f997f = L.circle(
+                [50.7730764, 5.4505685],
+                {"bubblingMouseEvents": true, "color": "#a70000", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#a70000", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20, "stroke": true, "weight": 3}
+            ).addTo(map_887290770d2ad347c2d383b5fdad4252);
+        
+    
+        var popup_a249039bfbf46720ae28622f9aaccd26 = L.popup({"maxHeight": 400, "maxWidth": 350, "minHeight": 350, "minWidth": 400});
+
+        
+            
+                var html_e5551d1c6e10b98352a6df7449aa9162 = $(`<div id="html_e5551d1c6e10b98352a6df7449aa9162" style="width: 100.0%; height: 100.0%;"><img src="https://github.com/Ablenya/Ablenya.github.io/blob/main/Justradarplots/29.png"></div>`)[0];
+                popup_a249039bfbf46720ae28622f9aaccd26.setContent(html_e5551d1c6e10b98352a6df7449aa9162);
+            
+        
+
+        circle_59746899168f8d56d6984948094f997f.bindPopup(popup_a249039bfbf46720ae28622f9aaccd26)
+        ;
+
+        
+    
+    
+            var circle_327b16feaecbcbb40dd3f85ea3d9b837 = L.circle(
+                [51.0184338, 4.476749],
+                {"bubblingMouseEvents": true, "color": "#ffa1a1", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ffa1a1", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20, "stroke": true, "weight": 3}
+            ).addTo(map_887290770d2ad347c2d383b5fdad4252);
+        
+    
+        var popup_b8088187678be60aba11c1d09a1da1fe = L.popup({"maxHeight": 400, "maxWidth": 350, "minHeight": 350, "minWidth": 400});
+
+        
+            
+                var html_f5466aaf0d8507f385baa119d35f3983 = $(`<div id="html_f5466aaf0d8507f385baa119d35f3983" style="width: 100.0%; height: 100.0%;"><img src="https://github.com/Ablenya/Ablenya.github.io/blob/main/Justradarplots/30.png"></div>`)[0];
+                popup_b8088187678be60aba11c1d09a1da1fe.setContent(html_f5466aaf0d8507f385baa119d35f3983);
+            
+        
+
+        circle_327b16feaecbcbb40dd3f85ea3d9b837.bindPopup(popup_b8088187678be60aba11c1d09a1da1fe)
+        ;
+
+        
+    
+    
+            var circle_7654f51223b18e3d4d10fb866910ed3a = L.circle(
+                [51.0145181, 4.6323042],
+                {"bubblingMouseEvents": true, "color": "#a70000", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#a70000", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20, "stroke": true, "weight": 3}
+            ).addTo(map_887290770d2ad347c2d383b5fdad4252);
+        
+    
+        var popup_bd7b21012785722e63042e11bf1e3e9d = L.popup({"maxHeight": 400, "maxWidth": 350, "minHeight": 350, "minWidth": 400});
+
+        
+            
+                var html_4059268000a55edaab6f7a690ebad590 = $(`<div id="html_4059268000a55edaab6f7a690ebad590" style="width: 100.0%; height: 100.0%;"><img src="https://github.com/Ablenya/Ablenya.github.io/blob/main/Justradarplots/31.png"></div>`)[0];
+                popup_bd7b21012785722e63042e11bf1e3e9d.setContent(html_4059268000a55edaab6f7a690ebad590);
+            
+        
+
+        circle_7654f51223b18e3d4d10fb866910ed3a.bindPopup(popup_bd7b21012785722e63042e11bf1e3e9d)
+        ;
+
+        
+    
+    
+            var circle_82b77622009f98b8c58b1ff0e5f50fa0 = L.circle(
+                [51.0079064, 4.4977362],
+                {"bubblingMouseEvents": true, "color": "#a70000", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#a70000", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20, "stroke": true, "weight": 3}
+            ).addTo(map_887290770d2ad347c2d383b5fdad4252);
+        
+    
+        var popup_19ff1696ec547e68e8b68826d71faf12 = L.popup({"maxHeight": 400, "maxWidth": 350, "minHeight": 350, "minWidth": 400});
+
+        
+            
+                var html_0b12c345b3eda0bef8de53cb046cfb5e = $(`<div id="html_0b12c345b3eda0bef8de53cb046cfb5e" style="width: 100.0%; height: 100.0%;"><img src="https://github.com/Ablenya/Ablenya.github.io/blob/main/Justradarplots/32.png"></div>`)[0];
+                popup_19ff1696ec547e68e8b68826d71faf12.setContent(html_0b12c345b3eda0bef8de53cb046cfb5e);
+            
+        
+
+        circle_82b77622009f98b8c58b1ff0e5f50fa0.bindPopup(popup_19ff1696ec547e68e8b68826d71faf12)
+        ;
+
+        
+    
+    
+            var circle_16863f546b0c35fdce4777f267fd3382 = L.circle(
+                [51.2464537, 5.4793793],
+                {"bubblingMouseEvents": true, "color": "#ff3a1e", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff3a1e", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20, "stroke": true, "weight": 3}
+            ).addTo(map_887290770d2ad347c2d383b5fdad4252);
+        
+    
+        var popup_4c8b1c469122fc2cc665a79628ba8904 = L.popup({"maxHeight": 400, "maxWidth": 350, "minHeight": 350, "minWidth": 400});
+
+        
+            
+                var html_c74e2d19ecea5d475f647c898387cebf = $(`<div id="html_c74e2d19ecea5d475f647c898387cebf" style="width: 100.0%; height: 100.0%;"><img src="https://github.com/Ablenya/Ablenya.github.io/blob/main/Justradarplots/33.png"></div>`)[0];
+                popup_4c8b1c469122fc2cc665a79628ba8904.setContent(html_c74e2d19ecea5d475f647c898387cebf);
+            
+        
+
+        circle_16863f546b0c35fdce4777f267fd3382.bindPopup(popup_4c8b1c469122fc2cc665a79628ba8904)
+        ;
+
+        
+    
+    
+            var circle_34e9697d549b25771b8ba3010dbe3d42 = L.circle(
+                [51.194774, 4.4136417],
+                {"bubblingMouseEvents": true, "color": "#a70000", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#a70000", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20, "stroke": true, "weight": 3}
+            ).addTo(map_887290770d2ad347c2d383b5fdad4252);
+        
+    
+        var popup_1797318ac32bf3e56e986d299809dd9d = L.popup({"maxHeight": 400, "maxWidth": 350, "minHeight": 350, "minWidth": 400});
+
+        
+            
+                var html_1b07fc6e6fe58d99d04f99f650cfd543 = $(`<div id="html_1b07fc6e6fe58d99d04f99f650cfd543" style="width: 100.0%; height: 100.0%;"><img src="https://github.com/Ablenya/Ablenya.github.io/blob/main/Justradarplots/34.png"></div>`)[0];
+                popup_1797318ac32bf3e56e986d299809dd9d.setContent(html_1b07fc6e6fe58d99d04f99f650cfd543);
+            
+        
+
+        circle_34e9697d549b25771b8ba3010dbe3d42.bindPopup(popup_1797318ac32bf3e56e986d299809dd9d)
+        ;
+
+        
+    
+    
+            var circle_84555615d972c220dd5a14eabfa5fc9c = L.circle(
+                [51.0222821, 3.6762496],
+                {"bubblingMouseEvents": true, "color": "#a70000", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#a70000", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20, "stroke": true, "weight": 3}
+            ).addTo(map_887290770d2ad347c2d383b5fdad4252);
+        
+    
+        var popup_f7fe7a3b74b2b9e8ef971d93306157ee = L.popup({"maxHeight": 400, "maxWidth": 350, "minHeight": 350, "minWidth": 400});
+
+        
+            
+                var html_bbd6e93fc1b5a35633c972c017f3fbea = $(`<div id="html_bbd6e93fc1b5a35633c972c017f3fbea" style="width: 100.0%; height: 100.0%;"><img src="https://github.com/Ablenya/Ablenya.github.io/blob/main/Justradarplots/35.png"></div>`)[0];
+                popup_f7fe7a3b74b2b9e8ef971d93306157ee.setContent(html_bbd6e93fc1b5a35633c972c017f3fbea);
+            
+        
+
+        circle_84555615d972c220dd5a14eabfa5fc9c.bindPopup(popup_f7fe7a3b74b2b9e8ef971d93306157ee)
+        ;
+
+        
+    
+    
+            var circle_edec606e747de15167143f071162237e = L.circle(
+                [51.0296949, 3.7436209],
+                {"bubblingMouseEvents": true, "color": "#ffa1a1", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ffa1a1", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20, "stroke": true, "weight": 3}
+            ).addTo(map_887290770d2ad347c2d383b5fdad4252);
+        
+    
+        var popup_2a3152fd7984db926b944d904faa757a = L.popup({"maxHeight": 400, "maxWidth": 350, "minHeight": 350, "minWidth": 400});
+
+        
+            
+                var html_ba462ecd274c358b7d5cb61b646bcb4e = $(`<div id="html_ba462ecd274c358b7d5cb61b646bcb4e" style="width: 100.0%; height: 100.0%;"><img src="https://github.com/Ablenya/Ablenya.github.io/blob/main/Justradarplots/36.png"></div>`)[0];
+                popup_2a3152fd7984db926b944d904faa757a.setContent(html_ba462ecd274c358b7d5cb61b646bcb4e);
+            
+        
+
+        circle_edec606e747de15167143f071162237e.bindPopup(popup_2a3152fd7984db926b944d904faa757a)
+        ;
+
+        
+    
+    
+            var circle_21b7a7d93e958868f686080396fbb6b8 = L.circle(
+                [51.0440633, 3.7491349],
+                {"bubblingMouseEvents": true, "color": "#2e0000", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2e0000", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20, "stroke": true, "weight": 3}
+            ).addTo(map_887290770d2ad347c2d383b5fdad4252);
+        
+    
+        var popup_71cd6a97b855f7fc5b3b11f0ef7e5444 = L.popup({"maxHeight": 400, "maxWidth": 350, "minHeight": 350, "minWidth": 400});
+
+        
+            
+                var html_e2acabf3a2459269433849880c7d81d7 = $(`<div id="html_e2acabf3a2459269433849880c7d81d7" style="width: 100.0%; height: 100.0%;"><img src="https://github.com/Ablenya/Ablenya.github.io/blob/main/Justradarplots/37.png"></div>`)[0];
+                popup_71cd6a97b855f7fc5b3b11f0ef7e5444.setContent(html_e2acabf3a2459269433849880c7d81d7);
+            
+        
+
+        circle_21b7a7d93e958868f686080396fbb6b8.bindPopup(popup_71cd6a97b855f7fc5b3b11f0ef7e5444)
+        ;
+
+        
+    
+    
+            var circle_e3d5780f0bdb52ba3a0d1898bd8340e5 = L.circle(
+                [51.147512, 4.2983585],
+                {"bubblingMouseEvents": true, "color": "#fedada", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fedada", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20, "stroke": true, "weight": 3}
+            ).addTo(map_887290770d2ad347c2d383b5fdad4252);
+        
+    
+        var popup_1f2f5d8496b07a7b642de46899104e6c = L.popup({"maxHeight": 400, "maxWidth": 350, "minHeight": 350, "minWidth": 400});
+
+        
+            
+                var html_9c0687b64d37d337cd9ecee255075684 = $(`<div id="html_9c0687b64d37d337cd9ecee255075684" style="width: 100.0%; height: 100.0%;"><img src="https://github.com/Ablenya/Ablenya.github.io/blob/main/Justradarplots/38.png"></div>`)[0];
+                popup_1f2f5d8496b07a7b642de46899104e6c.setContent(html_9c0687b64d37d337cd9ecee255075684);
+            
+        
+
+        circle_e3d5780f0bdb52ba3a0d1898bd8340e5.bindPopup(popup_1f2f5d8496b07a7b642de46899104e6c)
+        ;
+
+        
+    
+    
+            var circle_2395839399f07fdd007daa9988eaafc1 = L.circle(
+                [50.838311, 3.7643463],
+                {"bubblingMouseEvents": true, "color": "#a70000", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#a70000", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20, "stroke": true, "weight": 3}
+            ).addTo(map_887290770d2ad347c2d383b5fdad4252);
+        
+    
+        var popup_2d43220d44bbb2b6b3f0743c3da70280 = L.popup({"maxHeight": 400, "maxWidth": 350, "minHeight": 350, "minWidth": 400});
+
+        
+            
+                var html_7dce1292a604383592b1480a0a6beb9c = $(`<div id="html_7dce1292a604383592b1480a0a6beb9c" style="width: 100.0%; height: 100.0%;"><img src="https://github.com/Ablenya/Ablenya.github.io/blob/main/Justradarplots/39.png"></div>`)[0];
+                popup_2d43220d44bbb2b6b3f0743c3da70280.setContent(html_7dce1292a604383592b1480a0a6beb9c);
+            
+        
+
+        circle_2395839399f07fdd007daa9988eaafc1.bindPopup(popup_2d43220d44bbb2b6b3f0743c3da70280)
+        ;
+
+        
+    
+    
+            var circle_41d4dd01aba5c1764193ae61a025cde9 = L.circle(
+                [51.06522, 3.69882],
+                {"bubblingMouseEvents": true, "color": "#a70000", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#a70000", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20, "stroke": true, "weight": 3}
+            ).addTo(map_887290770d2ad347c2d383b5fdad4252);
+        
+    
+        var popup_ac8de89b97653854a71f15ab8bb44d52 = L.popup({"maxHeight": 400, "maxWidth": 350, "minHeight": 350, "minWidth": 400});
+
+        
+            
+                var html_0ee260030b19ae19301a2af229bf6d08 = $(`<div id="html_0ee260030b19ae19301a2af229bf6d08" style="width: 100.0%; height: 100.0%;"><img src="https://github.com/Ablenya/Ablenya.github.io/blob/main/Justradarplots/40.png"></div>`)[0];
+                popup_ac8de89b97653854a71f15ab8bb44d52.setContent(html_0ee260030b19ae19301a2af229bf6d08);
+            
+        
+
+        circle_41d4dd01aba5c1764193ae61a025cde9.bindPopup(popup_ac8de89b97653854a71f15ab8bb44d52)
+        ;
+
+        
+    
+    
+            var circle_511e46e358ec3c21cfeff2eb6b1c3de4 = L.circle(
+                [51.2215218, 4.4796934],
+                {"bubblingMouseEvents": true, "color": "#ff3a1e", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff3a1e", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20, "stroke": true, "weight": 3}
+            ).addTo(map_887290770d2ad347c2d383b5fdad4252);
+        
+    
+        var popup_dfe635667a19e8819c72d019ef7f4a64 = L.popup({"maxHeight": 400, "maxWidth": 350, "minHeight": 350, "minWidth": 400});
+
+        
+            
+                var html_dfd8b917c13aa9714fb8deccb0ee3892 = $(`<div id="html_dfd8b917c13aa9714fb8deccb0ee3892" style="width: 100.0%; height: 100.0%;"><img src="https://github.com/Ablenya/Ablenya.github.io/blob/main/Justradarplots/41.png"></div>`)[0];
+                popup_dfe635667a19e8819c72d019ef7f4a64.setContent(html_dfd8b917c13aa9714fb8deccb0ee3892);
+            
+        
+
+        circle_511e46e358ec3c21cfeff2eb6b1c3de4.bindPopup(popup_dfe635667a19e8819c72d019ef7f4a64)
+        ;
+
+        
+    
+    
+            var circle_a5f0f283913c548e322ea5f9b97954be = L.circle(
+                [50.808425, 5.1830478],
+                {"bubblingMouseEvents": true, "color": "#a70000", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#a70000", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20, "stroke": true, "weight": 3}
+            ).addTo(map_887290770d2ad347c2d383b5fdad4252);
+        
+    
+        var popup_fdc4c27abbf3c83749f582e0c19d6230 = L.popup({"maxHeight": 400, "maxWidth": 350, "minHeight": 350, "minWidth": 400});
+
+        
+            
+                var html_38aa8f55b2ecd22737b755dfa9681eab = $(`<div id="html_38aa8f55b2ecd22737b755dfa9681eab" style="width: 100.0%; height: 100.0%;"><img src="https://github.com/Ablenya/Ablenya.github.io/blob/main/Justradarplots/42.png"></div>`)[0];
+                popup_fdc4c27abbf3c83749f582e0c19d6230.setContent(html_38aa8f55b2ecd22737b755dfa9681eab);
+            
+        
+
+        circle_a5f0f283913c548e322ea5f9b97954be.bindPopup(popup_fdc4c27abbf3c83749f582e0c19d6230)
+        ;
+
+        
+    
+    
+            var circle_73dd9e933288da325e9fe999b8f6ddff = L.circle(
+                [51.031247, 4.4925541],
+                {"bubblingMouseEvents": true, "color": "#a70000", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#a70000", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20, "stroke": true, "weight": 3}
+            ).addTo(map_887290770d2ad347c2d383b5fdad4252);
+        
+    
+        var popup_60172007fb7acec44ac2d9bdccb5ab84 = L.popup({"maxHeight": 400, "maxWidth": 350, "minHeight": 350, "minWidth": 400});
+
+        
+            
+                var html_9e1146d27881df0ca351d11accaeccc3 = $(`<div id="html_9e1146d27881df0ca351d11accaeccc3" style="width: 100.0%; height: 100.0%;"><img src="https://github.com/Ablenya/Ablenya.github.io/blob/main/Justradarplots/43.png"></div>`)[0];
+                popup_60172007fb7acec44ac2d9bdccb5ab84.setContent(html_9e1146d27881df0ca351d11accaeccc3);
+            
+        
+
+        circle_73dd9e933288da325e9fe999b8f6ddff.bindPopup(popup_60172007fb7acec44ac2d9bdccb5ab84)
+        ;
+
+        
+    
+    
+            var circle_376c71bb0974bef480f057445e12f3f9 = L.circle(
+                [51.2062615, 4.4691275],
+                {"bubblingMouseEvents": true, "color": "#a70000", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#a70000", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20, "stroke": true, "weight": 3}
+            ).addTo(map_887290770d2ad347c2d383b5fdad4252);
+        
+    
+        var popup_d60cb20e9534f87fa528bf39ccf3d678 = L.popup({"maxHeight": 400, "maxWidth": 350, "minHeight": 350, "minWidth": 400});
+
+        
+            
+                var html_c1b405ce5c236a4ff1e7eb38cc396ffd = $(`<div id="html_c1b405ce5c236a4ff1e7eb38cc396ffd" style="width: 100.0%; height: 100.0%;"><img src="https://github.com/Ablenya/Ablenya.github.io/blob/main/Justradarplots/44.png"></div>`)[0];
+                popup_d60cb20e9534f87fa528bf39ccf3d678.setContent(html_c1b405ce5c236a4ff1e7eb38cc396ffd);
+            
+        
+
+        circle_376c71bb0974bef480f057445e12f3f9.bindPopup(popup_d60cb20e9534f87fa528bf39ccf3d678)
+        ;
+
+        
+    
+    
+            var circle_84b7082755990bd673db49f45bc3c499 = L.circle(
+                [51.3153263, 4.8953918],
+                {"bubblingMouseEvents": true, "color": "#2e0000", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2e0000", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20, "stroke": true, "weight": 3}
+            ).addTo(map_887290770d2ad347c2d383b5fdad4252);
+        
+    
+        var popup_03197f4cd3dd145f8647b0ab6b2b9f28 = L.popup({"maxHeight": 400, "maxWidth": 350, "minHeight": 350, "minWidth": 400});
+
+        
+            
+                var html_e49149cc18de835672fd2e9ae126697e = $(`<div id="html_e49149cc18de835672fd2e9ae126697e" style="width: 100.0%; height: 100.0%;"><img src="https://github.com/Ablenya/Ablenya.github.io/blob/main/Justradarplots/45.png"></div>`)[0];
+                popup_03197f4cd3dd145f8647b0ab6b2b9f28.setContent(html_e49149cc18de835672fd2e9ae126697e);
+            
+        
+
+        circle_84b7082755990bd673db49f45bc3c499.bindPopup(popup_03197f4cd3dd145f8647b0ab6b2b9f28)
+        ;
+
+        
+    
+    
+            var circle_d8d580e1f23b68329479bd1041004088 = L.circle(
+                [51.2642779, 4.6147328],
+                {"bubblingMouseEvents": true, "color": "#ff3a1e", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff3a1e", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20, "stroke": true, "weight": 3}
+            ).addTo(map_887290770d2ad347c2d383b5fdad4252);
+        
+    
+        var popup_ce83dd7a9a09b6e005fe676a2e3a6f28 = L.popup({"maxHeight": 400, "maxWidth": 350, "minHeight": 350, "minWidth": 400});
+
+        
+            
+                var html_1d4c337f9b6bed4857afb778793061d6 = $(`<div id="html_1d4c337f9b6bed4857afb778793061d6" style="width: 100.0%; height: 100.0%;"><img src="https://github.com/Ablenya/Ablenya.github.io/blob/main/Justradarplots/46.png"></div>`)[0];
+                popup_ce83dd7a9a09b6e005fe676a2e3a6f28.setContent(html_1d4c337f9b6bed4857afb778793061d6);
+            
+        
+
+        circle_d8d580e1f23b68329479bd1041004088.bindPopup(popup_ce83dd7a9a09b6e005fe676a2e3a6f28)
+        ;
+
+        
+    
+    
+            var circle_8181de09f0efbff1b02932f9e15c38ba = L.circle(
+                [51.0320487, 4.0633807],
+                {"bubblingMouseEvents": true, "color": "#2e0000", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2e0000", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20, "stroke": true, "weight": 3}
+            ).addTo(map_887290770d2ad347c2d383b5fdad4252);
+        
+    
+        var popup_37720b6d8a95ab2dfa6969cc1e4ef74e = L.popup({"maxHeight": 400, "maxWidth": 350, "minHeight": 350, "minWidth": 400});
+
+        
+            
+                var html_9a611adebfdfea80bd0665be4e959652 = $(`<div id="html_9a611adebfdfea80bd0665be4e959652" style="width: 100.0%; height: 100.0%;"><img src="https://github.com/Ablenya/Ablenya.github.io/blob/main/Justradarplots/47.png"></div>`)[0];
+                popup_37720b6d8a95ab2dfa6969cc1e4ef74e.setContent(html_9a611adebfdfea80bd0665be4e959652);
+            
+        
+
+        circle_8181de09f0efbff1b02932f9e15c38ba.bindPopup(popup_37720b6d8a95ab2dfa6969cc1e4ef74e)
+        ;
+
+        
+    
+    
+            var circle_6e57fe231ac3e4e4131c8d99f4d0b703 = L.circle(
+                [51.2223505, 4.3373397],
+                {"bubblingMouseEvents": true, "color": "#ff3a1e", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff3a1e", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20, "stroke": true, "weight": 3}
+            ).addTo(map_887290770d2ad347c2d383b5fdad4252);
+        
+    
+        var popup_1de3ab33d8a64f27f92b9d221a172f1b = L.popup({"maxHeight": 400, "maxWidth": 350, "minHeight": 350, "minWidth": 400});
+
+        
+            
+                var html_8a84835c987cc1a6a19d1e00a4d57fd3 = $(`<div id="html_8a84835c987cc1a6a19d1e00a4d57fd3" style="width: 100.0%; height: 100.0%;"><img src="https://github.com/Ablenya/Ablenya.github.io/blob/main/Justradarplots/48.png"></div>`)[0];
+                popup_1de3ab33d8a64f27f92b9d221a172f1b.setContent(html_8a84835c987cc1a6a19d1e00a4d57fd3);
+            
+        
+
+        circle_6e57fe231ac3e4e4131c8d99f4d0b703.bindPopup(popup_1de3ab33d8a64f27f92b9d221a172f1b)
+        ;
+
+        
+    
+    
+            var circle_fcc4d5b9764ff4767fcffdafa9f73d31 = L.circle(
+                [51.2181365, 2.9214528],
+                {"bubblingMouseEvents": true, "color": "#a70000", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#a70000", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20, "stroke": true, "weight": 3}
+            ).addTo(map_887290770d2ad347c2d383b5fdad4252);
+        
+    
+        var popup_94cc9cd315a40479c2b8d096c40a274a = L.popup({"maxHeight": 400, "maxWidth": 350, "minHeight": 350, "minWidth": 400});
+
+        
+            
+                var html_c4b21f4ad4413f0aec04a6e441f89ba1 = $(`<div id="html_c4b21f4ad4413f0aec04a6e441f89ba1" style="width: 100.0%; height: 100.0%;"><img src="https://github.com/Ablenya/Ablenya.github.io/blob/main/Justradarplots/49.png"></div>`)[0];
+                popup_94cc9cd315a40479c2b8d096c40a274a.setContent(html_c4b21f4ad4413f0aec04a6e441f89ba1);
+            
+        
+
+        circle_fcc4d5b9764ff4767fcffdafa9f73d31.bindPopup(popup_94cc9cd315a40479c2b8d096c40a274a)
+        ;
+
+        
+    
+</script>
+</html>
