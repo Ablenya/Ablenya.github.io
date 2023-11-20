@@ -1,0 +1,40 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Jouw geluidlandschap</title>
+    <style>
+        body {
+            font-family: 'CustomFont';
+            src: url('file:///C:/Users/ABarros/Downloads/MuseoSans_300.otf') format('opentype');
+         
+        }
+        /* Target the select element to adjust its font size */
+        select#map_select {
+            font-size: 17px; /* Change this value to adjust the font size */
+        }
+        
+    </style>
+</head>
+<body>
+    
+    <select id="map_select">
+        <option value="https://Ablenya.github.io/Sound_of_Rate_soundscape.html">Hoe aangenaam was het geluidslandschap?</option>
+        <option value="https://Ablenya.github.io/Sound_of_Traffic.html">Verkeergeluiden</option>
+        <option value="https://Ablenya.github.io/Sound_of_Silence.html">Stilte</option>
+        <option value="https://Ablenya.github.io/Sound_of_Natural sounds.html">Natuurgeluiden</option>
+    </select>
+    <br><br>
+    <iframe id="map_frame" width="100%" height="700" frameborder="0" src="https://Ablenya.github.io/Sound_of_Rate_soundscape.html"></iframe>
+
+    <script>
+        var dropdown = document.getElementById("map_select");
+        var mapFrame = document.getElementById("map_frame");
+
+        dropdown.onchange = function() {
+            var selectedMap = dropdown.options[dropdown.selectedIndex].value;
+            mapFrame.src = selectedMap;
+        };
+    </script>
+</body>
+</html>
