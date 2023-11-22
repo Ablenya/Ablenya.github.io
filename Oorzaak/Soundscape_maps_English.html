@@ -1,0 +1,73 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Your soundscape</title>
+    
+    <style>
+        body {
+            font-family: 'CustomFont';
+            src: url('file:///C:/Users/ABarros/Downloads/MuseoSans_300.otf') format('opentype');
+         
+        }
+        /* Target the select element to adjust its font size */
+        select#map_select {
+            font-size: 17px;
+            margin-left: 10px; /* Adjust spacing between elements */
+        }
+        /* Custom style for the h3 tag */
+        h4 {
+            font-family: 'CustomFont', sans-serif;
+            font-size: 17px;
+            display: inline; /* Display the text inline */
+            margin-right: 10px; /* Adjust spacing between elements */
+        }
+        /* Custom style for the div container */
+        div#data_from {
+            text-align: right; /* Align the content to the right */
+            margin-right: 10px; /* Adjust spacing from the right */
+        } 
+        
+        /* Style for the "Data from:" text */
+        div#data_from h4 {
+            font-family: 'CustomFont', sans-serif;
+            font-size: 15px;
+            display: inline; /* Display the text inline */
+        }          
+       
+    </style>
+</head>
+<body>
+ <div class="container">
+     <div id="data_from">
+     <h4>Data from 22/11/2023</h4>
+     </div>
+     
+    <h4>Select from:</h4>
+
+    <select id="map_select">
+        <option value="https://Ablenya.github.io/Maps_in_English/Sound_of_Rate_soundscape_English.html">How did you like the soundscape?</option>
+        <option value="https://Ablenya.github.io/Maps_in_English/Sound_of_Traffic_English.html">Traffic noise</option>
+        <option value="https://Ablenya.github.io/Maps_in_English/Sound_of_Silence_English.html">Silence</option>
+        <option value="https://Ablenya.github.io/Maps_in_English/Sound_of_Human sounds_English.html">Sounds from human beings</option>
+        <option value="https://Ablenya.github.io/Maps_in_English/Sound_of_Music_English.html">Music</option>
+        <option value="https://Ablenya.github.io/Maps_in_English/Sound_of_Natural sounds_English.html">Nature sounds</option>
+        <option value="https://Ablenya.github.io/Maps_in_English/Sound_of_Industry_English.html">Industry noise</option>
+        <option value="https://Ablenya.github.io/Maps_in_English/Sound_of_Construction_English.html">Construction noise</option>
+        <option value="https://Ablenya.github.io/Maps_in_English/Sound_of_Alarms_English.html">Noise from alarms/priority vehicles</option>
+
+    </select>
+    <br><br>
+    <iframe id="map_frame" width="100%" height="700" frameborder="0" src="https://Ablenya.github.io/Maps_in_English/Sound_of_Rate_soundscape_English.html"></iframe>
+
+    <script>
+        var dropdown = document.getElementById("map_select");
+        var mapFrame = document.getElementById("map_frame");
+
+        dropdown.onchange = function() {
+            var selectedMap = dropdown.options[dropdown.selectedIndex].value;
+            mapFrame.src = selectedMap;
+        };
+    </script>
+</body>
+</html>
