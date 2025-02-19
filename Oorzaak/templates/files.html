@@ -1,0 +1,31 @@
+<div>
+  <label class="label-title"><strong>Choose measurement point(s):</strong></label><br>
+  <!-- 'Select All' checkbox -->
+  <input type="checkbox" id="select_all" onclick="toggleAll(this)">
+  <label for="select_all">Select All</label><br><br>
+  
+  <!-- Container for checkboxes arranged in four columns -->
+  <div class="checkbox-container">
+    {% for file in files %}
+      <div class="checkbox-item">
+        <input type="checkbox" name="files" value="{{ file.id }}" class="file-checkbox" id="file_{{ file.id }}">
+        <label for="file_{{ file.id }}">{{ file.name }}</label>
+      </div>
+    {% endfor %}
+  </div>
+</div>
+
+<style>
+  .checkbox-container {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0;
+  }
+  .checkbox-item {
+    width: 15%;  /* Four columns */
+    padding: 2px;  /* Reduced spacing */
+    margin: 0;
+    box-sizing: border-box;
+  }
+</style>
+

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Data exports Oorzaak</title>
+  <style>
+    /* 1) Define the custom font face */
+    @font-face {
+      font-family: "MuseoSans";
+      src: url("https://Ablenya.github.io/MuseoSans_300.otf") format("opentype");
+      font-weight: 300;  /* Adjust if needed */
+      font-style: normal;
+    }
+
+    /* 2) Apply MuseoSans to the body */
+    body {
+      font-family: "MuseoSans", sans-serif;
+      margin: 10px;
+      padding: 0;
+    }
+
+    /* The existing style for labels */
+    .label-title {
+      font-size: 16px;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+
+    /* Ensure <select> and <button> also use MuseoSans */
+    select, button {
+      font-family: "MuseoSans", sans-serif;
+    }
+
+    /* 3) Position the logo at the top-right corner */
+    .logo {
+      position: absolute; 
+      top: 20px;
+      right: 10px;
+      width: 450px;  /* Adjust the size as you prefer */
+      height: auto;
+    }
+  </style>
+  <script>
+    function loadFiles() {
+      var folderSelect = document.getElementById("folder");
+      var folderId = folderSelect.value;
+      if (!folderId) {
+        document.getElementById("files-container").innerHTML = "";
+        return;
+      }
+      var xhr = new XMLHttpRequest();
+      xhr.onreadystatechange = function() {
+        if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
+          document.getElementById("files-container").innerHTML = xhr.responseText;
+        }
+      };
+      xhr.open("GET", "/files/" + folderId, true);
+      xhr.send();
+    }
+  </script>
+</head>
+<body>
+  <!-- 4) Logo in the top-right corner -->
+  <img src="https://ablenya.github.io/Logo for soundscape_2.jpg" alt="Logo" class="logo">
+
+  <h1>Data exports Oorzaak</h1>
+  
+  <form method="post">
+    <!-- Folder Selection -->
+    <div>
+      <label class="label-title" for="folder">Select a measurement period:</label><br>
+      <select name="folder" id="folder" onchange="loadFiles()">
+        <option value="">--Select a folder--</option>
+        {% for folder in folders %}
+          <option value="{{ folder.id }}">{{ folder.name }}</option>
+        {% endfor %}
+      </select>
+    </div>
+    <br>
+    <!-- Measurement Points (Loaded Dynamically) -->
+    <div id="files-container">
+      <!-- "Select measurement point(s):" and file checkboxes will be injected here from files.html -->
+    </div>
+    <br>
+    <!-- Download Options -->
+    <div>
+      <label class="label-title"><strong>Select download type:</strong></label><br>
+      <label>
+        <input type="checkbox" name="options" value="original">
+        Individual reports
+      </label>
+      <br>
+      <label>
+        <input type="checkbox" name="options" value="compiled">
+        Compiled reports
+      </label>
+      <br>
+      <label>
+        <input type="checkbox" name="options" value="overview">
+        Overview reports
+      </label>
+    </div>
+    <br>
+    <button type="submit">Download</button>
+  </form>
+  
+  <!-- Add the toggleAll function here so it's always available -->
+  <script>
+    function toggleAll(source) {
+      console.log("Toggle all triggered. Value: " + source.checked);
+      var checkboxes = document.getElementsByClassName('file-checkbox');
+      for (var i = 0; i < checkboxes.length; i++) {
+        checkboxes[i].checked = source.checked;
+      }
+    }
+  </script>
+</body>
+</html>
