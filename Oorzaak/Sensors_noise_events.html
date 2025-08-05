@@ -1,0 +1,2207 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_4527a291c6d19799da09185ccff98677 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+    <script src="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.css"/>
+</head>
+<body>
+    
+    
+    <style>
+    @font-face {
+        font-family: 'CustomFont';
+        src: url('https://Ablenya.github.io/MuseoSans_300.otf') format('opentype');
+    }
+    </style>
+    <div style="position: fixed; bottom: 50px; left: 50px; z-index: 1000; background-color: #cdcdcd; padding: 10px; border: 2px solid grey; font-size: 14px; font-family: 'CustomFont', sans-serif;">
+        <b>Perioden</b><br>
+        <i style="background: #00419d; border-radius: 50%; width: 15px; height: 15px; display: inline-block;"></i> Periode 1 <br>
+        <i style="background: #15f4ee; border-radius: 50%; width: 15px; height: 15px; display: inline-block;"></i> Periode 2<br>
+        <i style="background: #ffd863; border-radius: 50%; width: 15px; height: 15px; display: inline-block;"></i> Periode 3<br>
+        <i style="background: #DA70D6; border-radius: 50%; width: 15px; height: 15px; display: inline-block;"></i> Periode 4<br>
+        <i style="background: #93003b; border-radius: 50%; width: 15px; height: 15px; display: inline-block;"></i> Periode 5<br>
+        <i style="background: #2d2d2d; border-radius: 50%; width: 15px; height: 15px; display: inline-block;"></i> Periode 6<br>
+
+        <b>  </b><br>
+        <b>Slaapkamerraam gevel</b><br>
+        <i style="background: #00419d; border-radius: 50%; width: 15px; height: 15px; display: inline-block;border: 2.5px solid black;"></i> Front <br>
+        <i style="background: #00419d; border-radius: 50%; width: 15px; height: 15px; display: inline-block;border: 2.5px solid white;"></i> Not front <br>
+
+    
+    </div>
+    
+    
+    <style>
+    @font-face {
+        font-family: 'CustomFont';
+        src: url('https://Ablenya.github.io/MuseoSans_300.otf') format('opentype');
+    }
+    </style>
+    <div style="position: fixed; bottom: 50px; left: 50px; z-index: 1000; background-color: #cdcdcd; padding: 10px; border: 2px solid grey; font-size: 14px; font-family: 'CustomFont', sans-serif;">
+        <b>Perioden</b><br>
+        <i style="background: #00419d; border-radius: 50%; width: 15px; height: 15px; display: inline-block;"></i> Periode 1 <br>
+        <i style="background: #15f4ee; border-radius: 50%; width: 15px; height: 15px; display: inline-block;"></i> Periode 2<br>
+        <i style="background: #ffd863; border-radius: 50%; width: 15px; height: 15px; display: inline-block;"></i> Periode 3<br>
+        <i style="background: #DA70D6; border-radius: 50%; width: 15px; height: 15px; display: inline-block;"></i> Periode 4<br>
+        <i style="background: #93003b; border-radius: 50%; width: 15px; height: 15px; display: inline-block;"></i> Periode 5<br>
+        <i style="background: #2d2d2d; border-radius: 50%; width: 15px; height: 15px; display: inline-block;"></i> Periode 6<br>
+
+        <b>  </b><br>
+        <b>Slaapkamerraam gevel</b><br>
+        <i style="background: #00419d; border-radius: 50%; width: 15px; height: 15px; display: inline-block;border: 2.5px solid black;"></i> Front <br>
+        <i style="background: #00419d; border-radius: 50%; width: 15px; height: 15px; display: inline-block;border: 2.5px solid white;"></i> Not front <br>
+
+    
+    </div>
+    
+    
+            <div class="folium-map" id="map_4527a291c6d19799da09185ccff98677" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_4527a291c6d19799da09185ccff98677 = L.map(
+                "map_4527a291c6d19799da09185ccff98677",
+                {
+                    center: [51.21720165107778, 4.409412613877543],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 11,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+            L.control.scale().addTo(map_4527a291c6d19799da09185ccff98677);
+
+            
+
+        
+    
+            var tile_layer_611e654eba4c97d5c07b187b875b78e1 = L.tileLayer(
+                "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "Data by \u0026copy; \u003ca target=\"_blank\" href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_4527a291c6d19799da09185ccff98677);
+        
+    
+            var circle_marker_fb631d75771379351bc192f5d6781dde = L.circleMarker(
+                [51.2343927, 4.4236505],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#15f4ee", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(map_4527a291c6d19799da09185ccff98677);
+        
+    
+        var popup_0db7d4ba8c5c2b84ffe85171656aed1a = L.popup({"maxWidth": 500});
+
+        
+            
+                var html_42dc1c299aa130a053b76aff24612b99 = $(`<div id="html_42dc1c299aa130a053b76aff24612b99" style="width: 100.0%; height: 100.0%;">         <div style="text-align:center;">           <img              id="img_0"              src="https://Ablenya.github.io/Oorzaak/Antwerp%20period%202/A0002%20Figure%204.png"              style="max-width:500px; height:auto; display:block; margin:0 auto;"            />           <button              onclick="               var img = document.getElementById('img_0');               if(img.style.maxWidth === '1100px') {                 img.style.maxWidth = '500px';                 this.textContent = 'Enlarge';               } else {                 img.style.maxWidth = '1100px';                 this.textContent = 'Shrink';               }             "             style="margin-top:5px;"           >Enlarge</button>         </div>         </div>`)[0];
+                popup_0db7d4ba8c5c2b84ffe85171656aed1a.setContent(html_42dc1c299aa130a053b76aff24612b99);
+            
+        
+
+        circle_marker_fb631d75771379351bc192f5d6781dde.bindPopup(popup_0db7d4ba8c5c2b84ffe85171656aed1a)
+        ;
+
+        
+    
+    
+            var circle_marker_08d46915ecb27f5d63493abff6a24fb9 = L.circleMarker(
+                [51.2218404, 4.4047147],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#15f4ee", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(map_4527a291c6d19799da09185ccff98677);
+        
+    
+        var popup_df2558a33b43939b19a72acf08d1490c = L.popup({"maxWidth": 500});
+
+        
+            
+                var html_4ca5110760827c42d4f3ebb8819a5d69 = $(`<div id="html_4ca5110760827c42d4f3ebb8819a5d69" style="width: 100.0%; height: 100.0%;">         <div style="text-align:center;">           <img              id="img_1"              src="https://Ablenya.github.io/Oorzaak/Antwerp%20period%202/A0032%20Figure%204.png"              style="max-width:500px; height:auto; display:block; margin:0 auto;"            />           <button              onclick="               var img = document.getElementById('img_1');               if(img.style.maxWidth === '1100px') {                 img.style.maxWidth = '500px';                 this.textContent = 'Enlarge';               } else {                 img.style.maxWidth = '1100px';                 this.textContent = 'Shrink';               }             "             style="margin-top:5px;"           >Enlarge</button>         </div>         </div>`)[0];
+                popup_df2558a33b43939b19a72acf08d1490c.setContent(html_4ca5110760827c42d4f3ebb8819a5d69);
+            
+        
+
+        circle_marker_08d46915ecb27f5d63493abff6a24fb9.bindPopup(popup_df2558a33b43939b19a72acf08d1490c)
+        ;
+
+        
+    
+    
+            var circle_marker_86554d4a0055f224c2daba9d7f71a05b = L.circleMarker(
+                [51.2840347, 4.4111749],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#15f4ee", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(map_4527a291c6d19799da09185ccff98677);
+        
+    
+        var popup_8c7a3bf0840d23f1747114058cacdf2f = L.popup({"maxWidth": 500});
+
+        
+            
+                var html_af0539e4e3c6181255ab9cd977a3685f = $(`<div id="html_af0539e4e3c6181255ab9cd977a3685f" style="width: 100.0%; height: 100.0%;">         <div style="text-align:center;">           <img              id="img_2"              src="https://Ablenya.github.io/Oorzaak/Antwerp%20period%202/A0035%20Figure%204.png"              style="max-width:500px; height:auto; display:block; margin:0 auto;"            />           <button              onclick="               var img = document.getElementById('img_2');               if(img.style.maxWidth === '1100px') {                 img.style.maxWidth = '500px';                 this.textContent = 'Enlarge';               } else {                 img.style.maxWidth = '1100px';                 this.textContent = 'Shrink';               }             "             style="margin-top:5px;"           >Enlarge</button>         </div>         </div>`)[0];
+                popup_8c7a3bf0840d23f1747114058cacdf2f.setContent(html_af0539e4e3c6181255ab9cd977a3685f);
+            
+        
+
+        circle_marker_86554d4a0055f224c2daba9d7f71a05b.bindPopup(popup_8c7a3bf0840d23f1747114058cacdf2f)
+        ;
+
+        
+    
+    
+            var circle_marker_a7c57b74f1ca0629279f74546883afa1 = L.circleMarker(
+                [51.2192875, 4.3835476],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#15f4ee", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(map_4527a291c6d19799da09185ccff98677);
+        
+    
+        var popup_afadbca31fbc44547d5f9c004bad3728 = L.popup({"maxWidth": 500});
+
+        
+            
+                var html_9f6df2ed147fc5bd082578430ab90dc0 = $(`<div id="html_9f6df2ed147fc5bd082578430ab90dc0" style="width: 100.0%; height: 100.0%;">         <div style="text-align:center;">           <img              id="img_3"              src="https://Ablenya.github.io/Oorzaak/Antwerp%20period%202/A0058%20Figure%204.png"              style="max-width:500px; height:auto; display:block; margin:0 auto;"            />           <button              onclick="               var img = document.getElementById('img_3');               if(img.style.maxWidth === '1100px') {                 img.style.maxWidth = '500px';                 this.textContent = 'Enlarge';               } else {                 img.style.maxWidth = '1100px';                 this.textContent = 'Shrink';               }             "             style="margin-top:5px;"           >Enlarge</button>         </div>         </div>`)[0];
+                popup_afadbca31fbc44547d5f9c004bad3728.setContent(html_9f6df2ed147fc5bd082578430ab90dc0);
+            
+        
+
+        circle_marker_a7c57b74f1ca0629279f74546883afa1.bindPopup(popup_afadbca31fbc44547d5f9c004bad3728)
+        ;
+
+        
+    
+    
+            var circle_marker_74cd9e7d8f97129cd500568234905a7d = L.circleMarker(
+                [51.2167939, 4.41313619999999],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#15f4ee", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(map_4527a291c6d19799da09185ccff98677);
+        
+    
+        var popup_a1da29e7fdc5e9d77330d4b6f0ad3a00 = L.popup({"maxWidth": 500});
+
+        
+            
+                var html_1662e378f2d1d0c379cb7b14f46dc790 = $(`<div id="html_1662e378f2d1d0c379cb7b14f46dc790" style="width: 100.0%; height: 100.0%;">         <div style="text-align:center;">           <img              id="img_4"              src="https://Ablenya.github.io/Oorzaak/Antwerp%20period%202/A0123%20Figure%204.png"              style="max-width:500px; height:auto; display:block; margin:0 auto;"            />           <button              onclick="               var img = document.getElementById('img_4');               if(img.style.maxWidth === '1100px') {                 img.style.maxWidth = '500px';                 this.textContent = 'Enlarge';               } else {                 img.style.maxWidth = '1100px';                 this.textContent = 'Shrink';               }             "             style="margin-top:5px;"           >Enlarge</button>         </div>         </div>`)[0];
+                popup_a1da29e7fdc5e9d77330d4b6f0ad3a00.setContent(html_1662e378f2d1d0c379cb7b14f46dc790);
+            
+        
+
+        circle_marker_74cd9e7d8f97129cd500568234905a7d.bindPopup(popup_a1da29e7fdc5e9d77330d4b6f0ad3a00)
+        ;
+
+        
+    
+    
+            var circle_marker_e56a5d2cb595245d74bb328e62aad1c1 = L.circleMarker(
+                [51.2022293, 4.3940126],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#15f4ee", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(map_4527a291c6d19799da09185ccff98677);
+        
+    
+        var popup_648b2aa06c81f84be9620dcc23d5f449 = L.popup({"maxWidth": 500});
+
+        
+            
+                var html_bb063814f268d57d7b20bbbaf284241b = $(`<div id="html_bb063814f268d57d7b20bbbaf284241b" style="width: 100.0%; height: 100.0%;">         <div style="text-align:center;">           <img              id="img_5"              src="https://Ablenya.github.io/Oorzaak/Antwerp%20period%202/A0129%20Figure%204.png"              style="max-width:500px; height:auto; display:block; margin:0 auto;"            />           <button              onclick="               var img = document.getElementById('img_5');               if(img.style.maxWidth === '1100px') {                 img.style.maxWidth = '500px';                 this.textContent = 'Enlarge';               } else {                 img.style.maxWidth = '1100px';                 this.textContent = 'Shrink';               }             "             style="margin-top:5px;"           >Enlarge</button>         </div>         </div>`)[0];
+                popup_648b2aa06c81f84be9620dcc23d5f449.setContent(html_bb063814f268d57d7b20bbbaf284241b);
+            
+        
+
+        circle_marker_e56a5d2cb595245d74bb328e62aad1c1.bindPopup(popup_648b2aa06c81f84be9620dcc23d5f449)
+        ;
+
+        
+    
+    
+            var circle_marker_ca9debdb6754e71a76332cb2eaeb08e5 = L.circleMarker(
+                [51.1969441, 4.4287149],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#15f4ee", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(map_4527a291c6d19799da09185ccff98677);
+        
+    
+        var popup_92f3f902c445836796818d1fb564382c = L.popup({"maxWidth": 500});
+
+        
+            
+                var html_07a26833ebcbff963f4508f6ca83b072 = $(`<div id="html_07a26833ebcbff963f4508f6ca83b072" style="width: 100.0%; height: 100.0%;">         <div style="text-align:center;">           <img              id="img_6"              src="https://Ablenya.github.io/Oorzaak/Antwerp%20period%202/A0150%20Figure%204.png"              style="max-width:500px; height:auto; display:block; margin:0 auto;"            />           <button              onclick="               var img = document.getElementById('img_6');               if(img.style.maxWidth === '1100px') {                 img.style.maxWidth = '500px';                 this.textContent = 'Enlarge';               } else {                 img.style.maxWidth = '1100px';                 this.textContent = 'Shrink';               }             "             style="margin-top:5px;"           >Enlarge</button>         </div>         </div>`)[0];
+                popup_92f3f902c445836796818d1fb564382c.setContent(html_07a26833ebcbff963f4508f6ca83b072);
+            
+        
+
+        circle_marker_ca9debdb6754e71a76332cb2eaeb08e5.bindPopup(popup_92f3f902c445836796818d1fb564382c)
+        ;
+
+        
+    
+    
+            var circle_marker_803f6b73e25c6efd56bab94093d00b27 = L.circleMarker(
+                [51.2177632999999, 4.4367684],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#15f4ee", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(map_4527a291c6d19799da09185ccff98677);
+        
+    
+        var popup_2ef8e061954a6ed803c14d83aef841be = L.popup({"maxWidth": 500});
+
+        
+            
+                var html_04b4b8d5c20783c8e228ef9ab614a441 = $(`<div id="html_04b4b8d5c20783c8e228ef9ab614a441" style="width: 100.0%; height: 100.0%;">         <div style="text-align:center;">           <img              id="img_7"              src="https://Ablenya.github.io/Oorzaak/Antwerp%20period%202/A0157%20Figure%204.png"              style="max-width:500px; height:auto; display:block; margin:0 auto;"            />           <button              onclick="               var img = document.getElementById('img_7');               if(img.style.maxWidth === '1100px') {                 img.style.maxWidth = '500px';                 this.textContent = 'Enlarge';               } else {                 img.style.maxWidth = '1100px';                 this.textContent = 'Shrink';               }             "             style="margin-top:5px;"           >Enlarge</button>         </div>         </div>`)[0];
+                popup_2ef8e061954a6ed803c14d83aef841be.setContent(html_04b4b8d5c20783c8e228ef9ab614a441);
+            
+        
+
+        circle_marker_803f6b73e25c6efd56bab94093d00b27.bindPopup(popup_2ef8e061954a6ed803c14d83aef841be)
+        ;
+
+        
+    
+    
+            var circle_marker_abba33f351b959e640d31292b02c66ee = L.circleMarker(
+                [51.2192719, 4.3644339],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#15f4ee", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(map_4527a291c6d19799da09185ccff98677);
+        
+    
+        var popup_ddea3375a105842456fcce50242bb4fc = L.popup({"maxWidth": 500});
+
+        
+            
+                var html_da42b0becb04a6dfc3875cfe291bd2d4 = $(`<div id="html_da42b0becb04a6dfc3875cfe291bd2d4" style="width: 100.0%; height: 100.0%;">         <div style="text-align:center;">           <img              id="img_8"              src="https://Ablenya.github.io/Oorzaak/Antwerp%20period%202/A0158%20Figure%204.png"              style="max-width:500px; height:auto; display:block; margin:0 auto;"            />           <button              onclick="               var img = document.getElementById('img_8');               if(img.style.maxWidth === '1100px') {                 img.style.maxWidth = '500px';                 this.textContent = 'Enlarge';               } else {                 img.style.maxWidth = '1100px';                 this.textContent = 'Shrink';               }             "             style="margin-top:5px;"           >Enlarge</button>         </div>         </div>`)[0];
+                popup_ddea3375a105842456fcce50242bb4fc.setContent(html_da42b0becb04a6dfc3875cfe291bd2d4);
+            
+        
+
+        circle_marker_abba33f351b959e640d31292b02c66ee.bindPopup(popup_ddea3375a105842456fcce50242bb4fc)
+        ;
+
+        
+    
+    
+            var circle_marker_2b1da23f52ea7c18382948f49c51d9d8 = L.circleMarker(
+                [51.2184821, 4.4162104],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#15f4ee", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(map_4527a291c6d19799da09185ccff98677);
+        
+    
+        var popup_3ce6b777621a7270c811a53dc8bdf926 = L.popup({"maxWidth": 500});
+
+        
+            
+                var html_611969eb18f57edd604a5b09b0d43450 = $(`<div id="html_611969eb18f57edd604a5b09b0d43450" style="width: 100.0%; height: 100.0%;">         <div style="text-align:center;">           <img              id="img_9"              src="https://Ablenya.github.io/Oorzaak/Antwerp%20period%202/A0173%20Figure%204.png"              style="max-width:500px; height:auto; display:block; margin:0 auto;"            />           <button              onclick="               var img = document.getElementById('img_9');               if(img.style.maxWidth === '1100px') {                 img.style.maxWidth = '500px';                 this.textContent = 'Enlarge';               } else {                 img.style.maxWidth = '1100px';                 this.textContent = 'Shrink';               }             "             style="margin-top:5px;"           >Enlarge</button>         </div>         </div>`)[0];
+                popup_3ce6b777621a7270c811a53dc8bdf926.setContent(html_611969eb18f57edd604a5b09b0d43450);
+            
+        
+
+        circle_marker_2b1da23f52ea7c18382948f49c51d9d8.bindPopup(popup_3ce6b777621a7270c811a53dc8bdf926)
+        ;
+
+        
+    
+    
+            var circle_marker_726dc0aadc334ee324a853e5b84430cf = L.circleMarker(
+                [51.3431054, 4.33319449999999],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#15f4ee", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(map_4527a291c6d19799da09185ccff98677);
+        
+    
+        var popup_4bb5e0f514a1139b67bd62e98ff387a5 = L.popup({"maxWidth": 500});
+
+        
+            
+                var html_067ef3a56bc00f674e320476f7a6a495 = $(`<div id="html_067ef3a56bc00f674e320476f7a6a495" style="width: 100.0%; height: 100.0%;">         <div style="text-align:center;">           <img              id="img_10"              src="https://Ablenya.github.io/Oorzaak/Antwerp%20period%202/A0226%20Figure%204.png"              style="max-width:500px; height:auto; display:block; margin:0 auto;"            />           <button              onclick="               var img = document.getElementById('img_10');               if(img.style.maxWidth === '1100px') {                 img.style.maxWidth = '500px';                 this.textContent = 'Enlarge';               } else {                 img.style.maxWidth = '1100px';                 this.textContent = 'Shrink';               }             "             style="margin-top:5px;"           >Enlarge</button>         </div>         </div>`)[0];
+                popup_4bb5e0f514a1139b67bd62e98ff387a5.setContent(html_067ef3a56bc00f674e320476f7a6a495);
+            
+        
+
+        circle_marker_726dc0aadc334ee324a853e5b84430cf.bindPopup(popup_4bb5e0f514a1139b67bd62e98ff387a5)
+        ;
+
+        
+    
+    
+            var circle_marker_b64244087ac4edcd30144c3a8bdcd829 = L.circleMarker(
+                [51.2283927, 4.4595461],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#15f4ee", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(map_4527a291c6d19799da09185ccff98677);
+        
+    
+        var popup_59bde255957136b8b43c4be0d8816089 = L.popup({"maxWidth": 500});
+
+        
+            
+                var html_e8dd8778c85c03c3a43993ef79d08a97 = $(`<div id="html_e8dd8778c85c03c3a43993ef79d08a97" style="width: 100.0%; height: 100.0%;">         <div style="text-align:center;">           <img              id="img_11"              src="https://Ablenya.github.io/Oorzaak/Antwerp%20period%202/A0236%20Figure%204.png"              style="max-width:500px; height:auto; display:block; margin:0 auto;"            />           <button              onclick="               var img = document.getElementById('img_11');               if(img.style.maxWidth === '1100px') {                 img.style.maxWidth = '500px';                 this.textContent = 'Enlarge';               } else {                 img.style.maxWidth = '1100px';                 this.textContent = 'Shrink';               }             "             style="margin-top:5px;"           >Enlarge</button>         </div>         </div>`)[0];
+                popup_59bde255957136b8b43c4be0d8816089.setContent(html_e8dd8778c85c03c3a43993ef79d08a97);
+            
+        
+
+        circle_marker_b64244087ac4edcd30144c3a8bdcd829.bindPopup(popup_59bde255957136b8b43c4be0d8816089)
+        ;
+
+        
+    
+    
+            var circle_marker_e7e968deb44d7120cf1d72574a910b09 = L.circleMarker(
+                [51.1701998, 4.3874809],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#15f4ee", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(map_4527a291c6d19799da09185ccff98677);
+        
+    
+        var popup_e786dda1bb8a27bb5898e3f9c96dcf22 = L.popup({"maxWidth": 500});
+
+        
+            
+                var html_3f6e96020a4f0c059bf08b7381658c14 = $(`<div id="html_3f6e96020a4f0c059bf08b7381658c14" style="width: 100.0%; height: 100.0%;">         <div style="text-align:center;">           <img              id="img_12"              src="https://Ablenya.github.io/Oorzaak/Antwerp%20period%202/A0250%20Figure%204.png"              style="max-width:500px; height:auto; display:block; margin:0 auto;"            />           <button              onclick="               var img = document.getElementById('img_12');               if(img.style.maxWidth === '1100px') {                 img.style.maxWidth = '500px';                 this.textContent = 'Enlarge';               } else {                 img.style.maxWidth = '1100px';                 this.textContent = 'Shrink';               }             "             style="margin-top:5px;"           >Enlarge</button>         </div>         </div>`)[0];
+                popup_e786dda1bb8a27bb5898e3f9c96dcf22.setContent(html_3f6e96020a4f0c059bf08b7381658c14);
+            
+        
+
+        circle_marker_e7e968deb44d7120cf1d72574a910b09.bindPopup(popup_e786dda1bb8a27bb5898e3f9c96dcf22)
+        ;
+
+        
+    
+    
+            var circle_marker_3ca493ec2c3efe65670d1bfa5678da65 = L.circleMarker(
+                [51.2026798, 4.4279304],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#15f4ee", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(map_4527a291c6d19799da09185ccff98677);
+        
+    
+        var popup_86e51e696ad66a607c38981b8394daa1 = L.popup({"maxWidth": 500});
+
+        
+            
+                var html_11d851c7134d682b6bc47c8d0160c998 = $(`<div id="html_11d851c7134d682b6bc47c8d0160c998" style="width: 100.0%; height: 100.0%;">         <div style="text-align:center;">           <img              id="img_13"              src="https://Ablenya.github.io/Oorzaak/Antwerp%20period%202/A0270%20Figure%204.png"              style="max-width:500px; height:auto; display:block; margin:0 auto;"            />           <button              onclick="               var img = document.getElementById('img_13');               if(img.style.maxWidth === '1100px') {                 img.style.maxWidth = '500px';                 this.textContent = 'Enlarge';               } else {                 img.style.maxWidth = '1100px';                 this.textContent = 'Shrink';               }             "             style="margin-top:5px;"           >Enlarge</button>         </div>         </div>`)[0];
+                popup_86e51e696ad66a607c38981b8394daa1.setContent(html_11d851c7134d682b6bc47c8d0160c998);
+            
+        
+
+        circle_marker_3ca493ec2c3efe65670d1bfa5678da65.bindPopup(popup_86e51e696ad66a607c38981b8394daa1)
+        ;
+
+        
+    
+    
+            var circle_marker_eeaca59fe063a176fe20e4bede2e91a7 = L.circleMarker(
+                [51.2095735, 4.4470301],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#15f4ee", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(map_4527a291c6d19799da09185ccff98677);
+        
+    
+        var popup_f37bfc02a82b26a5fb8230970c1e34e0 = L.popup({"maxWidth": 500});
+
+        
+            
+                var html_a9513b18d00245e45b65f0b3ef034173 = $(`<div id="html_a9513b18d00245e45b65f0b3ef034173" style="width: 100.0%; height: 100.0%;">         <div style="text-align:center;">           <img              id="img_14"              src="https://Ablenya.github.io/Oorzaak/Antwerp%20period%202/A0333%20Figure%204.png"              style="max-width:500px; height:auto; display:block; margin:0 auto;"            />           <button              onclick="               var img = document.getElementById('img_14');               if(img.style.maxWidth === '1100px') {                 img.style.maxWidth = '500px';                 this.textContent = 'Enlarge';               } else {                 img.style.maxWidth = '1100px';                 this.textContent = 'Shrink';               }             "             style="margin-top:5px;"           >Enlarge</button>         </div>         </div>`)[0];
+                popup_f37bfc02a82b26a5fb8230970c1e34e0.setContent(html_a9513b18d00245e45b65f0b3ef034173);
+            
+        
+
+        circle_marker_eeaca59fe063a176fe20e4bede2e91a7.bindPopup(popup_f37bfc02a82b26a5fb8230970c1e34e0)
+        ;
+
+        
+    
+    
+            var circle_marker_0174b3e0916ef73273beb622d7a43144 = L.circleMarker(
+                [51.227689, 4.4367584],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#15f4ee", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(map_4527a291c6d19799da09185ccff98677);
+        
+    
+        var popup_52265588d385de6097752947b5572b5d = L.popup({"maxWidth": 500});
+
+        
+            
+                var html_e0778949c2f2ae8383fb53627ce4d9d1 = $(`<div id="html_e0778949c2f2ae8383fb53627ce4d9d1" style="width: 100.0%; height: 100.0%;">         <div style="text-align:center;">           <img              id="img_15"              src="https://Ablenya.github.io/Oorzaak/Antwerp%20period%202/A0349%20Figure%204.png"              style="max-width:500px; height:auto; display:block; margin:0 auto;"            />           <button              onclick="               var img = document.getElementById('img_15');               if(img.style.maxWidth === '1100px') {                 img.style.maxWidth = '500px';                 this.textContent = 'Enlarge';               } else {                 img.style.maxWidth = '1100px';                 this.textContent = 'Shrink';               }             "             style="margin-top:5px;"           >Enlarge</button>         </div>         </div>`)[0];
+                popup_52265588d385de6097752947b5572b5d.setContent(html_e0778949c2f2ae8383fb53627ce4d9d1);
+            
+        
+
+        circle_marker_0174b3e0916ef73273beb622d7a43144.bindPopup(popup_52265588d385de6097752947b5572b5d)
+        ;
+
+        
+    
+    
+            var circle_marker_51a6014cb08d68651dada8444970c850 = L.circleMarker(
+                [51.2314334, 4.4141841],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#15f4ee", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(map_4527a291c6d19799da09185ccff98677);
+        
+    
+        var popup_2c81ff4a86c243afddebcb2ea7d9f800 = L.popup({"maxWidth": 500});
+
+        
+            
+                var html_302ba65344625133c188fdb7fe05a19e = $(`<div id="html_302ba65344625133c188fdb7fe05a19e" style="width: 100.0%; height: 100.0%;">         <div style="text-align:center;">           <img              id="img_16"              src="https://Ablenya.github.io/Oorzaak/Antwerp%20period%202/A0371%20Figure%204.png"              style="max-width:500px; height:auto; display:block; margin:0 auto;"            />           <button              onclick="               var img = document.getElementById('img_16');               if(img.style.maxWidth === '1100px') {                 img.style.maxWidth = '500px';                 this.textContent = 'Enlarge';               } else {                 img.style.maxWidth = '1100px';                 this.textContent = 'Shrink';               }             "             style="margin-top:5px;"           >Enlarge</button>         </div>         </div>`)[0];
+                popup_2c81ff4a86c243afddebcb2ea7d9f800.setContent(html_302ba65344625133c188fdb7fe05a19e);
+            
+        
+
+        circle_marker_51a6014cb08d68651dada8444970c850.bindPopup(popup_2c81ff4a86c243afddebcb2ea7d9f800)
+        ;
+
+        
+    
+    
+            var circle_marker_5fb85081766cb9117fad76e7bcdf5f69 = L.circleMarker(
+                [51.2092694, 4.4291064],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#15f4ee", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(map_4527a291c6d19799da09185ccff98677);
+        
+    
+        var popup_0ce834102e98381dcb1391f9d18344d8 = L.popup({"maxWidth": 500});
+
+        
+            
+                var html_dc04c0e0b01b60f6fd3cf27cdf55e80f = $(`<div id="html_dc04c0e0b01b60f6fd3cf27cdf55e80f" style="width: 100.0%; height: 100.0%;">         <div style="text-align:center;">           <img              id="img_17"              src="https://Ablenya.github.io/Oorzaak/Antwerp%20period%202/A0392%20Figure%204.png"              style="max-width:500px; height:auto; display:block; margin:0 auto;"            />           <button              onclick="               var img = document.getElementById('img_17');               if(img.style.maxWidth === '1100px') {                 img.style.maxWidth = '500px';                 this.textContent = 'Enlarge';               } else {                 img.style.maxWidth = '1100px';                 this.textContent = 'Shrink';               }             "             style="margin-top:5px;"           >Enlarge</button>         </div>         </div>`)[0];
+                popup_0ce834102e98381dcb1391f9d18344d8.setContent(html_dc04c0e0b01b60f6fd3cf27cdf55e80f);
+            
+        
+
+        circle_marker_5fb85081766cb9117fad76e7bcdf5f69.bindPopup(popup_0ce834102e98381dcb1391f9d18344d8)
+        ;
+
+        
+    
+    
+            var circle_marker_1c42b80f5f488e4ab6581bb442cf8472 = L.circleMarker(
+                [51.2345701, 4.4116187],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#15f4ee", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(map_4527a291c6d19799da09185ccff98677);
+        
+    
+        var popup_c0d87643a5f16e7c46de316ea9546de0 = L.popup({"maxWidth": 500});
+
+        
+            
+                var html_49913626e8c0a4ece0dcd3f370ed15db = $(`<div id="html_49913626e8c0a4ece0dcd3f370ed15db" style="width: 100.0%; height: 100.0%;">         <div style="text-align:center;">           <img              id="img_18"              src="https://Ablenya.github.io/Oorzaak/Antwerp%20period%202/A0427%20Figure%204.png"              style="max-width:500px; height:auto; display:block; margin:0 auto;"            />           <button              onclick="               var img = document.getElementById('img_18');               if(img.style.maxWidth === '1100px') {                 img.style.maxWidth = '500px';                 this.textContent = 'Enlarge';               } else {                 img.style.maxWidth = '1100px';                 this.textContent = 'Shrink';               }             "             style="margin-top:5px;"           >Enlarge</button>         </div>         </div>`)[0];
+                popup_c0d87643a5f16e7c46de316ea9546de0.setContent(html_49913626e8c0a4ece0dcd3f370ed15db);
+            
+        
+
+        circle_marker_1c42b80f5f488e4ab6581bb442cf8472.bindPopup(popup_c0d87643a5f16e7c46de316ea9546de0)
+        ;
+
+        
+    
+    
+            var circle_marker_4d513f84f29523ae3fd11d17d7224db3 = L.circleMarker(
+                [51.2149844, 4.44204059999999],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#15f4ee", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(map_4527a291c6d19799da09185ccff98677);
+        
+    
+        var popup_ee73b404fa80fd9b83167c415650fc11 = L.popup({"maxWidth": 500});
+
+        
+            
+                var html_b78bde097cb79388ffa563ca54939077 = $(`<div id="html_b78bde097cb79388ffa563ca54939077" style="width: 100.0%; height: 100.0%;">         <div style="text-align:center;">           <img              id="img_19"              src="https://Ablenya.github.io/Oorzaak/Antwerp%20period%202/A0436%20Figure%204.png"              style="max-width:500px; height:auto; display:block; margin:0 auto;"            />           <button              onclick="               var img = document.getElementById('img_19');               if(img.style.maxWidth === '1100px') {                 img.style.maxWidth = '500px';                 this.textContent = 'Enlarge';               } else {                 img.style.maxWidth = '1100px';                 this.textContent = 'Shrink';               }             "             style="margin-top:5px;"           >Enlarge</button>         </div>         </div>`)[0];
+                popup_ee73b404fa80fd9b83167c415650fc11.setContent(html_b78bde097cb79388ffa563ca54939077);
+            
+        
+
+        circle_marker_4d513f84f29523ae3fd11d17d7224db3.bindPopup(popup_ee73b404fa80fd9b83167c415650fc11)
+        ;
+
+        
+    
+    
+            var circle_marker_e1fa0c90ff23939c2dc2f433a87c0ace = L.circleMarker(
+                [51.2265321, 4.4022082],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#15f4ee", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(map_4527a291c6d19799da09185ccff98677);
+        
+    
+        var popup_9f9a38a66c7e59937b869234869bd5ea = L.popup({"maxWidth": 500});
+
+        
+            
+                var html_9db83a66730f02eb24e08a3e9afdd294 = $(`<div id="html_9db83a66730f02eb24e08a3e9afdd294" style="width: 100.0%; height: 100.0%;">         <div style="text-align:center;">           <img              id="img_20"              src="https://Ablenya.github.io/Oorzaak/Antwerp%20period%202/A0445%20Figure%204.png"              style="max-width:500px; height:auto; display:block; margin:0 auto;"            />           <button              onclick="               var img = document.getElementById('img_20');               if(img.style.maxWidth === '1100px') {                 img.style.maxWidth = '500px';                 this.textContent = 'Enlarge';               } else {                 img.style.maxWidth = '1100px';                 this.textContent = 'Shrink';               }             "             style="margin-top:5px;"           >Enlarge</button>         </div>         </div>`)[0];
+                popup_9f9a38a66c7e59937b869234869bd5ea.setContent(html_9db83a66730f02eb24e08a3e9afdd294);
+            
+        
+
+        circle_marker_e1fa0c90ff23939c2dc2f433a87c0ace.bindPopup(popup_9f9a38a66c7e59937b869234869bd5ea)
+        ;
+
+        
+    
+    
+            var circle_marker_7a019d9fcdc0f0fb1b3110bb20a2e291 = L.circleMarker(
+                [51.219872, 4.4597234],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#15f4ee", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(map_4527a291c6d19799da09185ccff98677);
+        
+    
+        var popup_fe8df76540c845ada8e1c91da8670357 = L.popup({"maxWidth": 500});
+
+        
+            
+                var html_0e5b52f6dd5e64d0339e82048a2929e4 = $(`<div id="html_0e5b52f6dd5e64d0339e82048a2929e4" style="width: 100.0%; height: 100.0%;">         <div style="text-align:center;">           <img              id="img_21"              src="https://Ablenya.github.io/Oorzaak/Antwerp%20period%202/A0454%20Figure%204.png"              style="max-width:500px; height:auto; display:block; margin:0 auto;"            />           <button              onclick="               var img = document.getElementById('img_21');               if(img.style.maxWidth === '1100px') {                 img.style.maxWidth = '500px';                 this.textContent = 'Enlarge';               } else {                 img.style.maxWidth = '1100px';                 this.textContent = 'Shrink';               }             "             style="margin-top:5px;"           >Enlarge</button>         </div>         </div>`)[0];
+                popup_fe8df76540c845ada8e1c91da8670357.setContent(html_0e5b52f6dd5e64d0339e82048a2929e4);
+            
+        
+
+        circle_marker_7a019d9fcdc0f0fb1b3110bb20a2e291.bindPopup(popup_fe8df76540c845ada8e1c91da8670357)
+        ;
+
+        
+    
+    
+            var circle_marker_d19dd5a60f36fb55b0eed9c362e3c7f9 = L.circleMarker(
+                [51.1941442, 4.4817824],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#15f4ee", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(map_4527a291c6d19799da09185ccff98677);
+        
+    
+        var popup_4570ee1d3dee085777da32ff5f8b5b79 = L.popup({"maxWidth": 500});
+
+        
+            
+                var html_697ff2db02bc7cbc92bb7b43ca0de61e = $(`<div id="html_697ff2db02bc7cbc92bb7b43ca0de61e" style="width: 100.0%; height: 100.0%;">         <div style="text-align:center;">           <img              id="img_22"              src="https://Ablenya.github.io/Oorzaak/Antwerp%20period%202/A0488%20Figure%204.png"              style="max-width:500px; height:auto; display:block; margin:0 auto;"            />           <button              onclick="               var img = document.getElementById('img_22');               if(img.style.maxWidth === '1100px') {                 img.style.maxWidth = '500px';                 this.textContent = 'Enlarge';               } else {                 img.style.maxWidth = '1100px';                 this.textContent = 'Shrink';               }             "             style="margin-top:5px;"           >Enlarge</button>         </div>         </div>`)[0];
+                popup_4570ee1d3dee085777da32ff5f8b5b79.setContent(html_697ff2db02bc7cbc92bb7b43ca0de61e);
+            
+        
+
+        circle_marker_d19dd5a60f36fb55b0eed9c362e3c7f9.bindPopup(popup_4570ee1d3dee085777da32ff5f8b5b79)
+        ;
+
+        
+    
+    
+            var circle_marker_9366c8935b28a99eec99f97911c2b984 = L.circleMarker(
+                [51.1917757999999, 4.4462837],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#15f4ee", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(map_4527a291c6d19799da09185ccff98677);
+        
+    
+        var popup_f34c2c1645a778b2d3c9aabf7fa687fd = L.popup({"maxWidth": 500});
+
+        
+            
+                var html_ed0313da4e5513b763e95856fe1d225e = $(`<div id="html_ed0313da4e5513b763e95856fe1d225e" style="width: 100.0%; height: 100.0%;">         <div style="text-align:center;">           <img              id="img_23"              src="https://Ablenya.github.io/Oorzaak/Antwerp%20period%202/A0491%20Figure%204.png"              style="max-width:500px; height:auto; display:block; margin:0 auto;"            />           <button              onclick="               var img = document.getElementById('img_23');               if(img.style.maxWidth === '1100px') {                 img.style.maxWidth = '500px';                 this.textContent = 'Enlarge';               } else {                 img.style.maxWidth = '1100px';                 this.textContent = 'Shrink';               }             "             style="margin-top:5px;"           >Enlarge</button>         </div>         </div>`)[0];
+                popup_f34c2c1645a778b2d3c9aabf7fa687fd.setContent(html_ed0313da4e5513b763e95856fe1d225e);
+            
+        
+
+        circle_marker_9366c8935b28a99eec99f97911c2b984.bindPopup(popup_f34c2c1645a778b2d3c9aabf7fa687fd)
+        ;
+
+        
+    
+    
+            var circle_marker_96a99fc4a05adabc6f034f2e979ff8e8 = L.circleMarker(
+                [51.220334, 4.4418003],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#15f4ee", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(map_4527a291c6d19799da09185ccff98677);
+        
+    
+        var popup_578cb3e6f621a777acc3f2dd410b8eb2 = L.popup({"maxWidth": 500});
+
+        
+            
+                var html_3380810b684e3ab879ed36e9672cbd8f = $(`<div id="html_3380810b684e3ab879ed36e9672cbd8f" style="width: 100.0%; height: 100.0%;">         <div style="text-align:center;">           <img              id="img_24"              src="https://Ablenya.github.io/Oorzaak/Antwerp%20period%202/A0495%20Figure%204.png"              style="max-width:500px; height:auto; display:block; margin:0 auto;"            />           <button              onclick="               var img = document.getElementById('img_24');               if(img.style.maxWidth === '1100px') {                 img.style.maxWidth = '500px';                 this.textContent = 'Enlarge';               } else {                 img.style.maxWidth = '1100px';                 this.textContent = 'Shrink';               }             "             style="margin-top:5px;"           >Enlarge</button>         </div>         </div>`)[0];
+                popup_578cb3e6f621a777acc3f2dd410b8eb2.setContent(html_3380810b684e3ab879ed36e9672cbd8f);
+            
+        
+
+        circle_marker_96a99fc4a05adabc6f034f2e979ff8e8.bindPopup(popup_578cb3e6f621a777acc3f2dd410b8eb2)
+        ;
+
+        
+    
+    
+            var circle_marker_39eb182a5cc4fba670b7af23d52c4b4b = L.circleMarker(
+                [51.2197334, 4.3779436],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#15f4ee", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(map_4527a291c6d19799da09185ccff98677);
+        
+    
+        var popup_6572f6085e9427298826fe6cb02172e5 = L.popup({"maxWidth": 500});
+
+        
+            
+                var html_fa240837d8d0625d9f72cc0934575ce7 = $(`<div id="html_fa240837d8d0625d9f72cc0934575ce7" style="width: 100.0%; height: 100.0%;">         <div style="text-align:center;">           <img              id="img_25"              src="https://Ablenya.github.io/Oorzaak/Antwerp%20period%202/A0517%20Figure%204.png"              style="max-width:500px; height:auto; display:block; margin:0 auto;"            />           <button              onclick="               var img = document.getElementById('img_25');               if(img.style.maxWidth === '1100px') {                 img.style.maxWidth = '500px';                 this.textContent = 'Enlarge';               } else {                 img.style.maxWidth = '1100px';                 this.textContent = 'Shrink';               }             "             style="margin-top:5px;"           >Enlarge</button>         </div>         </div>`)[0];
+                popup_6572f6085e9427298826fe6cb02172e5.setContent(html_fa240837d8d0625d9f72cc0934575ce7);
+            
+        
+
+        circle_marker_39eb182a5cc4fba670b7af23d52c4b4b.bindPopup(popup_6572f6085e9427298826fe6cb02172e5)
+        ;
+
+        
+    
+    
+            var circle_marker_34519f42797a29a7632e45f70f01c89e = L.circleMarker(
+                [51.2254066, 4.4046609],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#15f4ee", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(map_4527a291c6d19799da09185ccff98677);
+        
+    
+        var popup_43000a78d7fa9531917f82271842b730 = L.popup({"maxWidth": 500});
+
+        
+            
+                var html_2fd957bf7312c1519adab6a6dfb8379d = $(`<div id="html_2fd957bf7312c1519adab6a6dfb8379d" style="width: 100.0%; height: 100.0%;">         <div style="text-align:center;">           <img              id="img_26"              src="https://Ablenya.github.io/Oorzaak/Antwerp%20period%202/A0529%20Figure%204.png"              style="max-width:500px; height:auto; display:block; margin:0 auto;"            />           <button              onclick="               var img = document.getElementById('img_26');               if(img.style.maxWidth === '1100px') {                 img.style.maxWidth = '500px';                 this.textContent = 'Enlarge';               } else {                 img.style.maxWidth = '1100px';                 this.textContent = 'Shrink';               }             "             style="margin-top:5px;"           >Enlarge</button>         </div>         </div>`)[0];
+                popup_43000a78d7fa9531917f82271842b730.setContent(html_2fd957bf7312c1519adab6a6dfb8379d);
+            
+        
+
+        circle_marker_34519f42797a29a7632e45f70f01c89e.bindPopup(popup_43000a78d7fa9531917f82271842b730)
+        ;
+
+        
+    
+    
+            var circle_marker_67b795c4c2d33974070a6ab759be8419 = L.circleMarker(
+                [51.2085996, 4.39804169999999],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#15f4ee", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(map_4527a291c6d19799da09185ccff98677);
+        
+    
+        var popup_12ddda8ed01699307a9b0ff0cc6bbf49 = L.popup({"maxWidth": 500});
+
+        
+            
+                var html_27fd6eb48eecf6d796dd4123b2f19365 = $(`<div id="html_27fd6eb48eecf6d796dd4123b2f19365" style="width: 100.0%; height: 100.0%;">         <div style="text-align:center;">           <img              id="img_27"              src="https://Ablenya.github.io/Oorzaak/Antwerp%20period%202/A0531%20Figure%204.png"              style="max-width:500px; height:auto; display:block; margin:0 auto;"            />           <button              onclick="               var img = document.getElementById('img_27');               if(img.style.maxWidth === '1100px') {                 img.style.maxWidth = '500px';                 this.textContent = 'Enlarge';               } else {                 img.style.maxWidth = '1100px';                 this.textContent = 'Shrink';               }             "             style="margin-top:5px;"           >Enlarge</button>         </div>         </div>`)[0];
+                popup_12ddda8ed01699307a9b0ff0cc6bbf49.setContent(html_27fd6eb48eecf6d796dd4123b2f19365);
+            
+        
+
+        circle_marker_67b795c4c2d33974070a6ab759be8419.bindPopup(popup_12ddda8ed01699307a9b0ff0cc6bbf49)
+        ;
+
+        
+    
+    
+            var circle_marker_4cf3547afd4fa0bc0fbcb67f1ae2dcfb = L.circleMarker(
+                [51.2901712, 4.4348071],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#15f4ee", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(map_4527a291c6d19799da09185ccff98677);
+        
+    
+        var popup_45b42102cd6f4e8de7dc9b2974669447 = L.popup({"maxWidth": 500});
+
+        
+            
+                var html_4061d5a348ef00d1b8f90123f56f7caf = $(`<div id="html_4061d5a348ef00d1b8f90123f56f7caf" style="width: 100.0%; height: 100.0%;">         <div style="text-align:center;">           <img              id="img_28"              src="https://Ablenya.github.io/Oorzaak/Antwerp%20period%202/A0543%20Figure%204.png"              style="max-width:500px; height:auto; display:block; margin:0 auto;"            />           <button              onclick="               var img = document.getElementById('img_28');               if(img.style.maxWidth === '1100px') {                 img.style.maxWidth = '500px';                 this.textContent = 'Enlarge';               } else {                 img.style.maxWidth = '1100px';                 this.textContent = 'Shrink';               }             "             style="margin-top:5px;"           >Enlarge</button>         </div>         </div>`)[0];
+                popup_45b42102cd6f4e8de7dc9b2974669447.setContent(html_4061d5a348ef00d1b8f90123f56f7caf);
+            
+        
+
+        circle_marker_4cf3547afd4fa0bc0fbcb67f1ae2dcfb.bindPopup(popup_45b42102cd6f4e8de7dc9b2974669447)
+        ;
+
+        
+    
+    
+            var circle_marker_380072c99a36218f3315afccb85b9de0 = L.circleMarker(
+                [51.1996219, 4.4450188],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#15f4ee", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(map_4527a291c6d19799da09185ccff98677);
+        
+    
+        var popup_4971a7932e0167f5c2cb586466e30d29 = L.popup({"maxWidth": 500});
+
+        
+            
+                var html_fb841e09fc9fb262498685fb397b19e2 = $(`<div id="html_fb841e09fc9fb262498685fb397b19e2" style="width: 100.0%; height: 100.0%;">         <div style="text-align:center;">           <img              id="img_29"              src="https://Ablenya.github.io/Oorzaak/Antwerp%20period%202/A0560%20Figure%204.png"              style="max-width:500px; height:auto; display:block; margin:0 auto;"            />           <button              onclick="               var img = document.getElementById('img_29');               if(img.style.maxWidth === '1100px') {                 img.style.maxWidth = '500px';                 this.textContent = 'Enlarge';               } else {                 img.style.maxWidth = '1100px';                 this.textContent = 'Shrink';               }             "             style="margin-top:5px;"           >Enlarge</button>         </div>         </div>`)[0];
+                popup_4971a7932e0167f5c2cb586466e30d29.setContent(html_fb841e09fc9fb262498685fb397b19e2);
+            
+        
+
+        circle_marker_380072c99a36218f3315afccb85b9de0.bindPopup(popup_4971a7932e0167f5c2cb586466e30d29)
+        ;
+
+        
+    
+    
+            var circle_marker_1e8c620303f6bdaa6644be47dc584ac6 = L.circleMarker(
+                [51.199935, 4.4704841],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#15f4ee", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(map_4527a291c6d19799da09185ccff98677);
+        
+    
+        var popup_79af002a1b75da52885111c31e444771 = L.popup({"maxWidth": 500});
+
+        
+            
+                var html_4faa7bcd963687f99cf67c024996c790 = $(`<div id="html_4faa7bcd963687f99cf67c024996c790" style="width: 100.0%; height: 100.0%;">         <div style="text-align:center;">           <img              id="img_30"              src="https://Ablenya.github.io/Oorzaak/Antwerp%20period%202/A0571%20Figure%204.png"              style="max-width:500px; height:auto; display:block; margin:0 auto;"            />           <button              onclick="               var img = document.getElementById('img_30');               if(img.style.maxWidth === '1100px') {                 img.style.maxWidth = '500px';                 this.textContent = 'Enlarge';               } else {                 img.style.maxWidth = '1100px';                 this.textContent = 'Shrink';               }             "             style="margin-top:5px;"           >Enlarge</button>         </div>         </div>`)[0];
+                popup_79af002a1b75da52885111c31e444771.setContent(html_4faa7bcd963687f99cf67c024996c790);
+            
+        
+
+        circle_marker_1e8c620303f6bdaa6644be47dc584ac6.bindPopup(popup_79af002a1b75da52885111c31e444771)
+        ;
+
+        
+    
+    
+            var circle_marker_38fe33a7d18c2ec85dcb6d5ad0512387 = L.circleMarker(
+                [51.2230013, 4.4321654],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#15f4ee", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(map_4527a291c6d19799da09185ccff98677);
+        
+    
+        var popup_61da86bb8a67470ff65032c5b2fb34bc = L.popup({"maxWidth": 500});
+
+        
+            
+                var html_4b6ce8f96f236da3a3deaae76ca1e566 = $(`<div id="html_4b6ce8f96f236da3a3deaae76ca1e566" style="width: 100.0%; height: 100.0%;">         <div style="text-align:center;">           <img              id="img_31"              src="https://Ablenya.github.io/Oorzaak/Antwerp%20period%202/A0642%20Figure%204.png"              style="max-width:500px; height:auto; display:block; margin:0 auto;"            />           <button              onclick="               var img = document.getElementById('img_31');               if(img.style.maxWidth === '1100px') {                 img.style.maxWidth = '500px';                 this.textContent = 'Enlarge';               } else {                 img.style.maxWidth = '1100px';                 this.textContent = 'Shrink';               }             "             style="margin-top:5px;"           >Enlarge</button>         </div>         </div>`)[0];
+                popup_61da86bb8a67470ff65032c5b2fb34bc.setContent(html_4b6ce8f96f236da3a3deaae76ca1e566);
+            
+        
+
+        circle_marker_38fe33a7d18c2ec85dcb6d5ad0512387.bindPopup(popup_61da86bb8a67470ff65032c5b2fb34bc)
+        ;
+
+        
+    
+    
+            var circle_marker_35e74c9f3f216c2c7ab4a9e235489449 = L.circleMarker(
+                [51.1826138, 4.3824119],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#15f4ee", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(map_4527a291c6d19799da09185ccff98677);
+        
+    
+        var popup_77c36c01122ca16180042e303735eb6f = L.popup({"maxWidth": 500});
+
+        
+            
+                var html_a4138513f65aa942b152a64f4e039c65 = $(`<div id="html_a4138513f65aa942b152a64f4e039c65" style="width: 100.0%; height: 100.0%;">         <div style="text-align:center;">           <img              id="img_32"              src="https://Ablenya.github.io/Oorzaak/Antwerp%20period%202/A0658%20Figure%204.png"              style="max-width:500px; height:auto; display:block; margin:0 auto;"            />           <button              onclick="               var img = document.getElementById('img_32');               if(img.style.maxWidth === '1100px') {                 img.style.maxWidth = '500px';                 this.textContent = 'Enlarge';               } else {                 img.style.maxWidth = '1100px';                 this.textContent = 'Shrink';               }             "             style="margin-top:5px;"           >Enlarge</button>         </div>         </div>`)[0];
+                popup_77c36c01122ca16180042e303735eb6f.setContent(html_a4138513f65aa942b152a64f4e039c65);
+            
+        
+
+        circle_marker_35e74c9f3f216c2c7ab4a9e235489449.bindPopup(popup_77c36c01122ca16180042e303735eb6f)
+        ;
+
+        
+    
+    
+            var circle_marker_56f2c32fc4f4eec9a50a68e8e801c228 = L.circleMarker(
+                [51.2797294, 4.4462692],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#15f4ee", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(map_4527a291c6d19799da09185ccff98677);
+        
+    
+        var popup_d5bed7bfcd29c806d8e10c7188eceab9 = L.popup({"maxWidth": 500});
+
+        
+            
+                var html_f7ed9820f4a5ef29ecf9b16a0b163c6d = $(`<div id="html_f7ed9820f4a5ef29ecf9b16a0b163c6d" style="width: 100.0%; height: 100.0%;">         <div style="text-align:center;">           <img              id="img_33"              src="https://Ablenya.github.io/Oorzaak/Antwerp%20period%202/A0663%20Figure%204.png"              style="max-width:500px; height:auto; display:block; margin:0 auto;"            />           <button              onclick="               var img = document.getElementById('img_33');               if(img.style.maxWidth === '1100px') {                 img.style.maxWidth = '500px';                 this.textContent = 'Enlarge';               } else {                 img.style.maxWidth = '1100px';                 this.textContent = 'Shrink';               }             "             style="margin-top:5px;"           >Enlarge</button>         </div>         </div>`)[0];
+                popup_d5bed7bfcd29c806d8e10c7188eceab9.setContent(html_f7ed9820f4a5ef29ecf9b16a0b163c6d);
+            
+        
+
+        circle_marker_56f2c32fc4f4eec9a50a68e8e801c228.bindPopup(popup_d5bed7bfcd29c806d8e10c7188eceab9)
+        ;
+
+        
+    
+    
+            var circle_marker_026320519e41d0bdb9145d1af2de2c37 = L.circleMarker(
+                [51.192113, 4.4334166],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#15f4ee", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(map_4527a291c6d19799da09185ccff98677);
+        
+    
+        var popup_ff01eea1440ff0a0eecb8fb9dfdd3bbc = L.popup({"maxWidth": 500});
+
+        
+            
+                var html_74994efe22f2e06a9b518a4e829cd39e = $(`<div id="html_74994efe22f2e06a9b518a4e829cd39e" style="width: 100.0%; height: 100.0%;">         <div style="text-align:center;">           <img              id="img_34"              src="https://Ablenya.github.io/Oorzaak/Antwerp%20period%202/A0701%20Figure%204.png"              style="max-width:500px; height:auto; display:block; margin:0 auto;"            />           <button              onclick="               var img = document.getElementById('img_34');               if(img.style.maxWidth === '1100px') {                 img.style.maxWidth = '500px';                 this.textContent = 'Enlarge';               } else {                 img.style.maxWidth = '1100px';                 this.textContent = 'Shrink';               }             "             style="margin-top:5px;"           >Enlarge</button>         </div>         </div>`)[0];
+                popup_ff01eea1440ff0a0eecb8fb9dfdd3bbc.setContent(html_74994efe22f2e06a9b518a4e829cd39e);
+            
+        
+
+        circle_marker_026320519e41d0bdb9145d1af2de2c37.bindPopup(popup_ff01eea1440ff0a0eecb8fb9dfdd3bbc)
+        ;
+
+        
+    
+    
+            var circle_marker_5616697610eed32c700fa2c6ea8c7520 = L.circleMarker(
+                [51.2113072, 4.3988434],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#15f4ee", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(map_4527a291c6d19799da09185ccff98677);
+        
+    
+        var popup_62b8c96d7a1f90b5812fe135258fee2e = L.popup({"maxWidth": 500});
+
+        
+            
+                var html_a096a619ca6bfd95ff57a76030f59189 = $(`<div id="html_a096a619ca6bfd95ff57a76030f59189" style="width: 100.0%; height: 100.0%;">         <div style="text-align:center;">           <img              id="img_35"              src="https://Ablenya.github.io/Oorzaak/Antwerp%20period%202/A0724%20Figure%204.png"              style="max-width:500px; height:auto; display:block; margin:0 auto;"            />           <button              onclick="               var img = document.getElementById('img_35');               if(img.style.maxWidth === '1100px') {                 img.style.maxWidth = '500px';                 this.textContent = 'Enlarge';               } else {                 img.style.maxWidth = '1100px';                 this.textContent = 'Shrink';               }             "             style="margin-top:5px;"           >Enlarge</button>         </div>         </div>`)[0];
+                popup_62b8c96d7a1f90b5812fe135258fee2e.setContent(html_a096a619ca6bfd95ff57a76030f59189);
+            
+        
+
+        circle_marker_5616697610eed32c700fa2c6ea8c7520.bindPopup(popup_62b8c96d7a1f90b5812fe135258fee2e)
+        ;
+
+        
+    
+    
+            var circle_marker_14089f3e31ef5373409e586617028679 = L.circleMarker(
+                [51.2172336999999, 4.3966932],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#15f4ee", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(map_4527a291c6d19799da09185ccff98677);
+        
+    
+        var popup_b27555e7f30d4c4def444ef880a10f33 = L.popup({"maxWidth": 500});
+
+        
+            
+                var html_3ac4cae0adae47ccec56107ac8b9e1ae = $(`<div id="html_3ac4cae0adae47ccec56107ac8b9e1ae" style="width: 100.0%; height: 100.0%;">         <div style="text-align:center;">           <img              id="img_36"              src="https://Ablenya.github.io/Oorzaak/Antwerp%20period%202/A0732%20Figure%204.png"              style="max-width:500px; height:auto; display:block; margin:0 auto;"            />           <button              onclick="               var img = document.getElementById('img_36');               if(img.style.maxWidth === '1100px') {                 img.style.maxWidth = '500px';                 this.textContent = 'Enlarge';               } else {                 img.style.maxWidth = '1100px';                 this.textContent = 'Shrink';               }             "             style="margin-top:5px;"           >Enlarge</button>         </div>         </div>`)[0];
+                popup_b27555e7f30d4c4def444ef880a10f33.setContent(html_3ac4cae0adae47ccec56107ac8b9e1ae);
+            
+        
+
+        circle_marker_14089f3e31ef5373409e586617028679.bindPopup(popup_b27555e7f30d4c4def444ef880a10f33)
+        ;
+
+        
+    
+    
+            var circle_marker_fda575a63d373c133fe30a76e5d50171 = L.circleMarker(
+                [51.1986526, 4.43013989999999],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#15f4ee", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(map_4527a291c6d19799da09185ccff98677);
+        
+    
+        var popup_b003fd6b6aae036481e5b03c712fd0b8 = L.popup({"maxWidth": 500});
+
+        
+            
+                var html_a133fddb70daa9c496075880a54f79ac = $(`<div id="html_a133fddb70daa9c496075880a54f79ac" style="width: 100.0%; height: 100.0%;">         <div style="text-align:center;">           <img              id="img_37"              src="https://Ablenya.github.io/Oorzaak/Antwerp%20period%202/A0737%20Figure%204.png"              style="max-width:500px; height:auto; display:block; margin:0 auto;"            />           <button              onclick="               var img = document.getElementById('img_37');               if(img.style.maxWidth === '1100px') {                 img.style.maxWidth = '500px';                 this.textContent = 'Enlarge';               } else {                 img.style.maxWidth = '1100px';                 this.textContent = 'Shrink';               }             "             style="margin-top:5px;"           >Enlarge</button>         </div>         </div>`)[0];
+                popup_b003fd6b6aae036481e5b03c712fd0b8.setContent(html_a133fddb70daa9c496075880a54f79ac);
+            
+        
+
+        circle_marker_fda575a63d373c133fe30a76e5d50171.bindPopup(popup_b003fd6b6aae036481e5b03c712fd0b8)
+        ;
+
+        
+    
+    
+            var circle_marker_5d446d0eefe59d1621f5900784fec062 = L.circleMarker(
+                [51.2086765, 4.4321049],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#15f4ee", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(map_4527a291c6d19799da09185ccff98677);
+        
+    
+        var popup_ca7e9a072d9408768707183da2445614 = L.popup({"maxWidth": 500});
+
+        
+            
+                var html_ce0ccf6b5b0327712dfc937bc15388c8 = $(`<div id="html_ce0ccf6b5b0327712dfc937bc15388c8" style="width: 100.0%; height: 100.0%;">         <div style="text-align:center;">           <img              id="img_38"              src="https://Ablenya.github.io/Oorzaak/Antwerp%20period%202/A0755%20Figure%204.png"              style="max-width:500px; height:auto; display:block; margin:0 auto;"            />           <button              onclick="               var img = document.getElementById('img_38');               if(img.style.maxWidth === '1100px') {                 img.style.maxWidth = '500px';                 this.textContent = 'Enlarge';               } else {                 img.style.maxWidth = '1100px';                 this.textContent = 'Shrink';               }             "             style="margin-top:5px;"           >Enlarge</button>         </div>         </div>`)[0];
+                popup_ca7e9a072d9408768707183da2445614.setContent(html_ce0ccf6b5b0327712dfc937bc15388c8);
+            
+        
+
+        circle_marker_5d446d0eefe59d1621f5900784fec062.bindPopup(popup_ca7e9a072d9408768707183da2445614)
+        ;
+
+        
+    
+    
+            var circle_marker_32bb787ef0a4ad311a9b721385dbb52b = L.circleMarker(
+                [51.1983536, 4.41644399999999],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#15f4ee", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(map_4527a291c6d19799da09185ccff98677);
+        
+    
+        var popup_e802d4c176d235b0a83af1f4adafe0e2 = L.popup({"maxWidth": 500});
+
+        
+            
+                var html_17bf683d2b84e10e9527d3976aecf85d = $(`<div id="html_17bf683d2b84e10e9527d3976aecf85d" style="width: 100.0%; height: 100.0%;">         <div style="text-align:center;">           <img              id="img_39"              src="https://Ablenya.github.io/Oorzaak/Antwerp%20period%202/A0759%20Figure%204.png"              style="max-width:500px; height:auto; display:block; margin:0 auto;"            />           <button              onclick="               var img = document.getElementById('img_39');               if(img.style.maxWidth === '1100px') {                 img.style.maxWidth = '500px';                 this.textContent = 'Enlarge';               } else {                 img.style.maxWidth = '1100px';                 this.textContent = 'Shrink';               }             "             style="margin-top:5px;"           >Enlarge</button>         </div>         </div>`)[0];
+                popup_e802d4c176d235b0a83af1f4adafe0e2.setContent(html_17bf683d2b84e10e9527d3976aecf85d);
+            
+        
+
+        circle_marker_32bb787ef0a4ad311a9b721385dbb52b.bindPopup(popup_e802d4c176d235b0a83af1f4adafe0e2)
+        ;
+
+        
+    
+    
+            var circle_marker_75396cb9160124f1f3052b92497676f7 = L.circleMarker(
+                [51.2503842, 4.448203],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#15f4ee", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(map_4527a291c6d19799da09185ccff98677);
+        
+    
+        var popup_8c1cef895984afd72168c78befe3b263 = L.popup({"maxWidth": 500});
+
+        
+            
+                var html_b169e9b0c6894a7af3c0d121c1348790 = $(`<div id="html_b169e9b0c6894a7af3c0d121c1348790" style="width: 100.0%; height: 100.0%;">         <div style="text-align:center;">           <img              id="img_40"              src="https://Ablenya.github.io/Oorzaak/Antwerp%20period%202/A0782%20Figure%204.png"              style="max-width:500px; height:auto; display:block; margin:0 auto;"            />           <button              onclick="               var img = document.getElementById('img_40');               if(img.style.maxWidth === '1100px') {                 img.style.maxWidth = '500px';                 this.textContent = 'Enlarge';               } else {                 img.style.maxWidth = '1100px';                 this.textContent = 'Shrink';               }             "             style="margin-top:5px;"           >Enlarge</button>         </div>         </div>`)[0];
+                popup_8c1cef895984afd72168c78befe3b263.setContent(html_b169e9b0c6894a7af3c0d121c1348790);
+            
+        
+
+        circle_marker_75396cb9160124f1f3052b92497676f7.bindPopup(popup_8c1cef895984afd72168c78befe3b263)
+        ;
+
+        
+    
+    
+            var circle_marker_a0f188c04881a6142778e3ebc096a7f7 = L.circleMarker(
+                [51.1851972, 4.3653708],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#15f4ee", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(map_4527a291c6d19799da09185ccff98677);
+        
+    
+        var popup_c3969f207462bd7ffa69aaf919e62a6a = L.popup({"maxWidth": 500});
+
+        
+            
+                var html_85ac6c13f16bf9b3f693f789fe16daca = $(`<div id="html_85ac6c13f16bf9b3f693f789fe16daca" style="width: 100.0%; height: 100.0%;">         <div style="text-align:center;">           <img              id="img_41"              src="https://Ablenya.github.io/Oorzaak/Antwerp%20period%202/A0825%20Figure%204.png"              style="max-width:500px; height:auto; display:block; margin:0 auto;"            />           <button              onclick="               var img = document.getElementById('img_41');               if(img.style.maxWidth === '1100px') {                 img.style.maxWidth = '500px';                 this.textContent = 'Enlarge';               } else {                 img.style.maxWidth = '1100px';                 this.textContent = 'Shrink';               }             "             style="margin-top:5px;"           >Enlarge</button>         </div>         </div>`)[0];
+                popup_c3969f207462bd7ffa69aaf919e62a6a.setContent(html_85ac6c13f16bf9b3f693f789fe16daca);
+            
+        
+
+        circle_marker_a0f188c04881a6142778e3ebc096a7f7.bindPopup(popup_c3969f207462bd7ffa69aaf919e62a6a)
+        ;
+
+        
+    
+    
+            var circle_marker_0c164f249875c0f9e333558ba45aa918 = L.circleMarker(
+                [51.2790409, 4.42083529999999],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#15f4ee", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(map_4527a291c6d19799da09185ccff98677);
+        
+    
+        var popup_039bd548d7994c901d58c3e63802e026 = L.popup({"maxWidth": 500});
+
+        
+            
+                var html_eb58b08ae474b34529eb74bbd635efd7 = $(`<div id="html_eb58b08ae474b34529eb74bbd635efd7" style="width: 100.0%; height: 100.0%;">         <div style="text-align:center;">           <img              id="img_42"              src="https://Ablenya.github.io/Oorzaak/Antwerp%20period%202/A0848%20Figure%204.png"              style="max-width:500px; height:auto; display:block; margin:0 auto;"            />           <button              onclick="               var img = document.getElementById('img_42');               if(img.style.maxWidth === '1100px') {                 img.style.maxWidth = '500px';                 this.textContent = 'Enlarge';               } else {                 img.style.maxWidth = '1100px';                 this.textContent = 'Shrink';               }             "             style="margin-top:5px;"           >Enlarge</button>         </div>         </div>`)[0];
+                popup_039bd548d7994c901d58c3e63802e026.setContent(html_eb58b08ae474b34529eb74bbd635efd7);
+            
+        
+
+        circle_marker_0c164f249875c0f9e333558ba45aa918.bindPopup(popup_039bd548d7994c901d58c3e63802e026)
+        ;
+
+        
+    
+    
+            var circle_marker_59ad09ca8227804dbabc6f3cabff8bac = L.circleMarker(
+                [51.1945519999999, 4.4639817],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#15f4ee", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(map_4527a291c6d19799da09185ccff98677);
+        
+    
+        var popup_9fe57c2412a0f9b8be57813200619cf8 = L.popup({"maxWidth": 500});
+
+        
+            
+                var html_a32e96ed29de1b76b86fdb2c7fe0384b = $(`<div id="html_a32e96ed29de1b76b86fdb2c7fe0384b" style="width: 100.0%; height: 100.0%;">         <div style="text-align:center;">           <img              id="img_43"              src="https://Ablenya.github.io/Oorzaak/Antwerp%20period%202/A0854%20Figure%204.png"              style="max-width:500px; height:auto; display:block; margin:0 auto;"            />           <button              onclick="               var img = document.getElementById('img_43');               if(img.style.maxWidth === '1100px') {                 img.style.maxWidth = '500px';                 this.textContent = 'Enlarge';               } else {                 img.style.maxWidth = '1100px';                 this.textContent = 'Shrink';               }             "             style="margin-top:5px;"           >Enlarge</button>         </div>         </div>`)[0];
+                popup_9fe57c2412a0f9b8be57813200619cf8.setContent(html_a32e96ed29de1b76b86fdb2c7fe0384b);
+            
+        
+
+        circle_marker_59ad09ca8227804dbabc6f3cabff8bac.bindPopup(popup_9fe57c2412a0f9b8be57813200619cf8)
+        ;
+
+        
+    
+    
+            var circle_marker_573624d2a6aa85ff3823e9cf9ddbcfc6 = L.circleMarker(
+                [51.1988385, 4.3945025],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#15f4ee", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(map_4527a291c6d19799da09185ccff98677);
+        
+    
+        var popup_3669a352c3a8f96ad17509ad7a800a98 = L.popup({"maxWidth": 500});
+
+        
+            
+                var html_6ba3927184a29eb8da9541b619595884 = $(`<div id="html_6ba3927184a29eb8da9541b619595884" style="width: 100.0%; height: 100.0%;">         <div style="text-align:center;">           <img              id="img_44"              src="https://Ablenya.github.io/Oorzaak/Antwerp%20period%202/A0858%20Figure%204.png"              style="max-width:500px; height:auto; display:block; margin:0 auto;"            />           <button              onclick="               var img = document.getElementById('img_44');               if(img.style.maxWidth === '1100px') {                 img.style.maxWidth = '500px';                 this.textContent = 'Enlarge';               } else {                 img.style.maxWidth = '1100px';                 this.textContent = 'Shrink';               }             "             style="margin-top:5px;"           >Enlarge</button>         </div>         </div>`)[0];
+                popup_3669a352c3a8f96ad17509ad7a800a98.setContent(html_6ba3927184a29eb8da9541b619595884);
+            
+        
+
+        circle_marker_573624d2a6aa85ff3823e9cf9ddbcfc6.bindPopup(popup_3669a352c3a8f96ad17509ad7a800a98)
+        ;
+
+        
+    
+    
+            var circle_marker_bf479254ae4f2d8daca261fe1fe3e1f2 = L.circleMarker(
+                [51.2284397, 4.4706424],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#15f4ee", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(map_4527a291c6d19799da09185ccff98677);
+        
+    
+        var popup_e799ac5e6f00b346dfc7c7d81cdfc565 = L.popup({"maxWidth": 500});
+
+        
+            
+                var html_0f44e8fcc984fd16ecd1961d48e1a910 = $(`<div id="html_0f44e8fcc984fd16ecd1961d48e1a910" style="width: 100.0%; height: 100.0%;">         <div style="text-align:center;">           <img              id="img_45"              src="https://Ablenya.github.io/Oorzaak/Antwerp%20period%202/A0888%20Figure%204.png"              style="max-width:500px; height:auto; display:block; margin:0 auto;"            />           <button              onclick="               var img = document.getElementById('img_45');               if(img.style.maxWidth === '1100px') {                 img.style.maxWidth = '500px';                 this.textContent = 'Enlarge';               } else {                 img.style.maxWidth = '1100px';                 this.textContent = 'Shrink';               }             "             style="margin-top:5px;"           >Enlarge</button>         </div>         </div>`)[0];
+                popup_e799ac5e6f00b346dfc7c7d81cdfc565.setContent(html_0f44e8fcc984fd16ecd1961d48e1a910);
+            
+        
+
+        circle_marker_bf479254ae4f2d8daca261fe1fe3e1f2.bindPopup(popup_e799ac5e6f00b346dfc7c7d81cdfc565)
+        ;
+
+        
+    
+    
+            var circle_marker_7112f2ba1e65d599e60c39bd15da6e55 = L.circleMarker(
+                [51.1843891, 4.4419993],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#15f4ee", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(map_4527a291c6d19799da09185ccff98677);
+        
+    
+        var popup_577a27427a98e13787119cd62d412f70 = L.popup({"maxWidth": 500});
+
+        
+            
+                var html_27ff8dbeef0b64d6dbd3b4ae85214e25 = $(`<div id="html_27ff8dbeef0b64d6dbd3b4ae85214e25" style="width: 100.0%; height: 100.0%;">         <div style="text-align:center;">           <img              id="img_46"              src="https://Ablenya.github.io/Oorzaak/Antwerp%20period%202/A0894%20Figure%204.png"              style="max-width:500px; height:auto; display:block; margin:0 auto;"            />           <button              onclick="               var img = document.getElementById('img_46');               if(img.style.maxWidth === '1100px') {                 img.style.maxWidth = '500px';                 this.textContent = 'Enlarge';               } else {                 img.style.maxWidth = '1100px';                 this.textContent = 'Shrink';               }             "             style="margin-top:5px;"           >Enlarge</button>         </div>         </div>`)[0];
+                popup_577a27427a98e13787119cd62d412f70.setContent(html_27ff8dbeef0b64d6dbd3b4ae85214e25);
+            
+        
+
+        circle_marker_7112f2ba1e65d599e60c39bd15da6e55.bindPopup(popup_577a27427a98e13787119cd62d412f70)
+        ;
+
+        
+    
+    
+            var circle_marker_472a6f98b98748f56d597fb8b409d327 = L.circleMarker(
+                [51.2010172, 4.3907475],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#15f4ee", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(map_4527a291c6d19799da09185ccff98677);
+        
+    
+        var popup_5a9f3b013ef34ef40caedb28ec373ac6 = L.popup({"maxWidth": 500});
+
+        
+            
+                var html_993a5f170d423be63f6bec2a59b0517b = $(`<div id="html_993a5f170d423be63f6bec2a59b0517b" style="width: 100.0%; height: 100.0%;">         <div style="text-align:center;">           <img              id="img_47"              src="https://Ablenya.github.io/Oorzaak/Antwerp%20period%202/A0934%20Figure%204.png"              style="max-width:500px; height:auto; display:block; margin:0 auto;"            />           <button              onclick="               var img = document.getElementById('img_47');               if(img.style.maxWidth === '1100px') {                 img.style.maxWidth = '500px';                 this.textContent = 'Enlarge';               } else {                 img.style.maxWidth = '1100px';                 this.textContent = 'Shrink';               }             "             style="margin-top:5px;"           >Enlarge</button>         </div>         </div>`)[0];
+                popup_5a9f3b013ef34ef40caedb28ec373ac6.setContent(html_993a5f170d423be63f6bec2a59b0517b);
+            
+        
+
+        circle_marker_472a6f98b98748f56d597fb8b409d327.bindPopup(popup_5a9f3b013ef34ef40caedb28ec373ac6)
+        ;
+
+        
+    
+    
+            var circle_marker_b983fc0301067cc0f8e409cc83f1018d = L.circleMarker(
+                [51.2010555, 4.47347809999999],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#15f4ee", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(map_4527a291c6d19799da09185ccff98677);
+        
+    
+        var popup_9d1558f7b7262ff43c006471f0b01aba = L.popup({"maxWidth": 500});
+
+        
+            
+                var html_8642063c2dee91f72759154bb49c57fb = $(`<div id="html_8642063c2dee91f72759154bb49c57fb" style="width: 100.0%; height: 100.0%;">         <div style="text-align:center;">           <img              id="img_48"              src="https://Ablenya.github.io/Oorzaak/Antwerp%20period%202/A0936%20Figure%204.png"              style="max-width:500px; height:auto; display:block; margin:0 auto;"            />           <button              onclick="               var img = document.getElementById('img_48');               if(img.style.maxWidth === '1100px') {                 img.style.maxWidth = '500px';                 this.textContent = 'Enlarge';               } else {                 img.style.maxWidth = '1100px';                 this.textContent = 'Shrink';               }             "             style="margin-top:5px;"           >Enlarge</button>         </div>         </div>`)[0];
+                popup_9d1558f7b7262ff43c006471f0b01aba.setContent(html_8642063c2dee91f72759154bb49c57fb);
+            
+        
+
+        circle_marker_b983fc0301067cc0f8e409cc83f1018d.bindPopup(popup_9d1558f7b7262ff43c006471f0b01aba)
+        ;
+
+        
+    
+    
+            var circle_marker_9f0c975510fb0e1da362923e28485cb6 = L.circleMarker(
+                [51.257956, 4.4362243],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#15f4ee", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(map_4527a291c6d19799da09185ccff98677);
+        
+    
+        var popup_4890d97ea50a462f68597c7580b18605 = L.popup({"maxWidth": 500});
+
+        
+            
+                var html_b8941a7afb10c8538d9770e3c950f711 = $(`<div id="html_b8941a7afb10c8538d9770e3c950f711" style="width: 100.0%; height: 100.0%;">         <div style="text-align:center;">           <img              id="img_49"              src="https://Ablenya.github.io/Oorzaak/Antwerp%20period%202/A0939%20Figure%204.png"              style="max-width:500px; height:auto; display:block; margin:0 auto;"            />           <button              onclick="               var img = document.getElementById('img_49');               if(img.style.maxWidth === '1100px') {                 img.style.maxWidth = '500px';                 this.textContent = 'Enlarge';               } else {                 img.style.maxWidth = '1100px';                 this.textContent = 'Shrink';               }             "             style="margin-top:5px;"           >Enlarge</button>         </div>         </div>`)[0];
+                popup_4890d97ea50a462f68597c7580b18605.setContent(html_b8941a7afb10c8538d9770e3c950f711);
+            
+        
+
+        circle_marker_9f0c975510fb0e1da362923e28485cb6.bindPopup(popup_4890d97ea50a462f68597c7580b18605)
+        ;
+
+        
+    
+    
+            var circle_marker_cef95b5a009be6e2726724c6490c92a9 = L.circleMarker(
+                [51.2271291, 4.4590077],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#15f4ee", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(map_4527a291c6d19799da09185ccff98677);
+        
+    
+        var popup_2a20b2ed3a5ac35cbd911ade06ad09f7 = L.popup({"maxWidth": 500});
+
+        
+            
+                var html_f529870c594bd649e89c09e247ae1938 = $(`<div id="html_f529870c594bd649e89c09e247ae1938" style="width: 100.0%; height: 100.0%;">         <div style="text-align:center;">           <img              id="img_50"              src="https://Ablenya.github.io/Oorzaak/Antwerp%20period%202/A0954%20Figure%204.png"              style="max-width:500px; height:auto; display:block; margin:0 auto;"            />           <button              onclick="               var img = document.getElementById('img_50');               if(img.style.maxWidth === '1100px') {                 img.style.maxWidth = '500px';                 this.textContent = 'Enlarge';               } else {                 img.style.maxWidth = '1100px';                 this.textContent = 'Shrink';               }             "             style="margin-top:5px;"           >Enlarge</button>         </div>         </div>`)[0];
+                popup_2a20b2ed3a5ac35cbd911ade06ad09f7.setContent(html_f529870c594bd649e89c09e247ae1938);
+            
+        
+
+        circle_marker_cef95b5a009be6e2726724c6490c92a9.bindPopup(popup_2a20b2ed3a5ac35cbd911ade06ad09f7)
+        ;
+
+        
+    
+    
+            var circle_marker_a1f8650c40ff86bbb74ff48160d9d8c3 = L.circleMarker(
+                [51.2108098, 4.4501596],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#15f4ee", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(map_4527a291c6d19799da09185ccff98677);
+        
+    
+        var popup_d89c2c8dea8b2799a709fbce788b8c5c = L.popup({"maxWidth": 500});
+
+        
+            
+                var html_1ddb80490a423a2b96d1b71214299ac3 = $(`<div id="html_1ddb80490a423a2b96d1b71214299ac3" style="width: 100.0%; height: 100.0%;">         <div style="text-align:center;">           <img              id="img_51"              src="https://Ablenya.github.io/Oorzaak/Antwerp%20period%202/A0956%20Figure%204.png"              style="max-width:500px; height:auto; display:block; margin:0 auto;"            />           <button              onclick="               var img = document.getElementById('img_51');               if(img.style.maxWidth === '1100px') {                 img.style.maxWidth = '500px';                 this.textContent = 'Enlarge';               } else {                 img.style.maxWidth = '1100px';                 this.textContent = 'Shrink';               }             "             style="margin-top:5px;"           >Enlarge</button>         </div>         </div>`)[0];
+                popup_d89c2c8dea8b2799a709fbce788b8c5c.setContent(html_1ddb80490a423a2b96d1b71214299ac3);
+            
+        
+
+        circle_marker_a1f8650c40ff86bbb74ff48160d9d8c3.bindPopup(popup_d89c2c8dea8b2799a709fbce788b8c5c)
+        ;
+
+        
+    
+    
+            var circle_marker_f17b5713a87143a16c42643c0a1db892 = L.circleMarker(
+                [51.2319630999999, 4.4246003],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#15f4ee", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(map_4527a291c6d19799da09185ccff98677);
+        
+    
+        var popup_7556b3027b63678ac2f359c798353d4f = L.popup({"maxWidth": 500});
+
+        
+            
+                var html_757429521faa6a8cb0b1dabc316a369e = $(`<div id="html_757429521faa6a8cb0b1dabc316a369e" style="width: 100.0%; height: 100.0%;">         <div style="text-align:center;">           <img              id="img_52"              src="https://Ablenya.github.io/Oorzaak/Antwerp%20period%202/A0992%20Figure%204.png"              style="max-width:500px; height:auto; display:block; margin:0 auto;"            />           <button              onclick="               var img = document.getElementById('img_52');               if(img.style.maxWidth === '1100px') {                 img.style.maxWidth = '500px';                 this.textContent = 'Enlarge';               } else {                 img.style.maxWidth = '1100px';                 this.textContent = 'Shrink';               }             "             style="margin-top:5px;"           >Enlarge</button>         </div>         </div>`)[0];
+                popup_7556b3027b63678ac2f359c798353d4f.setContent(html_757429521faa6a8cb0b1dabc316a369e);
+            
+        
+
+        circle_marker_f17b5713a87143a16c42643c0a1db892.bindPopup(popup_7556b3027b63678ac2f359c798353d4f)
+        ;
+
+        
+    
+    
+            var circle_marker_fec108c54d9af448b634dff5d721f221 = L.circleMarker(
+                [51.2268121, 4.4084683],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#15f4ee", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(map_4527a291c6d19799da09185ccff98677);
+        
+    
+        var popup_e24576f06bc45c1cca95b52b00afb7e9 = L.popup({"maxWidth": 500});
+
+        
+            
+                var html_028c8329472decf33fc2c65c55cc62f2 = $(`<div id="html_028c8329472decf33fc2c65c55cc62f2" style="width: 100.0%; height: 100.0%;">         <div style="text-align:center;">           <img              id="img_53"              src="https://Ablenya.github.io/Oorzaak/Antwerp%20period%202/A0994%20Figure%204.png"              style="max-width:500px; height:auto; display:block; margin:0 auto;"            />           <button              onclick="               var img = document.getElementById('img_53');               if(img.style.maxWidth === '1100px') {                 img.style.maxWidth = '500px';                 this.textContent = 'Enlarge';               } else {                 img.style.maxWidth = '1100px';                 this.textContent = 'Shrink';               }             "             style="margin-top:5px;"           >Enlarge</button>         </div>         </div>`)[0];
+                popup_e24576f06bc45c1cca95b52b00afb7e9.setContent(html_028c8329472decf33fc2c65c55cc62f2);
+            
+        
+
+        circle_marker_fec108c54d9af448b634dff5d721f221.bindPopup(popup_e24576f06bc45c1cca95b52b00afb7e9)
+        ;
+
+        
+    
+    
+            var circle_marker_7b0186b251fc3450f38792e1f5ee7592 = L.circleMarker(
+                [51.2034570999999, 4.4498348],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#15f4ee", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(map_4527a291c6d19799da09185ccff98677);
+        
+    
+        var popup_d2d393e4b52052df0b721836bbd92be8 = L.popup({"maxWidth": 500});
+
+        
+            
+                var html_fb05d4a7d2e2d2e6403fee475e827705 = $(`<div id="html_fb05d4a7d2e2d2e6403fee475e827705" style="width: 100.0%; height: 100.0%;">         <div style="text-align:center;">           <img              id="img_54"              src="https://Ablenya.github.io/Oorzaak/Antwerp%20period%202/A1014%20Figure%204.png"              style="max-width:500px; height:auto; display:block; margin:0 auto;"            />           <button              onclick="               var img = document.getElementById('img_54');               if(img.style.maxWidth === '1100px') {                 img.style.maxWidth = '500px';                 this.textContent = 'Enlarge';               } else {                 img.style.maxWidth = '1100px';                 this.textContent = 'Shrink';               }             "             style="margin-top:5px;"           >Enlarge</button>         </div>         </div>`)[0];
+                popup_d2d393e4b52052df0b721836bbd92be8.setContent(html_fb05d4a7d2e2d2e6403fee475e827705);
+            
+        
+
+        circle_marker_7b0186b251fc3450f38792e1f5ee7592.bindPopup(popup_d2d393e4b52052df0b721836bbd92be8)
+        ;
+
+        
+    
+    
+            var circle_marker_6494d7e8b21fa69c05f04c3c0af56a2a = L.circleMarker(
+                [51.2301559, 4.4292397],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#15f4ee", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(map_4527a291c6d19799da09185ccff98677);
+        
+    
+        var popup_7619a6f7833365054024b929b7bb35db = L.popup({"maxWidth": 500});
+
+        
+            
+                var html_550402d36b6487120da8cbfa8f94dadd = $(`<div id="html_550402d36b6487120da8cbfa8f94dadd" style="width: 100.0%; height: 100.0%;">         <div style="text-align:center;">           <img              id="img_55"              src="https://Ablenya.github.io/Oorzaak/Antwerp%20period%202/A1022%20Figure%204.png"              style="max-width:500px; height:auto; display:block; margin:0 auto;"            />           <button              onclick="               var img = document.getElementById('img_55');               if(img.style.maxWidth === '1100px') {                 img.style.maxWidth = '500px';                 this.textContent = 'Enlarge';               } else {                 img.style.maxWidth = '1100px';                 this.textContent = 'Shrink';               }             "             style="margin-top:5px;"           >Enlarge</button>         </div>         </div>`)[0];
+                popup_7619a6f7833365054024b929b7bb35db.setContent(html_550402d36b6487120da8cbfa8f94dadd);
+            
+        
+
+        circle_marker_6494d7e8b21fa69c05f04c3c0af56a2a.bindPopup(popup_7619a6f7833365054024b929b7bb35db)
+        ;
+
+        
+    
+    
+            var circle_marker_3776f1625def6efe82fb3ddca84ebf65 = L.circleMarker(
+                [51.2204943, 4.4103172],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#15f4ee", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(map_4527a291c6d19799da09185ccff98677);
+        
+    
+        var popup_514d33e0de2d0c9cfee556b5cbaa380b = L.popup({"maxWidth": 500});
+
+        
+            
+                var html_87a007064bfe30f22f919d39b7824304 = $(`<div id="html_87a007064bfe30f22f919d39b7824304" style="width: 100.0%; height: 100.0%;">         <div style="text-align:center;">           <img              id="img_56"              src="https://Ablenya.github.io/Oorzaak/Antwerp%20period%202/A1038%20Figure%204.png"              style="max-width:500px; height:auto; display:block; margin:0 auto;"            />           <button              onclick="               var img = document.getElementById('img_56');               if(img.style.maxWidth === '1100px') {                 img.style.maxWidth = '500px';                 this.textContent = 'Enlarge';               } else {                 img.style.maxWidth = '1100px';                 this.textContent = 'Shrink';               }             "             style="margin-top:5px;"           >Enlarge</button>         </div>         </div>`)[0];
+                popup_514d33e0de2d0c9cfee556b5cbaa380b.setContent(html_87a007064bfe30f22f919d39b7824304);
+            
+        
+
+        circle_marker_3776f1625def6efe82fb3ddca84ebf65.bindPopup(popup_514d33e0de2d0c9cfee556b5cbaa380b)
+        ;
+
+        
+    
+    
+            var circle_marker_cd66d4f0ca92a5e9ddc8a6a1dca1c56d = L.circleMarker(
+                [51.2318013999999, 4.3829079],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#15f4ee", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(map_4527a291c6d19799da09185ccff98677);
+        
+    
+        var popup_0859fe8b71ee65103abbcf7d1e507132 = L.popup({"maxWidth": 500});
+
+        
+            
+                var html_6d119e24bafc9b23fbd6dcedbfb2a58e = $(`<div id="html_6d119e24bafc9b23fbd6dcedbfb2a58e" style="width: 100.0%; height: 100.0%;">         <div style="text-align:center;">           <img              id="img_57"              src="https://Ablenya.github.io/Oorzaak/Antwerp%20period%202/A1073%20Figure%204.png"              style="max-width:500px; height:auto; display:block; margin:0 auto;"            />           <button              onclick="               var img = document.getElementById('img_57');               if(img.style.maxWidth === '1100px') {                 img.style.maxWidth = '500px';                 this.textContent = 'Enlarge';               } else {                 img.style.maxWidth = '1100px';                 this.textContent = 'Shrink';               }             "             style="margin-top:5px;"           >Enlarge</button>         </div>         </div>`)[0];
+                popup_0859fe8b71ee65103abbcf7d1e507132.setContent(html_6d119e24bafc9b23fbd6dcedbfb2a58e);
+            
+        
+
+        circle_marker_cd66d4f0ca92a5e9ddc8a6a1dca1c56d.bindPopup(popup_0859fe8b71ee65103abbcf7d1e507132)
+        ;
+
+        
+    
+    
+            var circle_marker_4c7c3586c571a17f31d38cc5e0a2956f = L.circleMarker(
+                [51.2010582, 4.4668975],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#15f4ee", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(map_4527a291c6d19799da09185ccff98677);
+        
+    
+        var popup_7aee47e23800236705b3fd0f226d0180 = L.popup({"maxWidth": 500});
+
+        
+            
+                var html_3d17e1370a9e8416e6929295fafd26ca = $(`<div id="html_3d17e1370a9e8416e6929295fafd26ca" style="width: 100.0%; height: 100.0%;">         <div style="text-align:center;">           <img              id="img_58"              src="https://Ablenya.github.io/Oorzaak/Antwerp%20period%202/A1077%20Figure%204.png"              style="max-width:500px; height:auto; display:block; margin:0 auto;"            />           <button              onclick="               var img = document.getElementById('img_58');               if(img.style.maxWidth === '1100px') {                 img.style.maxWidth = '500px';                 this.textContent = 'Enlarge';               } else {                 img.style.maxWidth = '1100px';                 this.textContent = 'Shrink';               }             "             style="margin-top:5px;"           >Enlarge</button>         </div>         </div>`)[0];
+                popup_7aee47e23800236705b3fd0f226d0180.setContent(html_3d17e1370a9e8416e6929295fafd26ca);
+            
+        
+
+        circle_marker_4c7c3586c571a17f31d38cc5e0a2956f.bindPopup(popup_7aee47e23800236705b3fd0f226d0180)
+        ;
+
+        
+    
+    
+            var circle_marker_b85a14d52e44169d7a3d563a7ca63b1a = L.circleMarker(
+                [51.2033195, 4.47126],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#15f4ee", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(map_4527a291c6d19799da09185ccff98677);
+        
+    
+        var popup_a53a141dcd7e070bc2b8cd25506965a2 = L.popup({"maxWidth": 500});
+
+        
+            
+                var html_8fbec0743074962d74f97eaca71434d3 = $(`<div id="html_8fbec0743074962d74f97eaca71434d3" style="width: 100.0%; height: 100.0%;">         <div style="text-align:center;">           <img              id="img_59"              src="https://Ablenya.github.io/Oorzaak/Antwerp%20period%202/A1097%20Figure%204.png"              style="max-width:500px; height:auto; display:block; margin:0 auto;"            />           <button              onclick="               var img = document.getElementById('img_59');               if(img.style.maxWidth === '1100px') {                 img.style.maxWidth = '500px';                 this.textContent = 'Enlarge';               } else {                 img.style.maxWidth = '1100px';                 this.textContent = 'Shrink';               }             "             style="margin-top:5px;"           >Enlarge</button>         </div>         </div>`)[0];
+                popup_a53a141dcd7e070bc2b8cd25506965a2.setContent(html_8fbec0743074962d74f97eaca71434d3);
+            
+        
+
+        circle_marker_b85a14d52e44169d7a3d563a7ca63b1a.bindPopup(popup_a53a141dcd7e070bc2b8cd25506965a2)
+        ;
+
+        
+    
+    
+            var circle_marker_62ba93b88671a6f474fec9551a165791 = L.circleMarker(
+                [51.2253266, 4.43355569999999],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#15f4ee", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(map_4527a291c6d19799da09185ccff98677);
+        
+    
+        var popup_9c5c3d462da8f902e2eb1f68c5d8ce06 = L.popup({"maxWidth": 500});
+
+        
+            
+                var html_b68fe926d36d813a7a1ddcfd99ace2c5 = $(`<div id="html_b68fe926d36d813a7a1ddcfd99ace2c5" style="width: 100.0%; height: 100.0%;">         <div style="text-align:center;">           <img              id="img_60"              src="https://Ablenya.github.io/Oorzaak/Antwerp%20period%202/A1107%20Figure%204.png"              style="max-width:500px; height:auto; display:block; margin:0 auto;"            />           <button              onclick="               var img = document.getElementById('img_60');               if(img.style.maxWidth === '1100px') {                 img.style.maxWidth = '500px';                 this.textContent = 'Enlarge';               } else {                 img.style.maxWidth = '1100px';                 this.textContent = 'Shrink';               }             "             style="margin-top:5px;"           >Enlarge</button>         </div>         </div>`)[0];
+                popup_9c5c3d462da8f902e2eb1f68c5d8ce06.setContent(html_b68fe926d36d813a7a1ddcfd99ace2c5);
+            
+        
+
+        circle_marker_62ba93b88671a6f474fec9551a165791.bindPopup(popup_9c5c3d462da8f902e2eb1f68c5d8ce06)
+        ;
+
+        
+    
+    
+            var circle_marker_324f7cfadd3c9b9ec74b3f9b64828cdf = L.circleMarker(
+                [51.200988, 4.3966069],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#15f4ee", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(map_4527a291c6d19799da09185ccff98677);
+        
+    
+        var popup_fefc20d88386a5b4d62369d851fc0a79 = L.popup({"maxWidth": 500});
+
+        
+            
+                var html_9ab9ee114c7e8f7aa91e02f898cee16a = $(`<div id="html_9ab9ee114c7e8f7aa91e02f898cee16a" style="width: 100.0%; height: 100.0%;">         <div style="text-align:center;">           <img              id="img_61"              src="https://Ablenya.github.io/Oorzaak/Antwerp%20period%202/A1117%20Figure%204.png"              style="max-width:500px; height:auto; display:block; margin:0 auto;"            />           <button              onclick="               var img = document.getElementById('img_61');               if(img.style.maxWidth === '1100px') {                 img.style.maxWidth = '500px';                 this.textContent = 'Enlarge';               } else {                 img.style.maxWidth = '1100px';                 this.textContent = 'Shrink';               }             "             style="margin-top:5px;"           >Enlarge</button>         </div>         </div>`)[0];
+                popup_fefc20d88386a5b4d62369d851fc0a79.setContent(html_9ab9ee114c7e8f7aa91e02f898cee16a);
+            
+        
+
+        circle_marker_324f7cfadd3c9b9ec74b3f9b64828cdf.bindPopup(popup_fefc20d88386a5b4d62369d851fc0a79)
+        ;
+
+        
+    
+    
+            var circle_marker_b55f662a289ed4ed209d98aee2e065c3 = L.circleMarker(
+                [51.2191483, 4.3779851],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#15f4ee", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(map_4527a291c6d19799da09185ccff98677);
+        
+    
+        var popup_df3cb838d5650a08e28f1490e72b0f48 = L.popup({"maxWidth": 500});
+
+        
+            
+                var html_f143f16da505624b2064e0bb15f15f1d = $(`<div id="html_f143f16da505624b2064e0bb15f15f1d" style="width: 100.0%; height: 100.0%;">         <div style="text-align:center;">           <img              id="img_62"              src="https://Ablenya.github.io/Oorzaak/Antwerp%20period%202/A1155%20Figure%204.png"              style="max-width:500px; height:auto; display:block; margin:0 auto;"            />           <button              onclick="               var img = document.getElementById('img_62');               if(img.style.maxWidth === '1100px') {                 img.style.maxWidth = '500px';                 this.textContent = 'Enlarge';               } else {                 img.style.maxWidth = '1100px';                 this.textContent = 'Shrink';               }             "             style="margin-top:5px;"           >Enlarge</button>         </div>         </div>`)[0];
+                popup_df3cb838d5650a08e28f1490e72b0f48.setContent(html_f143f16da505624b2064e0bb15f15f1d);
+            
+        
+
+        circle_marker_b55f662a289ed4ed209d98aee2e065c3.bindPopup(popup_df3cb838d5650a08e28f1490e72b0f48)
+        ;
+
+        
+    
+    
+            var circle_marker_8439cd01fdfdc4ca957e8813b35985a1 = L.circleMarker(
+                [51.2044903, 4.4425387],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#15f4ee", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(map_4527a291c6d19799da09185ccff98677);
+        
+    
+        var popup_3364a02a9299cbd9a97f167a7e4ff9aa = L.popup({"maxWidth": 500});
+
+        
+            
+                var html_fdef8879c58d8987b5a549899e55e94e = $(`<div id="html_fdef8879c58d8987b5a549899e55e94e" style="width: 100.0%; height: 100.0%;">         <div style="text-align:center;">           <img              id="img_63"              src="https://Ablenya.github.io/Oorzaak/Antwerp%20period%202/A1166%20Figure%204.png"              style="max-width:500px; height:auto; display:block; margin:0 auto;"            />           <button              onclick="               var img = document.getElementById('img_63');               if(img.style.maxWidth === '1100px') {                 img.style.maxWidth = '500px';                 this.textContent = 'Enlarge';               } else {                 img.style.maxWidth = '1100px';                 this.textContent = 'Shrink';               }             "             style="margin-top:5px;"           >Enlarge</button>         </div>         </div>`)[0];
+                popup_3364a02a9299cbd9a97f167a7e4ff9aa.setContent(html_fdef8879c58d8987b5a549899e55e94e);
+            
+        
+
+        circle_marker_8439cd01fdfdc4ca957e8813b35985a1.bindPopup(popup_3364a02a9299cbd9a97f167a7e4ff9aa)
+        ;
+
+        
+    
+    
+            var circle_marker_a2a1fa7d67bc5822aa1390f63b141f12 = L.circleMarker(
+                [51.2096573, 4.396394],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#15f4ee", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(map_4527a291c6d19799da09185ccff98677);
+        
+    
+        var popup_f31c76fc8691f2b5dc4846d7b28bd7d4 = L.popup({"maxWidth": 500});
+
+        
+            
+                var html_27bf97b0467329f1d7da4677fbb0af4e = $(`<div id="html_27bf97b0467329f1d7da4677fbb0af4e" style="width: 100.0%; height: 100.0%;">         <div style="text-align:center;">           <img              id="img_64"              src="https://Ablenya.github.io/Oorzaak/Antwerp%20period%202/A1167%20Figure%204.png"              style="max-width:500px; height:auto; display:block; margin:0 auto;"            />           <button              onclick="               var img = document.getElementById('img_64');               if(img.style.maxWidth === '1100px') {                 img.style.maxWidth = '500px';                 this.textContent = 'Enlarge';               } else {                 img.style.maxWidth = '1100px';                 this.textContent = 'Shrink';               }             "             style="margin-top:5px;"           >Enlarge</button>         </div>         </div>`)[0];
+                popup_f31c76fc8691f2b5dc4846d7b28bd7d4.setContent(html_27bf97b0467329f1d7da4677fbb0af4e);
+            
+        
+
+        circle_marker_a2a1fa7d67bc5822aa1390f63b141f12.bindPopup(popup_f31c76fc8691f2b5dc4846d7b28bd7d4)
+        ;
+
+        
+    
+    
+            var circle_marker_17cf91788851a2d4656f64f67c14704c = L.circleMarker(
+                [51.2214468, 4.4662475],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#15f4ee", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(map_4527a291c6d19799da09185ccff98677);
+        
+    
+        var popup_71cce3549048b5c0ffdec5d136c40a47 = L.popup({"maxWidth": 500});
+
+        
+            
+                var html_b67c44d8d3d2444f4c915b5032512587 = $(`<div id="html_b67c44d8d3d2444f4c915b5032512587" style="width: 100.0%; height: 100.0%;">         <div style="text-align:center;">           <img              id="img_65"              src="https://Ablenya.github.io/Oorzaak/Antwerp%20period%202/A1169%20Figure%204.png"              style="max-width:500px; height:auto; display:block; margin:0 auto;"            />           <button              onclick="               var img = document.getElementById('img_65');               if(img.style.maxWidth === '1100px') {                 img.style.maxWidth = '500px';                 this.textContent = 'Enlarge';               } else {                 img.style.maxWidth = '1100px';                 this.textContent = 'Shrink';               }             "             style="margin-top:5px;"           >Enlarge</button>         </div>         </div>`)[0];
+                popup_71cce3549048b5c0ffdec5d136c40a47.setContent(html_b67c44d8d3d2444f4c915b5032512587);
+            
+        
+
+        circle_marker_17cf91788851a2d4656f64f67c14704c.bindPopup(popup_71cce3549048b5c0ffdec5d136c40a47)
+        ;
+
+        
+    
+    
+            var circle_marker_d9bb1b11a2a186ffcb43dd117a0757ff = L.circleMarker(
+                [51.1946302, 4.4204941],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#15f4ee", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(map_4527a291c6d19799da09185ccff98677);
+        
+    
+        var popup_d14b2c4c4c962b8e8f447e7749e02a29 = L.popup({"maxWidth": 500});
+
+        
+            
+                var html_ff351a9d9cccfb62f556cda27a64da08 = $(`<div id="html_ff351a9d9cccfb62f556cda27a64da08" style="width: 100.0%; height: 100.0%;">         <div style="text-align:center;">           <img              id="img_66"              src="https://Ablenya.github.io/Oorzaak/Antwerp%20period%202/A1184%20Figure%204.png"              style="max-width:500px; height:auto; display:block; margin:0 auto;"            />           <button              onclick="               var img = document.getElementById('img_66');               if(img.style.maxWidth === '1100px') {                 img.style.maxWidth = '500px';                 this.textContent = 'Enlarge';               } else {                 img.style.maxWidth = '1100px';                 this.textContent = 'Shrink';               }             "             style="margin-top:5px;"           >Enlarge</button>         </div>         </div>`)[0];
+                popup_d14b2c4c4c962b8e8f447e7749e02a29.setContent(html_ff351a9d9cccfb62f556cda27a64da08);
+            
+        
+
+        circle_marker_d9bb1b11a2a186ffcb43dd117a0757ff.bindPopup(popup_d14b2c4c4c962b8e8f447e7749e02a29)
+        ;
+
+        
+    
+    
+            var circle_marker_c0f0110b2f37f537eae794205d2d567c = L.circleMarker(
+                [51.1768611, 4.3845639],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#15f4ee", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(map_4527a291c6d19799da09185ccff98677);
+        
+    
+        var popup_3ce2c88e85c76b2ad84ab64992c69afc = L.popup({"maxWidth": 500});
+
+        
+            
+                var html_b2623cd0a2f9b29cec8844d09f8554d4 = $(`<div id="html_b2623cd0a2f9b29cec8844d09f8554d4" style="width: 100.0%; height: 100.0%;">         <div style="text-align:center;">           <img              id="img_67"              src="https://Ablenya.github.io/Oorzaak/Antwerp%20period%202/A1223%20Figure%204.png"              style="max-width:500px; height:auto; display:block; margin:0 auto;"            />           <button              onclick="               var img = document.getElementById('img_67');               if(img.style.maxWidth === '1100px') {                 img.style.maxWidth = '500px';                 this.textContent = 'Enlarge';               } else {                 img.style.maxWidth = '1100px';                 this.textContent = 'Shrink';               }             "             style="margin-top:5px;"           >Enlarge</button>         </div>         </div>`)[0];
+                popup_3ce2c88e85c76b2ad84ab64992c69afc.setContent(html_b2623cd0a2f9b29cec8844d09f8554d4);
+            
+        
+
+        circle_marker_c0f0110b2f37f537eae794205d2d567c.bindPopup(popup_3ce2c88e85c76b2ad84ab64992c69afc)
+        ;
+
+        
+    
+    
+            var circle_marker_37218cdd771778e8ebc7b53bc9cbb7a3 = L.circleMarker(
+                [51.1674398, 4.3962267],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#15f4ee", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(map_4527a291c6d19799da09185ccff98677);
+        
+    
+        var popup_a57f111cd326e2ea0e04599279ecf9ab = L.popup({"maxWidth": 500});
+
+        
+            
+                var html_094c665aa7f9b09fabf611e9cfa0844f = $(`<div id="html_094c665aa7f9b09fabf611e9cfa0844f" style="width: 100.0%; height: 100.0%;">         <div style="text-align:center;">           <img              id="img_68"              src="https://Ablenya.github.io/Oorzaak/Antwerp%20period%202/A1254%20Figure%204.png"              style="max-width:500px; height:auto; display:block; margin:0 auto;"            />           <button              onclick="               var img = document.getElementById('img_68');               if(img.style.maxWidth === '1100px') {                 img.style.maxWidth = '500px';                 this.textContent = 'Enlarge';               } else {                 img.style.maxWidth = '1100px';                 this.textContent = 'Shrink';               }             "             style="margin-top:5px;"           >Enlarge</button>         </div>         </div>`)[0];
+                popup_a57f111cd326e2ea0e04599279ecf9ab.setContent(html_094c665aa7f9b09fabf611e9cfa0844f);
+            
+        
+
+        circle_marker_37218cdd771778e8ebc7b53bc9cbb7a3.bindPopup(popup_a57f111cd326e2ea0e04599279ecf9ab)
+        ;
+
+        
+    
+    
+            var circle_marker_d5039d8bc4e85e9be3c409092553cc25 = L.circleMarker(
+                [51.2103417, 4.4000695],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#15f4ee", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(map_4527a291c6d19799da09185ccff98677);
+        
+    
+        var popup_70c9236f182067a2a0120700ad6945f7 = L.popup({"maxWidth": 500});
+
+        
+            
+                var html_2149d1e2164e2cead41e77eaf05c8fd6 = $(`<div id="html_2149d1e2164e2cead41e77eaf05c8fd6" style="width: 100.0%; height: 100.0%;">         <div style="text-align:center;">           <img              id="img_69"              src="https://Ablenya.github.io/Oorzaak/Antwerp%20period%202/A1286%20Figure%204.png"              style="max-width:500px; height:auto; display:block; margin:0 auto;"            />           <button              onclick="               var img = document.getElementById('img_69');               if(img.style.maxWidth === '1100px') {                 img.style.maxWidth = '500px';                 this.textContent = 'Enlarge';               } else {                 img.style.maxWidth = '1100px';                 this.textContent = 'Shrink';               }             "             style="margin-top:5px;"           >Enlarge</button>         </div>         </div>`)[0];
+                popup_70c9236f182067a2a0120700ad6945f7.setContent(html_2149d1e2164e2cead41e77eaf05c8fd6);
+            
+        
+
+        circle_marker_d5039d8bc4e85e9be3c409092553cc25.bindPopup(popup_70c9236f182067a2a0120700ad6945f7)
+        ;
+
+        
+    
+    
+            var circle_marker_133e5cc8ce862bdbb7db7323dc9914e7 = L.circleMarker(
+                [51.1844675, 4.49990319999999],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#15f4ee", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(map_4527a291c6d19799da09185ccff98677);
+        
+    
+        var popup_652cf1ac306e076ec396cf03dd46462a = L.popup({"maxWidth": 500});
+
+        
+            
+                var html_80854c3db65c28b4fee3e31e6e631752 = $(`<div id="html_80854c3db65c28b4fee3e31e6e631752" style="width: 100.0%; height: 100.0%;">         <div style="text-align:center;">           <img              id="img_70"              src="https://Ablenya.github.io/Oorzaak/Antwerp%20period%202/A1295%20Figure%204.png"              style="max-width:500px; height:auto; display:block; margin:0 auto;"            />           <button              onclick="               var img = document.getElementById('img_70');               if(img.style.maxWidth === '1100px') {                 img.style.maxWidth = '500px';                 this.textContent = 'Enlarge';               } else {                 img.style.maxWidth = '1100px';                 this.textContent = 'Shrink';               }             "             style="margin-top:5px;"           >Enlarge</button>         </div>         </div>`)[0];
+                popup_652cf1ac306e076ec396cf03dd46462a.setContent(html_80854c3db65c28b4fee3e31e6e631752);
+            
+        
+
+        circle_marker_133e5cc8ce862bdbb7db7323dc9914e7.bindPopup(popup_652cf1ac306e076ec396cf03dd46462a)
+        ;
+
+        
+    
+    
+            var circle_marker_710cbeb53a8f7660c2807bffc11ca92f = L.circleMarker(
+                [51.1910141, 4.3972185],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#15f4ee", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(map_4527a291c6d19799da09185ccff98677);
+        
+    
+        var popup_58a56505b99bd4a6ae29783ef749f094 = L.popup({"maxWidth": 500});
+
+        
+            
+                var html_597c890eeeaedb5d8de9999fad98a2c3 = $(`<div id="html_597c890eeeaedb5d8de9999fad98a2c3" style="width: 100.0%; height: 100.0%;">         <div style="text-align:center;">           <img              id="img_71"              src="https://Ablenya.github.io/Oorzaak/Antwerp%20period%202/A1307%20Figure%204.png"              style="max-width:500px; height:auto; display:block; margin:0 auto;"            />           <button              onclick="               var img = document.getElementById('img_71');               if(img.style.maxWidth === '1100px') {                 img.style.maxWidth = '500px';                 this.textContent = 'Enlarge';               } else {                 img.style.maxWidth = '1100px';                 this.textContent = 'Shrink';               }             "             style="margin-top:5px;"           >Enlarge</button>         </div>         </div>`)[0];
+                popup_58a56505b99bd4a6ae29783ef749f094.setContent(html_597c890eeeaedb5d8de9999fad98a2c3);
+            
+        
+
+        circle_marker_710cbeb53a8f7660c2807bffc11ca92f.bindPopup(popup_58a56505b99bd4a6ae29783ef749f094)
+        ;
+
+        
+    
+    
+            var circle_marker_67c6e13f9d474d7b7e460cc4eb64dc1e = L.circleMarker(
+                [51.218653, 4.4151674],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#15f4ee", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(map_4527a291c6d19799da09185ccff98677);
+        
+    
+        var popup_e4d7d32b6dbec5d7befcd8065b321311 = L.popup({"maxWidth": 500});
+
+        
+            
+                var html_b8a389bc2e3c8ad734c85300408ed785 = $(`<div id="html_b8a389bc2e3c8ad734c85300408ed785" style="width: 100.0%; height: 100.0%;">         <div style="text-align:center;">           <img              id="img_72"              src="https://Ablenya.github.io/Oorzaak/Antwerp%20period%202/A1321%20Figure%204.png"              style="max-width:500px; height:auto; display:block; margin:0 auto;"            />           <button              onclick="               var img = document.getElementById('img_72');               if(img.style.maxWidth === '1100px') {                 img.style.maxWidth = '500px';                 this.textContent = 'Enlarge';               } else {                 img.style.maxWidth = '1100px';                 this.textContent = 'Shrink';               }             "             style="margin-top:5px;"           >Enlarge</button>         </div>         </div>`)[0];
+                popup_e4d7d32b6dbec5d7befcd8065b321311.setContent(html_b8a389bc2e3c8ad734c85300408ed785);
+            
+        
+
+        circle_marker_67c6e13f9d474d7b7e460cc4eb64dc1e.bindPopup(popup_e4d7d32b6dbec5d7befcd8065b321311)
+        ;
+
+        
+    
+    
+            var circle_marker_80c1aead9c6be060ef661c62b8ce25a5 = L.circleMarker(
+                [51.2170959, 4.4142013],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#15f4ee", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(map_4527a291c6d19799da09185ccff98677);
+        
+    
+        var popup_002da1ba8543fd53e852517bf0e50d73 = L.popup({"maxWidth": 500});
+
+        
+            
+                var html_dd9d69e520d8e88ade22257b8f7c4dc5 = $(`<div id="html_dd9d69e520d8e88ade22257b8f7c4dc5" style="width: 100.0%; height: 100.0%;">         <div style="text-align:center;">           <img              id="img_73"              src="https://Ablenya.github.io/Oorzaak/Antwerp%20period%202/A1332%20Figure%204.png"              style="max-width:500px; height:auto; display:block; margin:0 auto;"            />           <button              onclick="               var img = document.getElementById('img_73');               if(img.style.maxWidth === '1100px') {                 img.style.maxWidth = '500px';                 this.textContent = 'Enlarge';               } else {                 img.style.maxWidth = '1100px';                 this.textContent = 'Shrink';               }             "             style="margin-top:5px;"           >Enlarge</button>         </div>         </div>`)[0];
+                popup_002da1ba8543fd53e852517bf0e50d73.setContent(html_dd9d69e520d8e88ade22257b8f7c4dc5);
+            
+        
+
+        circle_marker_80c1aead9c6be060ef661c62b8ce25a5.bindPopup(popup_002da1ba8543fd53e852517bf0e50d73)
+        ;
+
+        
+    
+    
+            var circle_marker_95618ccb8202cb79ac44eb553f7ea5a2 = L.circleMarker(
+                [51.1739995999999, 4.4073399],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#15f4ee", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(map_4527a291c6d19799da09185ccff98677);
+        
+    
+        var popup_0ea7891b307611fc7f52c5b9ee5da519 = L.popup({"maxWidth": 500});
+
+        
+            
+                var html_51f6a5c1a9cdb3a6079f33e5e44a7bf0 = $(`<div id="html_51f6a5c1a9cdb3a6079f33e5e44a7bf0" style="width: 100.0%; height: 100.0%;">         <div style="text-align:center;">           <img              id="img_74"              src="https://Ablenya.github.io/Oorzaak/Antwerp%20period%202/A1339%20Figure%204.png"              style="max-width:500px; height:auto; display:block; margin:0 auto;"            />           <button              onclick="               var img = document.getElementById('img_74');               if(img.style.maxWidth === '1100px') {                 img.style.maxWidth = '500px';                 this.textContent = 'Enlarge';               } else {                 img.style.maxWidth = '1100px';                 this.textContent = 'Shrink';               }             "             style="margin-top:5px;"           >Enlarge</button>         </div>         </div>`)[0];
+                popup_0ea7891b307611fc7f52c5b9ee5da519.setContent(html_51f6a5c1a9cdb3a6079f33e5e44a7bf0);
+            
+        
+
+        circle_marker_95618ccb8202cb79ac44eb553f7ea5a2.bindPopup(popup_0ea7891b307611fc7f52c5b9ee5da519)
+        ;
+
+        
+    
+    
+            var circle_marker_b2f124cd68984924b4ad2a94819c3a2f = L.circleMarker(
+                [51.2162455, 4.4436158],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#15f4ee", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(map_4527a291c6d19799da09185ccff98677);
+        
+    
+        var popup_c21b3718c3e5afe886f7e97d64a6326a = L.popup({"maxWidth": 500});
+
+        
+            
+                var html_e5e3361a8da38ca4384cb432f152fb55 = $(`<div id="html_e5e3361a8da38ca4384cb432f152fb55" style="width: 100.0%; height: 100.0%;">         <div style="text-align:center;">           <img              id="img_75"              src="https://Ablenya.github.io/Oorzaak/Antwerp%20period%202/A1342%20Figure%204.png"              style="max-width:500px; height:auto; display:block; margin:0 auto;"            />           <button              onclick="               var img = document.getElementById('img_75');               if(img.style.maxWidth === '1100px') {                 img.style.maxWidth = '500px';                 this.textContent = 'Enlarge';               } else {                 img.style.maxWidth = '1100px';                 this.textContent = 'Shrink';               }             "             style="margin-top:5px;"           >Enlarge</button>         </div>         </div>`)[0];
+                popup_c21b3718c3e5afe886f7e97d64a6326a.setContent(html_e5e3361a8da38ca4384cb432f152fb55);
+            
+        
+
+        circle_marker_b2f124cd68984924b4ad2a94819c3a2f.bindPopup(popup_c21b3718c3e5afe886f7e97d64a6326a)
+        ;
+
+        
+    
+    
+            var circle_marker_4893100ac234cea8e2d3593d90f8b5cf = L.circleMarker(
+                [51.2034147, 4.46755069999999],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#15f4ee", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(map_4527a291c6d19799da09185ccff98677);
+        
+    
+        var popup_c5b0cedef1571e8e88edd9c1bfc7c092 = L.popup({"maxWidth": 500});
+
+        
+            
+                var html_c3dda4947ea654631706601af6be78ee = $(`<div id="html_c3dda4947ea654631706601af6be78ee" style="width: 100.0%; height: 100.0%;">         <div style="text-align:center;">           <img              id="img_76"              src="https://Ablenya.github.io/Oorzaak/Antwerp%20period%202/A1384%20Figure%204.png"              style="max-width:500px; height:auto; display:block; margin:0 auto;"            />           <button              onclick="               var img = document.getElementById('img_76');               if(img.style.maxWidth === '1100px') {                 img.style.maxWidth = '500px';                 this.textContent = 'Enlarge';               } else {                 img.style.maxWidth = '1100px';                 this.textContent = 'Shrink';               }             "             style="margin-top:5px;"           >Enlarge</button>         </div>         </div>`)[0];
+                popup_c5b0cedef1571e8e88edd9c1bfc7c092.setContent(html_c3dda4947ea654631706601af6be78ee);
+            
+        
+
+        circle_marker_4893100ac234cea8e2d3593d90f8b5cf.bindPopup(popup_c5b0cedef1571e8e88edd9c1bfc7c092)
+        ;
+
+        
+    
+    
+            var circle_marker_7dad1af44191a8d865add8ba7d22bb2d = L.circleMarker(
+                [51.2129317, 4.4204967],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#15f4ee", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(map_4527a291c6d19799da09185ccff98677);
+        
+    
+        var popup_e7d29811233c894cd14ffcf55d24ffe2 = L.popup({"maxWidth": 500});
+
+        
+            
+                var html_b94cf5377c117bf0f2ad5ab087cd9eda = $(`<div id="html_b94cf5377c117bf0f2ad5ab087cd9eda" style="width: 100.0%; height: 100.0%;">         <div style="text-align:center;">           <img              id="img_77"              src="https://Ablenya.github.io/Oorzaak/Antwerp%20period%202/A1427%20Figure%204.png"              style="max-width:500px; height:auto; display:block; margin:0 auto;"            />           <button              onclick="               var img = document.getElementById('img_77');               if(img.style.maxWidth === '1100px') {                 img.style.maxWidth = '500px';                 this.textContent = 'Enlarge';               } else {                 img.style.maxWidth = '1100px';                 this.textContent = 'Shrink';               }             "             style="margin-top:5px;"           >Enlarge</button>         </div>         </div>`)[0];
+                popup_e7d29811233c894cd14ffcf55d24ffe2.setContent(html_b94cf5377c117bf0f2ad5ab087cd9eda);
+            
+        
+
+        circle_marker_7dad1af44191a8d865add8ba7d22bb2d.bindPopup(popup_e7d29811233c894cd14ffcf55d24ffe2)
+        ;
+
+        
+    
+    
+            var circle_marker_c9ee1f215757fb79627bb520cf7c86ad = L.circleMarker(
+                [51.2034292, 4.4313815],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#15f4ee", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(map_4527a291c6d19799da09185ccff98677);
+        
+    
+        var popup_9c524eb92ca9560a70a99e36e6ecfd52 = L.popup({"maxWidth": 500});
+
+        
+            
+                var html_f1d8923a78d4de044e24dc44762f39aa = $(`<div id="html_f1d8923a78d4de044e24dc44762f39aa" style="width: 100.0%; height: 100.0%;">         <div style="text-align:center;">           <img              id="img_78"              src="https://Ablenya.github.io/Oorzaak/Antwerp%20period%202/A1448%20Figure%204.png"              style="max-width:500px; height:auto; display:block; margin:0 auto;"            />           <button              onclick="               var img = document.getElementById('img_78');               if(img.style.maxWidth === '1100px') {                 img.style.maxWidth = '500px';                 this.textContent = 'Enlarge';               } else {                 img.style.maxWidth = '1100px';                 this.textContent = 'Shrink';               }             "             style="margin-top:5px;"           >Enlarge</button>         </div>         </div>`)[0];
+                popup_9c524eb92ca9560a70a99e36e6ecfd52.setContent(html_f1d8923a78d4de044e24dc44762f39aa);
+            
+        
+
+        circle_marker_c9ee1f215757fb79627bb520cf7c86ad.bindPopup(popup_9c524eb92ca9560a70a99e36e6ecfd52)
+        ;
+
+        
+    
+    
+            var circle_marker_55653dbac45fb85eb7769818427d922f = L.circleMarker(
+                [51.175815, 4.4023616],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#15f4ee", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(map_4527a291c6d19799da09185ccff98677);
+        
+    
+        var popup_62b35faa363615d21e4537b78817323d = L.popup({"maxWidth": 500});
+
+        
+            
+                var html_c7ac4cdba55437c6b3230664c9313b35 = $(`<div id="html_c7ac4cdba55437c6b3230664c9313b35" style="width: 100.0%; height: 100.0%;">         <div style="text-align:center;">           <img              id="img_79"              src="https://Ablenya.github.io/Oorzaak/Antwerp%20period%202/A1457%20Figure%204.png"              style="max-width:500px; height:auto; display:block; margin:0 auto;"            />           <button              onclick="               var img = document.getElementById('img_79');               if(img.style.maxWidth === '1100px') {                 img.style.maxWidth = '500px';                 this.textContent = 'Enlarge';               } else {                 img.style.maxWidth = '1100px';                 this.textContent = 'Shrink';               }             "             style="margin-top:5px;"           >Enlarge</button>         </div>         </div>`)[0];
+                popup_62b35faa363615d21e4537b78817323d.setContent(html_c7ac4cdba55437c6b3230664c9313b35);
+            
+        
+
+        circle_marker_55653dbac45fb85eb7769818427d922f.bindPopup(popup_62b35faa363615d21e4537b78817323d)
+        ;
+
+        
+    
+    
+            var circle_marker_3dc262014ebf553c8a279a7023336f6b = L.circleMarker(
+                [51.1863723, 4.384179],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#15f4ee", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(map_4527a291c6d19799da09185ccff98677);
+        
+    
+        var popup_7269146e532e61e30c7c0ee81aa80f0e = L.popup({"maxWidth": 500});
+
+        
+            
+                var html_49eff27ef9bdd9eb6b10c88faff7cca8 = $(`<div id="html_49eff27ef9bdd9eb6b10c88faff7cca8" style="width: 100.0%; height: 100.0%;">         <div style="text-align:center;">           <img              id="img_80"              src="https://Ablenya.github.io/Oorzaak/Antwerp%20period%202/A1463%20Figure%204.png"              style="max-width:500px; height:auto; display:block; margin:0 auto;"            />           <button              onclick="               var img = document.getElementById('img_80');               if(img.style.maxWidth === '1100px') {                 img.style.maxWidth = '500px';                 this.textContent = 'Enlarge';               } else {                 img.style.maxWidth = '1100px';                 this.textContent = 'Shrink';               }             "             style="margin-top:5px;"           >Enlarge</button>         </div>         </div>`)[0];
+                popup_7269146e532e61e30c7c0ee81aa80f0e.setContent(html_49eff27ef9bdd9eb6b10c88faff7cca8);
+            
+        
+
+        circle_marker_3dc262014ebf553c8a279a7023336f6b.bindPopup(popup_7269146e532e61e30c7c0ee81aa80f0e)
+        ;
+
+        
+    
+    
+            var circle_marker_12426647436339c4c014d94184621174 = L.circleMarker(
+                [51.2228056, 4.4711615],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#15f4ee", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(map_4527a291c6d19799da09185ccff98677);
+        
+    
+        var popup_2abdf649488f072840525d2189c74e56 = L.popup({"maxWidth": 500});
+
+        
+            
+                var html_3684d5d9d76bd123a3085fada5dd0fdd = $(`<div id="html_3684d5d9d76bd123a3085fada5dd0fdd" style="width: 100.0%; height: 100.0%;">         <div style="text-align:center;">           <img              id="img_81"              src="https://Ablenya.github.io/Oorzaak/Antwerp%20period%202/A1476%20Figure%204.png"              style="max-width:500px; height:auto; display:block; margin:0 auto;"            />           <button              onclick="               var img = document.getElementById('img_81');               if(img.style.maxWidth === '1100px') {                 img.style.maxWidth = '500px';                 this.textContent = 'Enlarge';               } else {                 img.style.maxWidth = '1100px';                 this.textContent = 'Shrink';               }             "             style="margin-top:5px;"           >Enlarge</button>         </div>         </div>`)[0];
+                popup_2abdf649488f072840525d2189c74e56.setContent(html_3684d5d9d76bd123a3085fada5dd0fdd);
+            
+        
+
+        circle_marker_12426647436339c4c014d94184621174.bindPopup(popup_2abdf649488f072840525d2189c74e56)
+        ;
+
+        
+    
+    
+            var circle_marker_2c657fd1dd15dde791108d29021fefb4 = L.circleMarker(
+                [51.2819844, 4.43877869999999],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#15f4ee", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(map_4527a291c6d19799da09185ccff98677);
+        
+    
+        var popup_a2f29366ec44a20c43a7614ff2513cf9 = L.popup({"maxWidth": 500});
+
+        
+            
+                var html_63c64628bf7d13b8a96a2ddb0e942ace = $(`<div id="html_63c64628bf7d13b8a96a2ddb0e942ace" style="width: 100.0%; height: 100.0%;">         <div style="text-align:center;">           <img              id="img_82"              src="https://Ablenya.github.io/Oorzaak/Antwerp%20period%202/A1491%20Figure%204.png"              style="max-width:500px; height:auto; display:block; margin:0 auto;"            />           <button              onclick="               var img = document.getElementById('img_82');               if(img.style.maxWidth === '1100px') {                 img.style.maxWidth = '500px';                 this.textContent = 'Enlarge';               } else {                 img.style.maxWidth = '1100px';                 this.textContent = 'Shrink';               }             "             style="margin-top:5px;"           >Enlarge</button>         </div>         </div>`)[0];
+                popup_a2f29366ec44a20c43a7614ff2513cf9.setContent(html_63c64628bf7d13b8a96a2ddb0e942ace);
+            
+        
+
+        circle_marker_2c657fd1dd15dde791108d29021fefb4.bindPopup(popup_a2f29366ec44a20c43a7614ff2513cf9)
+        ;
+
+        
+    
+    
+            var circle_marker_48505e0cdc5367c84573f4715b4fbbe8 = L.circleMarker(
+                [51.2105816, 4.4300923],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#15f4ee", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(map_4527a291c6d19799da09185ccff98677);
+        
+    
+        var popup_bb70282c9561d5fc98c96af202d4606d = L.popup({"maxWidth": 500});
+
+        
+            
+                var html_a18dde3abf1ed045161f6a12671c0b18 = $(`<div id="html_a18dde3abf1ed045161f6a12671c0b18" style="width: 100.0%; height: 100.0%;">         <div style="text-align:center;">           <img              id="img_83"              src="https://Ablenya.github.io/Oorzaak/Antwerp%20period%202/A1495%20Figure%204.png"              style="max-width:500px; height:auto; display:block; margin:0 auto;"            />           <button              onclick="               var img = document.getElementById('img_83');               if(img.style.maxWidth === '1100px') {                 img.style.maxWidth = '500px';                 this.textContent = 'Enlarge';               } else {                 img.style.maxWidth = '1100px';                 this.textContent = 'Shrink';               }             "             style="margin-top:5px;"           >Enlarge</button>         </div>         </div>`)[0];
+                popup_bb70282c9561d5fc98c96af202d4606d.setContent(html_a18dde3abf1ed045161f6a12671c0b18);
+            
+        
+
+        circle_marker_48505e0cdc5367c84573f4715b4fbbe8.bindPopup(popup_bb70282c9561d5fc98c96af202d4606d)
+        ;
+
+        
+    
+    
+            var circle_marker_fdc8e97061cd73f63231585715003405 = L.circleMarker(
+                [51.1932534, 4.4431265],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#15f4ee", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(map_4527a291c6d19799da09185ccff98677);
+        
+    
+        var popup_cea82e39f9e78bef50bfda5172f5a6e7 = L.popup({"maxWidth": 500});
+
+        
+            
+                var html_e2a95bb073654f91ecac49327393bead = $(`<div id="html_e2a95bb073654f91ecac49327393bead" style="width: 100.0%; height: 100.0%;">         <div style="text-align:center;">           <img              id="img_85"              src="https://Ablenya.github.io/Oorzaak/Antwerp%20period%202/A1524%20Figure%204.png"              style="max-width:500px; height:auto; display:block; margin:0 auto;"            />           <button              onclick="               var img = document.getElementById('img_85');               if(img.style.maxWidth === '1100px') {                 img.style.maxWidth = '500px';                 this.textContent = 'Enlarge';               } else {                 img.style.maxWidth = '1100px';                 this.textContent = 'Shrink';               }             "             style="margin-top:5px;"           >Enlarge</button>         </div>         </div>`)[0];
+                popup_cea82e39f9e78bef50bfda5172f5a6e7.setContent(html_e2a95bb073654f91ecac49327393bead);
+            
+        
+
+        circle_marker_fdc8e97061cd73f63231585715003405.bindPopup(popup_cea82e39f9e78bef50bfda5172f5a6e7)
+        ;
+
+        
+    
+    
+            var circle_marker_b52712f65d311f2f7994bcc300834a6f = L.circleMarker(
+                [51.1990154, 4.4590385],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#15f4ee", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(map_4527a291c6d19799da09185ccff98677);
+        
+    
+        var popup_0740753aedae7e5193cd6e0f3f088593 = L.popup({"maxWidth": 500});
+
+        
+            
+                var html_e4a4b9a5a3e4d60175c0cbcbca7a1dff = $(`<div id="html_e4a4b9a5a3e4d60175c0cbcbca7a1dff" style="width: 100.0%; height: 100.0%;">         <div style="text-align:center;">           <img              id="img_86"              src="https://Ablenya.github.io/Oorzaak/Antwerp%20period%202/A1532%20Figure%204.png"              style="max-width:500px; height:auto; display:block; margin:0 auto;"            />           <button              onclick="               var img = document.getElementById('img_86');               if(img.style.maxWidth === '1100px') {                 img.style.maxWidth = '500px';                 this.textContent = 'Enlarge';               } else {                 img.style.maxWidth = '1100px';                 this.textContent = 'Shrink';               }             "             style="margin-top:5px;"           >Enlarge</button>         </div>         </div>`)[0];
+                popup_0740753aedae7e5193cd6e0f3f088593.setContent(html_e4a4b9a5a3e4d60175c0cbcbca7a1dff);
+            
+        
+
+        circle_marker_b52712f65d311f2f7994bcc300834a6f.bindPopup(popup_0740753aedae7e5193cd6e0f3f088593)
+        ;
+
+        
+    
+    
+            var circle_marker_f9c217a4637fd71264cdf3b84874f334 = L.circleMarker(
+                [51.2295063, 4.4544872],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#15f4ee", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(map_4527a291c6d19799da09185ccff98677);
+        
+    
+        var popup_8d562088fcea741adb5f13ad991c7a8b = L.popup({"maxWidth": 500});
+
+        
+            
+                var html_929f87fda249afd0780ce9ba51e6e3ea = $(`<div id="html_929f87fda249afd0780ce9ba51e6e3ea" style="width: 100.0%; height: 100.0%;">         <div style="text-align:center;">           <img              id="img_87"              src="https://Ablenya.github.io/Oorzaak/Antwerp%20period%202/A1534%20Figure%204.png"              style="max-width:500px; height:auto; display:block; margin:0 auto;"            />           <button              onclick="               var img = document.getElementById('img_87');               if(img.style.maxWidth === '1100px') {                 img.style.maxWidth = '500px';                 this.textContent = 'Enlarge';               } else {                 img.style.maxWidth = '1100px';                 this.textContent = 'Shrink';               }             "             style="margin-top:5px;"           >Enlarge</button>         </div>         </div>`)[0];
+                popup_8d562088fcea741adb5f13ad991c7a8b.setContent(html_929f87fda249afd0780ce9ba51e6e3ea);
+            
+        
+
+        circle_marker_f9c217a4637fd71264cdf3b84874f334.bindPopup(popup_8d562088fcea741adb5f13ad991c7a8b)
+        ;
+
+        
+    
+    
+            var circle_marker_6885c0d2b36516cc2944d8e2706a6d3f = L.circleMarker(
+                [51.1782275, 4.3845822],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#15f4ee", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(map_4527a291c6d19799da09185ccff98677);
+        
+    
+        var popup_5225595cab4c8a72b3ccbd37a81c8411 = L.popup({"maxWidth": 500});
+
+        
+            
+                var html_9a8b4d9d8a7fda0ba1b79aafeeac2d5b = $(`<div id="html_9a8b4d9d8a7fda0ba1b79aafeeac2d5b" style="width: 100.0%; height: 100.0%;">         <div style="text-align:center;">           <img              id="img_88"              src="https://Ablenya.github.io/Oorzaak/Antwerp%20period%202/A1535%20Figure%204.png"              style="max-width:500px; height:auto; display:block; margin:0 auto;"            />           <button              onclick="               var img = document.getElementById('img_88');               if(img.style.maxWidth === '1100px') {                 img.style.maxWidth = '500px';                 this.textContent = 'Enlarge';               } else {                 img.style.maxWidth = '1100px';                 this.textContent = 'Shrink';               }             "             style="margin-top:5px;"           >Enlarge</button>         </div>         </div>`)[0];
+                popup_5225595cab4c8a72b3ccbd37a81c8411.setContent(html_9a8b4d9d8a7fda0ba1b79aafeeac2d5b);
+            
+        
+
+        circle_marker_6885c0d2b36516cc2944d8e2706a6d3f.bindPopup(popup_5225595cab4c8a72b3ccbd37a81c8411)
+        ;
+
+        
+    
+    
+            var circle_marker_594dc2d5d11c65c0576257cf3c9c5e34 = L.circleMarker(
+                [51.2059556, 4.4656347],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#15f4ee", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(map_4527a291c6d19799da09185ccff98677);
+        
+    
+        var popup_2f562736e4a3d390f00a04db2f432fc8 = L.popup({"maxWidth": 500});
+
+        
+            
+                var html_7b785d75d243e2baff8304fa74aaf551 = $(`<div id="html_7b785d75d243e2baff8304fa74aaf551" style="width: 100.0%; height: 100.0%;">         <div style="text-align:center;">           <img              id="img_89"              src="https://Ablenya.github.io/Oorzaak/Antwerp%20period%202/A1542%20Figure%204.png"              style="max-width:500px; height:auto; display:block; margin:0 auto;"            />           <button              onclick="               var img = document.getElementById('img_89');               if(img.style.maxWidth === '1100px') {                 img.style.maxWidth = '500px';                 this.textContent = 'Enlarge';               } else {                 img.style.maxWidth = '1100px';                 this.textContent = 'Shrink';               }             "             style="margin-top:5px;"           >Enlarge</button>         </div>         </div>`)[0];
+                popup_2f562736e4a3d390f00a04db2f432fc8.setContent(html_7b785d75d243e2baff8304fa74aaf551);
+            
+        
+
+        circle_marker_594dc2d5d11c65c0576257cf3c9c5e34.bindPopup(popup_2f562736e4a3d390f00a04db2f432fc8)
+        ;
+
+        
+    
+    
+            var circle_marker_dda7ec0385cbafd9c9229742fb61811c = L.circleMarker(
+                [51.2129772, 4.4590215],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#15f4ee", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(map_4527a291c6d19799da09185ccff98677);
+        
+    
+        var popup_dcc58c4ca431e294f05ee2365e4f2e7e = L.popup({"maxWidth": 500});
+
+        
+            
+                var html_aa81f173b2f8554a42478e9d4b554283 = $(`<div id="html_aa81f173b2f8554a42478e9d4b554283" style="width: 100.0%; height: 100.0%;">         <div style="text-align:center;">           <img              id="img_90"              src="https://Ablenya.github.io/Oorzaak/Antwerp%20period%202/A1546%20Figure%204.png"              style="max-width:500px; height:auto; display:block; margin:0 auto;"            />           <button              onclick="               var img = document.getElementById('img_90');               if(img.style.maxWidth === '1100px') {                 img.style.maxWidth = '500px';                 this.textContent = 'Enlarge';               } else {                 img.style.maxWidth = '1100px';                 this.textContent = 'Shrink';               }             "             style="margin-top:5px;"           >Enlarge</button>         </div>         </div>`)[0];
+                popup_dcc58c4ca431e294f05ee2365e4f2e7e.setContent(html_aa81f173b2f8554a42478e9d4b554283);
+            
+        
+
+        circle_marker_dda7ec0385cbafd9c9229742fb61811c.bindPopup(popup_dcc58c4ca431e294f05ee2365e4f2e7e)
+        ;
+
+        
+    
+    
+            var circle_marker_9ca8f02a470bbc4108e94f356d5df19f = L.circleMarker(
+                [51.2182579, 4.4243033],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#15f4ee", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(map_4527a291c6d19799da09185ccff98677);
+        
+    
+        var popup_04d1be064e4a57ac3d07248f81b40036 = L.popup({"maxWidth": 500});
+
+        
+            
+                var html_71938916aedb3d8217be83bfaab93646 = $(`<div id="html_71938916aedb3d8217be83bfaab93646" style="width: 100.0%; height: 100.0%;">         <div style="text-align:center;">           <img              id="img_91"              src="https://Ablenya.github.io/Oorzaak/Antwerp%20period%202/A1556%20Figure%204.png"              style="max-width:500px; height:auto; display:block; margin:0 auto;"            />           <button              onclick="               var img = document.getElementById('img_91');               if(img.style.maxWidth === '1100px') {                 img.style.maxWidth = '500px';                 this.textContent = 'Enlarge';               } else {                 img.style.maxWidth = '1100px';                 this.textContent = 'Shrink';               }             "             style="margin-top:5px;"           >Enlarge</button>         </div>         </div>`)[0];
+                popup_04d1be064e4a57ac3d07248f81b40036.setContent(html_71938916aedb3d8217be83bfaab93646);
+            
+        
+
+        circle_marker_9ca8f02a470bbc4108e94f356d5df19f.bindPopup(popup_04d1be064e4a57ac3d07248f81b40036)
+        ;
+
+        
+    
+    
+            var circle_marker_91acb22478c5adc0eccea07ac903d4e3 = L.circleMarker(
+                [51.2167709999999, 4.4414134],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#15f4ee", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(map_4527a291c6d19799da09185ccff98677);
+        
+    
+        var popup_66b193ed3867cadfc26de17227598cae = L.popup({"maxWidth": 500});
+
+        
+            
+                var html_11de5a8aed72f92aaa08ca03369bc128 = $(`<div id="html_11de5a8aed72f92aaa08ca03369bc128" style="width: 100.0%; height: 100.0%;">         <div style="text-align:center;">           <img              id="img_92"              src="https://Ablenya.github.io/Oorzaak/Antwerp%20period%202/A1559%20Figure%204.png"              style="max-width:500px; height:auto; display:block; margin:0 auto;"            />           <button              onclick="               var img = document.getElementById('img_92');               if(img.style.maxWidth === '1100px') {                 img.style.maxWidth = '500px';                 this.textContent = 'Enlarge';               } else {                 img.style.maxWidth = '1100px';                 this.textContent = 'Shrink';               }             "             style="margin-top:5px;"           >Enlarge</button>         </div>         </div>`)[0];
+                popup_66b193ed3867cadfc26de17227598cae.setContent(html_11de5a8aed72f92aaa08ca03369bc128);
+            
+        
+
+        circle_marker_91acb22478c5adc0eccea07ac903d4e3.bindPopup(popup_66b193ed3867cadfc26de17227598cae)
+        ;
+
+        
+    
+    
+            var circle_marker_bfbde2da626019f7016f5def4be0ecdc = L.circleMarker(
+                [51.2235595, 4.4262275],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#15f4ee", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(map_4527a291c6d19799da09185ccff98677);
+        
+    
+        var popup_601f613bf14333193edb65c52e28abaa = L.popup({"maxWidth": 500});
+
+        
+            
+                var html_5ccd229851a4203b0bfec14a86b6a6fb = $(`<div id="html_5ccd229851a4203b0bfec14a86b6a6fb" style="width: 100.0%; height: 100.0%;">         <div style="text-align:center;">           <img              id="img_93"              src="https://Ablenya.github.io/Oorzaak/Antwerp%20period%202/A1627%20Figure%204.png"              style="max-width:500px; height:auto; display:block; margin:0 auto;"            />           <button              onclick="               var img = document.getElementById('img_93');               if(img.style.maxWidth === '1100px') {                 img.style.maxWidth = '500px';                 this.textContent = 'Enlarge';               } else {                 img.style.maxWidth = '1100px';                 this.textContent = 'Shrink';               }             "             style="margin-top:5px;"           >Enlarge</button>         </div>         </div>`)[0];
+                popup_601f613bf14333193edb65c52e28abaa.setContent(html_5ccd229851a4203b0bfec14a86b6a6fb);
+            
+        
+
+        circle_marker_bfbde2da626019f7016f5def4be0ecdc.bindPopup(popup_601f613bf14333193edb65c52e28abaa)
+        ;
+
+        
+    
+    
+            var circle_marker_fb2ec5d1c4a3be8ba90af753138dda4a = L.circleMarker(
+                [51.2212062, 4.4413132],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#15f4ee", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(map_4527a291c6d19799da09185ccff98677);
+        
+    
+        var popup_d631718601e916d5b180ee2d37b1900c = L.popup({"maxWidth": 500});
+
+        
+            
+                var html_6b1faeb3ca5d4236799ac59029b8cb59 = $(`<div id="html_6b1faeb3ca5d4236799ac59029b8cb59" style="width: 100.0%; height: 100.0%;">         <div style="text-align:center;">           <img              id="img_94"              src="https://Ablenya.github.io/Oorzaak/Antwerp%20period%202/A1633%20Figure%204.png"              style="max-width:500px; height:auto; display:block; margin:0 auto;"            />           <button              onclick="               var img = document.getElementById('img_94');               if(img.style.maxWidth === '1100px') {                 img.style.maxWidth = '500px';                 this.textContent = 'Enlarge';               } else {                 img.style.maxWidth = '1100px';                 this.textContent = 'Shrink';               }             "             style="margin-top:5px;"           >Enlarge</button>         </div>         </div>`)[0];
+                popup_d631718601e916d5b180ee2d37b1900c.setContent(html_6b1faeb3ca5d4236799ac59029b8cb59);
+            
+        
+
+        circle_marker_fb2ec5d1c4a3be8ba90af753138dda4a.bindPopup(popup_d631718601e916d5b180ee2d37b1900c)
+        ;
+
+        
+    
+    
+            var circle_marker_a6c231bee219fadc8abec4654d492d0a = L.circleMarker(
+                [51.1641923, 4.4151091],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#15f4ee", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(map_4527a291c6d19799da09185ccff98677);
+        
+    
+        var popup_5b3b6945d7a0bd6ca5f1488c9f5e0c22 = L.popup({"maxWidth": 500});
+
+        
+            
+                var html_9bb0ddddcaf53d3b549e46377b3f8c87 = $(`<div id="html_9bb0ddddcaf53d3b549e46377b3f8c87" style="width: 100.0%; height: 100.0%;">         <div style="text-align:center;">           <img              id="img_95"              src="https://Ablenya.github.io/Oorzaak/Antwerp%20period%202/A1649%20Figure%204.png"              style="max-width:500px; height:auto; display:block; margin:0 auto;"            />           <button              onclick="               var img = document.getElementById('img_95');               if(img.style.maxWidth === '1100px') {                 img.style.maxWidth = '500px';                 this.textContent = 'Enlarge';               } else {                 img.style.maxWidth = '1100px';                 this.textContent = 'Shrink';               }             "             style="margin-top:5px;"           >Enlarge</button>         </div>         </div>`)[0];
+                popup_5b3b6945d7a0bd6ca5f1488c9f5e0c22.setContent(html_9bb0ddddcaf53d3b549e46377b3f8c87);
+            
+        
+
+        circle_marker_a6c231bee219fadc8abec4654d492d0a.bindPopup(popup_5b3b6945d7a0bd6ca5f1488c9f5e0c22)
+        ;
+
+        
+    
+    
+            var circle_marker_5f5508ea9646c44e4643b9b95a31b04e = L.circleMarker(
+                [51.2010687, 4.4499696],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#15f4ee", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(map_4527a291c6d19799da09185ccff98677);
+        
+    
+        var popup_dbf588c30424667f571c411302a27deb = L.popup({"maxWidth": 500});
+
+        
+            
+                var html_0ff25a9aeaa834132da0f2935a99631e = $(`<div id="html_0ff25a9aeaa834132da0f2935a99631e" style="width: 100.0%; height: 100.0%;">         <div style="text-align:center;">           <img              id="img_96"              src="https://Ablenya.github.io/Oorzaak/Antwerp%20period%202/A1651%20Figure%204.png"              style="max-width:500px; height:auto; display:block; margin:0 auto;"            />           <button              onclick="               var img = document.getElementById('img_96');               if(img.style.maxWidth === '1100px') {                 img.style.maxWidth = '500px';                 this.textContent = 'Enlarge';               } else {                 img.style.maxWidth = '1100px';                 this.textContent = 'Shrink';               }             "             style="margin-top:5px;"           >Enlarge</button>         </div>         </div>`)[0];
+                popup_dbf588c30424667f571c411302a27deb.setContent(html_0ff25a9aeaa834132da0f2935a99631e);
+            
+        
+
+        circle_marker_5f5508ea9646c44e4643b9b95a31b04e.bindPopup(popup_dbf588c30424667f571c411302a27deb)
+        ;
+
+        
+    
+    
+            var circle_marker_c3c0888e48eb1961e1e50831089a37ef = L.circleMarker(
+                [51.1677824, 4.39757389999999],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#15f4ee", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(map_4527a291c6d19799da09185ccff98677);
+        
+    
+        var popup_c9ca8497805456c7abc0bfb2a9297d7c = L.popup({"maxWidth": 500});
+
+        
+            
+                var html_9086ef7180e2f0a44d3f2b7ec999df9b = $(`<div id="html_9086ef7180e2f0a44d3f2b7ec999df9b" style="width: 100.0%; height: 100.0%;">         <div style="text-align:center;">           <img              id="img_97"              src="https://Ablenya.github.io/Oorzaak/Antwerp%20period%202/A1660%20Figure%204.png"              style="max-width:500px; height:auto; display:block; margin:0 auto;"            />           <button              onclick="               var img = document.getElementById('img_97');               if(img.style.maxWidth === '1100px') {                 img.style.maxWidth = '500px';                 this.textContent = 'Enlarge';               } else {                 img.style.maxWidth = '1100px';                 this.textContent = 'Shrink';               }             "             style="margin-top:5px;"           >Enlarge</button>         </div>         </div>`)[0];
+                popup_c9ca8497805456c7abc0bfb2a9297d7c.setContent(html_9086ef7180e2f0a44d3f2b7ec999df9b);
+            
+        
+
+        circle_marker_c3c0888e48eb1961e1e50831089a37ef.bindPopup(popup_c9ca8497805456c7abc0bfb2a9297d7c)
+        ;
+
+        
+    
+    
+            var circle_marker_8d2de03ae836bdc40f77cbcf8d4f0398 = L.circleMarker(
+                [51.2025544, 4.4431332],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#15f4ee", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(map_4527a291c6d19799da09185ccff98677);
+        
+    
+        var popup_7b9b9f4ce7bbf964485c50ec11538182 = L.popup({"maxWidth": 500});
+
+        
+            
+                var html_f6868fac0920de98c811cf3b9f24721d = $(`<div id="html_f6868fac0920de98c811cf3b9f24721d" style="width: 100.0%; height: 100.0%;">         <div style="text-align:center;">           <img              id="img_98"              src="https://Ablenya.github.io/Oorzaak/Antwerp%20period%202/A1670%20Figure%204.png"              style="max-width:500px; height:auto; display:block; margin:0 auto;"            />           <button              onclick="               var img = document.getElementById('img_98');               if(img.style.maxWidth === '1100px') {                 img.style.maxWidth = '500px';                 this.textContent = 'Enlarge';               } else {                 img.style.maxWidth = '1100px';                 this.textContent = 'Shrink';               }             "             style="margin-top:5px;"           >Enlarge</button>         </div>         </div>`)[0];
+                popup_7b9b9f4ce7bbf964485c50ec11538182.setContent(html_f6868fac0920de98c811cf3b9f24721d);
+            
+        
+
+        circle_marker_8d2de03ae836bdc40f77cbcf8d4f0398.bindPopup(popup_7b9b9f4ce7bbf964485c50ec11538182)
+        ;
+
+        
+    
+    
+            var circle_marker_b84ab295433211524ca940c23160cdd8 = L.circleMarker(
+                [51.2113931, 4.434885],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#15f4ee", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(map_4527a291c6d19799da09185ccff98677);
+        
+    
+        var popup_f3fff1c839b15a8dd16b26312d681437 = L.popup({"maxWidth": 500});
+
+        
+            
+                var html_2c65d9fabff33f05a2b7abe8ed31437f = $(`<div id="html_2c65d9fabff33f05a2b7abe8ed31437f" style="width: 100.0%; height: 100.0%;">         <div style="text-align:center;">           <img              id="img_99"              src="https://Ablenya.github.io/Oorzaak/Antwerp%20period%202/A1692%20Figure%204.png"              style="max-width:500px; height:auto; display:block; margin:0 auto;"            />           <button              onclick="               var img = document.getElementById('img_99');               if(img.style.maxWidth === '1100px') {                 img.style.maxWidth = '500px';                 this.textContent = 'Enlarge';               } else {                 img.style.maxWidth = '1100px';                 this.textContent = 'Shrink';               }             "             style="margin-top:5px;"           >Enlarge</button>         </div>         </div>`)[0];
+                popup_f3fff1c839b15a8dd16b26312d681437.setContent(html_2c65d9fabff33f05a2b7abe8ed31437f);
+            
+        
+
+        circle_marker_b84ab295433211524ca940c23160cdd8.bindPopup(popup_f3fff1c839b15a8dd16b26312d681437)
+        ;
+
+        
+    
+    
+            L.Control.geocoder(
+                {"collapsed": false, "defaultMarkGeocode": true, "position": "topright"}
+            ).on('markgeocode', function(e) {
+                map_4527a291c6d19799da09185ccff98677.setView(e.geocode.center, 11);
+            }).addTo(map_4527a291c6d19799da09185ccff98677);
+
+        
+</script>
+</html>
